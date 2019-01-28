@@ -1,0 +1,33 @@
+.ct-index__bydirector {
+    background:url('./assets/images/bydirector.jpg') no-repeat;
+    @include coverCenter;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    p {        
+        color: #fff;
+        text-align: center;        
+        font-family: NewCycle;                        
+        line-height: normal;        
+    }
+    span {
+        font-family: Spectral-regular;
+        color: #9B9B9B;
+    }
+}
+
+@media (min-width: 960px) {
+    .ct-index__bydirector {
+        margin: vw(150) 0 vw(100); 
+        height: vw(748);
+        padding: 0 vw(185);
+        p {
+            font-size: vw(35);                    
+        }
+        span {
+            font-size: vw(25);
+            margin-top: vw(58);
+        }
+    }
+}

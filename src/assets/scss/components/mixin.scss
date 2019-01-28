@@ -1,0 +1,33 @@
+@mixin overlay() {
+    content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;        
+}
+
+@mixin coverCenter() {
+    background-size: cover;
+    background-position:center;
+}
+
+@mixin size($height,$width) {
+    height: $height;
+    width: $width;
+}
+
+@function vh($px) {
+    @return ($px * 0.10319) + vh;
+}
+
+@function vw($px) {
+    @return ($px * 0.05208) + vw;
+}
+
+// Em function
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}

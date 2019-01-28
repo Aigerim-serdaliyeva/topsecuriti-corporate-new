@@ -1,0 +1,96 @@
+.ct-index__products {
+    text-align: center; 
+    font-family: Spectral-semibold;    
+    ul {
+        display: flex;  
+        justify-content: center;
+        li {
+            text-transform: lowercase;
+        }  
+    }
+    &__component {
+        display: flex;
+        .ct-child {
+            flex:1;            
+        }
+        .ct-content {
+            position: relative;
+            border: vw(1) solid #999999;
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .ct-index__products {
+        h2 {
+            font-size: vw(50);            
+        }
+        ul.primary-list {            
+            padding: vw(57) 0 vw(48);
+            li {    
+                font-size: vw(25);
+                padding: vw(21) vw(67);
+                border: vw(1) solid #999999;
+                margin-right: vw(20);                
+            }
+            li:last-child {
+                margin-right: 0;
+            }
+        }    
+        &__component {
+            height: vw(562);
+            margin: 0 vw(281); 
+            .ct-content {
+                padding-top: vw(62);    
+                h2 {
+                    font-size: vw(35);
+                    text-transform: lowercase;
+                }
+                ul {
+                    margin: 0;
+                    padding: 0 vw(94);
+                    display: block;
+                    li {
+                        text-align: left;                        
+                        font-family: NewCycle;
+                        font-size: vw(30);
+                        text-transform: lowercase;
+                        color: #4C4C4C;
+                        margin-top: vw(20);
+                        position: relative;
+                        &::before {
+                            content: '•'; 
+                            position: absolute;
+                            top: 0;
+                            left: vw(-20);
+                            bottom: 0;
+                            margin: auto;                                                        
+                            font-size: vw(32);                            
+                        }
+                    }
+                }
+                a {
+                    position: absolute;
+                    bottom: vw(-40.5);left: 0;right: 0;margin: auto;
+                    height: vw(81);
+                    width: vw(357);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;                    
+                    border: vw(1) solid #999999;
+                    font-size: vw(25);
+                    font-family: Spectral-semibold;
+                    text-transform: lowercase;
+                    z-index: 10;
+                    background: #fff;
+                }
+            }           
+        }
+        .component-personal {
+            .ct-image {
+                background: url('./assets/images/component-personal.jpg') no-repeat;
+                @include coverCenter;
+            }
+        }
+    }    
+}

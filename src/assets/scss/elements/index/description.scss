@@ -1,0 +1,55 @@
+.webp .ct-index__description__bg {
+    background: url('./assets/images/index-description-bg.webp') no-repeat;
+    @include coverCenter();
+}
+
+.no-webp .ct-index__description__bg {
+    background: url('./assets/images/index-description-bg.jpg') no-repeat;
+    @include coverCenter();
+}
+
+.ct-index__description {
+    text-align: center;
+    &__bg {      
+      width: 100%;  
+    }
+    h2, h1 {
+        font-family: Spectral-semibold;
+    }
+    h2 {        
+        text-transform: lowercase;
+        border-bottom:  vw(3) solid #FFB800;
+        color: #FFB800;
+        margin: auto;     
+    }
+    h1 {
+        text-transform: uppercase;
+    } 
+    p {
+        font-family: NewCycle;
+        line-height: normal;
+    }
+}
+
+
+@media (min-width: 960px) {
+    .ct-index__description {
+        h2 {
+            padding-top: vw(142);
+            font-size: vw(39);                 
+            width: vw(321);                          
+        }
+        h1 {   
+            padding: vw(44) 0 vw(30) 0;
+            font-size: vw(90);            
+        }
+        p {
+            font-size: vw(30);
+            padding: 0 vw(184);
+        }
+        &__bg {
+            height: vw(734);
+            margin: vw(50) 0 vw(60) 0;
+        }
+    }    
+}

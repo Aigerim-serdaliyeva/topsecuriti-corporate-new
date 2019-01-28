@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ct-menu />
+    <router-view />
+    <ct-footer />
   </div>
 </template>
 
+<style lang="scss">
+@import "./assets/scss/style.scss";
+</style>
+
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CtMenu from "./components/CtMenu.vue";
+import CtFooter from "./components/CtFooter.vue";
 
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    CtMenu,
+    CtFooter
   }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

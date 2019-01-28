@@ -1,0 +1,84 @@
+.ct-index__news {
+    height: auto;            
+    line-height: normal;
+    h2 {        
+        font-family: Spectral-semibold;
+        text-align: center;
+    }
+    h3 {
+        font-family: Spectral-bold;
+        color: #4C4C4C;        
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;    
+        flex-direction: column; 
+        align-content: center;   
+        p {
+            font-family: NewCycle;
+            color: #4C4C4C;
+        }
+        img {
+            object-fit: cover;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            span {
+                color: #AFAFAF;
+                font-family: Spectral-regular;
+            }
+            span:last-child {
+                color: #FFB800;
+            }
+        }     
+    }
+}
+
+@media (min-width: 960px) {
+    .ct-index__news {   
+        h2 {
+            font-size: vw(50);                
+        }                     
+        ul {
+            height: vw(2000);                                    
+            margin-top: vw(60);
+            li {    
+                @include size(auto, vw(482));
+                box-shadow: 0 vw(4) vw(12) rgba(0, 0, 0, 0.25);                  
+                margin: 0 vw(16) vw(16) 0;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }                                                                                                                                                
+            }              
+            img {
+                @include size(vw(322), 100%);                                
+            }
+            article {
+                padding: vw(35) vw(21) vw(25);
+            }
+            h3 {                
+                font-size: vw(25);                                                  
+            }                       
+            .line {
+                margin: vw(25) 0 vw(33);
+                width: vw(118);
+                border: vw(1) solid #FFB800;
+            } 
+            p {                
+                font-size: vw(25);
+            }    
+            .end-line {
+                margin: vw(33) 0 vw(20);
+                width: vw(118);
+                border: vw(1) solid #CACACA;
+            }
+            .content {
+                font-size: vw(20);                
+                span {
+                    font-size: vw(20);
+                }                
+            }
+        }
+    }
+}
