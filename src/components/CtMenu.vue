@@ -4,13 +4,14 @@
     <div v-if="this.$route.path === '/'">
       <div id="trigger1" />
       <div id="pin1">
-        <div class="ct-welcome">
+        <div class="ct-welcome" >
           <!-- Импортировал svg как компонент чтобы в будущем при расширении логики
                я мог использовать props
            -->
           <div class="ct-welcome__wrap">
             <div class="logo-svg-parent">
-              <welcome-svg />
+              <welcome-svg v-if="isMobile()"/>
+              <welcome-svg v-else/>
             </div>
             <div class="ct-welcome__description">
               <h2>
@@ -46,10 +47,19 @@ export default {
     WelcomeSvg,
     AboutScroll
   },
+  methods: {
+      isMobile() {
+          if(window.matchMedia("(max-width:960px)").matches) {
+              return false
+          } else {
+              return true
+          }
+      }
+  },
   computed: {
     lists() {
       return this.$store.state.lists;
-    }
+    },
   }
 };
 </script>

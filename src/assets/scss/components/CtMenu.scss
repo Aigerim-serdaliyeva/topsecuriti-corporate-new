@@ -18,9 +18,7 @@ nav {
         flex:1;
         align-items: center;                            
     }
-    li {
-        margin-right: vw(67);        
-    }
+
     a {
         text-decoration: none;
         color: #4C4C4C;        
@@ -72,15 +70,22 @@ nav {
 
 @media (min-width: 960px) {
 nav {
-    height: vw(100);
+    height: vw(100);    
     a {
         font-size: vw(20);                        
+    }
+    li {
+        margin-right: vw(67);        
     }
     .logo {
         width: vw(127.72);        
         margin-right: vw(163);
     }
 }
+}
+
+@media (max-width: 960px) {
+
 }
 
 
@@ -98,7 +103,6 @@ nav {
         background: rgba(0,0,0,0.75);
     }    
  }
- 
 
  .ct-welcome__description {
      position: relative;
@@ -108,17 +112,12 @@ nav {
      display: flex;
      align-items: center;
      flex-direction: column;
-     font-family: Spectral-regular;
-     font-size: vh(25);
-     text-align: center;
-     line-height: 6vh;
+     font-family: Spectral-regular;     
+     text-align: center;     
      opacity: 0;
      transform: translateY(5vh);
-     h2 {
-        margin: vh(40) 0 vh(34); 
-     }
-     svg {                         
-        @include size(vh(71), vh(187));                           
+     line-height: normal;
+     svg {                                                           
          cursor: pointer;
      }    
  }
@@ -131,7 +130,38 @@ nav {
 
 #svg-item {
     position: relative;    
-    z-index: 10;      
-    @include size(vh(358), vh(409));
+    z-index: 10;          
     overflow: visible;         
+}
+
+@media (min-width: 960px) {
+    .ct-welcome__description {
+        font-size: vh(25);
+        h2 {
+            margin: vh(40) 0 vh(34); 
+         }
+        svg {                         
+            @include size(vh(71), vh(187));                                        
+         }    
+    }
+
+    #svg-item  {
+        @include size(vh(358), vh(409));
+    }
+}
+
+@media (max-width: 960px) {
+    .ct-welcome__description {
+        font-size: vh(18);        
+        h2 {
+            margin: vh(40) 0 vh(34); 
+         }
+        svg {                         
+            @include size(vh(71), vh(187));                                        
+         }    
+    }
+
+    #svg-item  {
+        @include size(vh(172.53), vh(197.11));
+    }    
 }

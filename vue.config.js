@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = {  
+module.exports = {
   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "scss",

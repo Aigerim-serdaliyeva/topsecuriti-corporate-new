@@ -42,7 +42,7 @@ import CtNav from "@/components/CtNav";
 import CtIndexServices from "@/components/CtIndexServices";
 import CtIndexNews from "@/components/CtIndexNews";
 import CtIndexDescriptionList from "@/components/CtIndexDescriptionList.vue";
-import { TimelineMax } from "gsap";
+import { TimelineLite } from "gsap";
 
 export default {
   metaInfo: {
@@ -113,7 +113,7 @@ export default {
       document.querySelector(".svg-test #path4").style.transform =
         "translate(50vw, -40vh) rotate(80deg)";
 
-      const tl = new TimelineMax();
+      const tl = new TimelineLite();
       tl.to(svgPath, 0.5, {
         transform: "translate(0,0)",
         delay: 0.5

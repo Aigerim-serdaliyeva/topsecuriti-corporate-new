@@ -14,7 +14,7 @@ const store = () =>
         { id: 3, path: "partners" },
         { id: 4, path: "contacts" }
       ]
-    },
+    },    
     mutations: {
       changeVisitedData(state, path) {
         state.visitedData = path;
