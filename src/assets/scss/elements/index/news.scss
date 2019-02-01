@@ -14,6 +14,9 @@
         flex-wrap: wrap;    
         flex-direction: column; 
         align-content: center;   
+        li {
+            background: #fff;
+        }
         p {
             font-family: NewCycle;
             color: #4C4C4C;
@@ -41,7 +44,7 @@
             font-size: vw(50);                
         }                     
         ul {
-            height: vw(2000);                                    
+            height: vw(2200);                                    
             margin-top: vw(60);
             li {    
                 @include size(auto, vw(482));

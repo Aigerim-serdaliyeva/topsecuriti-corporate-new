@@ -5,21 +5,20 @@
     </transition>
 
     <section class="ct-index__description">
-      <h2>Кто мы такие?</h2>
       <h1>Top security kz</h1>
       <p>
-        Наше охранное агенство основанное в 1203918 году в г. Алматы. Мы
-        занимаемся обеспечение безопасности. Значимость этих проблем настолько
-        очевидна, что начало повседневной работы по формированию позиции
-        позволяет оценить значение соответствующий условий активизации. Не
-        следует, однако забывать, что начало повседневной работы по формированию
-        позиции играет важную роль в формировании дальнейших направлений
-        развития.
+        Компания создавалось с целью поднять на новый уровень качество
+        оказываемых услуг в сфере охраны.<br />
+        Мы сделали акцент на основопологающие пункты безопасности:
+      </p>
+      <ct-index-description-list />
+      <p>
+        Цель нашей компании - Дать людям чувство защищенности и уверености в
+        охране
       </p>
       <div id="indescr" class="ct-index__description__bg" />
     </section>
-
-    <ct-index-products />
+    <ct-index-services />
 
     <section class="ct-index__bydirector">
       <p>
@@ -35,34 +34,28 @@
     </section>
 
     <ct-index-news />
-
-    <section class="ct-index__team">
-      <span>наша команда</span>
-      <h2>TOP SECURITY KZ</h2>
-      <ul>
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-      </ul>
-    </section>
   </div>
 </template>
 
 <script>
-import CtNav from "./../components/CtNav";
-import CtIndexProducts from "./../components/CtIndexProducts";
-import CtIndexNews from "./../components/CtIndexNews";
+import CtNav from "@/components/CtNav";
+import CtIndexServices from "@/components/CtIndexServices";
+import CtIndexNews from "@/components/CtIndexNews";
+import CtIndexDescriptionList from "@/components/CtIndexDescriptionList.vue";
+import { TimelineMax } from "gsap";
 
 export default {
+  metaInfo: {
+    title: "Главная"
+  },
   components: {
     CtNav,
-    CtIndexProducts,
-    CtIndexNews
+    CtIndexServices,
+    CtIndexNews,
+    CtIndexDescriptionList
+  },
+  data() {
+    return {};
   },
   computed: {
     lists() {
@@ -97,9 +90,7 @@ export default {
       this.$ksvuescr.$emit("addScene", "triggerMenu", scene2);
     },
     pinContainerScene() {
-      let duration = window.innerHeight / 2.5; // Значения должны быть одинаковыми со значение position to fixed в else в ct-menu.vue
       let svgPath = document.querySelectorAll(".svg-test path");
-
       svgPath.forEach((el, index) => {
         if (index !== 1 && index !== 2 && index !== 3) {
           // Задаю рандомные значения для позиций каждого элемента в svg
@@ -113,31 +104,23 @@ export default {
           el.setAttribute("data-y", top);
         }
       });
+      document.querySelector(".svg-test #path2").style.transform =
+        "translate(-40vw, 10vh) rotate(-50deg)";
 
-      const scene = new this.$scrollmagic.Scene({
-        triggerElement: "#trigger1",
-        triggerHook: "onLeave",
-        duration: duration
-      })
-        .setPin("#pin1", {})
-        .on("progress", function(e) {
-          let progress = e.progress * 100;
+      document.querySelector(".svg-test #path3").style.transform =
+        "translate(20vw, 50vh) rotate(-30deg)";
 
-          svgPath.forEach((el, index) => {
-            let x = el.getAttribute("data-x"),
-              y = el.getAttribute("data-y"),
-              r = el.getAttribute("data-r"),
-              left = x - (x / 100) * progress,
-              top = y - (y / 100) * progress,
-              rotate = Math.floor(r - (r / 100) * progress);
-            if (index !== 1 && index !== 2 && index !== 3) {
-              el.style.transform = `translate(${left}vw,${top}vh)`;
-            } else {
-              el.style.transform = `translate(${left}vw,${top}vh) rotate(${rotate}deg)`;
-            }
-          });
-        });
-      this.$ksvuescr.$emit("addScene", "pinContainerScene", scene);
+      document.querySelector(".svg-test #path4").style.transform =
+        "translate(50vw, -40vh) rotate(80deg)";
+
+      const tl = new TimelineMax();
+      tl.to(svgPath, 0.5, {
+        transform: "translate(0,0)",
+        delay: 0.5
+      }).to(".ct-welcome__description", 0.5, {
+        opacity: 1,
+        transform: "translateY(0)"
+      });
     }
   }
 };

@@ -9,6 +9,7 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "gsap": "^2.0.2",
     "ks-vue-scrollmagic": "^1.0.2",
     "vue": "^2.5.21",
     "vue-i18n": "^8.7.0",
@@ -18,6 +19,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-service": "^3.3.0",

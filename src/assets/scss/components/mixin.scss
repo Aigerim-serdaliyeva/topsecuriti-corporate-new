@@ -17,6 +17,12 @@
     width: $width;
 }
 
+@mixin before() {
+    content:'';
+    position: absolute;
+    margin: auto;
+}
+
 @function vh($px) {
     @return ($px * 0.10319) + vh;
 }

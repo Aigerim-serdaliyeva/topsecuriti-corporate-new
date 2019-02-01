@@ -1,6 +1,14 @@
-.ct-index__bydirector {
+.webp .ct-index__bydirector {
+    background:url('./assets/images/bydirector.webp') no-repeat;
+    @include coverCenter;
+}
+
+.no-webp .ct-index__bydirector {
     background:url('./assets/images/bydirector.jpg') no-repeat;
-    @include coverCenter;  
+    @include coverCenter;
+}
+
+.ct-index__bydirector {          
     display: flex;
     flex-direction: column;
     justify-content: center;

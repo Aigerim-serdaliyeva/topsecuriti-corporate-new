@@ -9,12 +9,10 @@ const store = () =>
       visitedData: "",
       scrolledData: false,
       lists: [
-        { id: 1, path: "about" }
-        // { id: 2, path: "products" },
-        // { id: 3, path: "news" },
-        // { id: 4, path: "team" },
-        // { id: 5, path: "partners" },
-        // { id: 6, path: "contacts" }
+        { id: 1, path: "about" },
+        { id: 2, path: "news" },
+        { id: 3, path: "partners" },
+        { id: 4, path: "contacts" }
       ]
     },
     mutations: {

@@ -5,19 +5,23 @@ Vue.use(VueI18n);
 
 const messages = {
   ru: {
-    message: {
-      hello: "о нас"
+    menu: {
+      about: "О нас",
+      products: "Продукты",
+      news: "Новости",
+      team: "Команда",
+      partners: "Партнеры",
+      contacts: "Контакты"
     }
   },
   kz: {
-    message: {
-      hello: "о кермен"
-    }
+    message: {}
   }
 };
 
 export const i18n = new VueI18n({
   locale: "ru", // set locale
   fallbackLocale: "ru",
-  messages // set locale messages
+  messages, // set locale messages,
+  enableInSFC: false
 });

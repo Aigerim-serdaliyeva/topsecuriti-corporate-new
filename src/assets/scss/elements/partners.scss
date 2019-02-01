@@ -1,0 +1,123 @@
+.ct-partners {
+    line-height: normal;
+    text-align: center;
+    color: #4C4C4C; 
+    .article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-family: NewCycle;
+            color: #fff;
+        }
+    }
+    .ct-pages-content__wrap {        
+        background: #F9F9F9;        
+    }
+    h2,h3 {
+        font-family: Spectral-bold;        
+    }
+    .ct-partners__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        div {
+            width: 100%;
+        }
+    }
+    p {
+        font-family: NewCycle;
+    }
+
+}
+
+
+@media (min-width: 960px) {
+    .ct-partners {        
+        .article {
+            @include size(100%, 100%);  
+            svg {
+                @include size (vw(358), vw(409));
+            }
+            p {
+                width: vw(980);
+                margin-left: vw(89);  
+                font-size: vw(30);
+            }
+        }  
+        .ct-pages-content__wrap {
+            box-shadow: 0 vw(4) vw(19) rgba(0, 0, 0, 0.25);
+        }  
+        h2 {
+            padding: vw(100) 0 vw(118);
+            font-size: vw(50);
+        }
+        article {
+            width: 33.33%;                
+            position: relative; 
+            margin-bottom: vw(100);
+            div {
+                margin-top: vw(58);
+            }      
+        }        
+        h3 {
+            font-size: vw(30);
+            position: relative;                      
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;left: 0;right: 0;
+                margin: auto;      
+                height: vw(1);
+                width: vw(353.74);
+                background:#CACACA;                          
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;left: 0;right: 0;
+                margin: auto;
+                height: vw(1);
+                width: vw(88.93);
+                background:#CACACA;
+            }
+        }
+        p {
+            font-size: vw(20);
+        }
+        img {
+            object-fit: cover;            
+        }
+        .partners-global {
+            @include size(vw(88), vw(376));
+        }
+        .partners-bbhs {
+            @include size(vw(75.49), vw(376));
+        }
+        .partners-pest {            
+            @include size(vw(103), vw(258.29));        
+        }
+        .partners-muratov {
+            @include size(vw(173), vw(210.45));
+        }
+        .partners-cleaning {
+            @include size(vw(135.63), vw(375.77));                        
+        }
+        .partners-newestate {
+            @include size(vw(172.84), vw(142.13))
+        }     
+        .partners-lady {
+            @include size(vw(172.96), vw(261.19))            
+        }
+        .partners-hr {
+            @include size(vw(173), vw(229.84));
+        }   
+
+    }
+}
+

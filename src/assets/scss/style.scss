@@ -18,10 +18,17 @@ $breakpoint-large-max: ($breakpoint-xlarge - 1);
 // Global classes
 @import 'components/global.scss';
 
-// Main
+// Components
 @import 'components/CtMenu.scss';
 @import 'components/CtFooter.scss';
+@import 'components/BeginBg.scss';
+
+// Pages
 @import 'elements/index.scss';
+@import 'elements/about.scss';
+@import 'elements/news.scss';
+@import 'elements/partners.scss';
+@import 'elements/contacts.scss';
 
 // Media
 @import 'elements/media.scss';

@@ -9,7 +9,7 @@
     <ul :class="visitedData">
       <li v-for="list in listsProp" :class="`nav-${list.path}`" :key="list.id">
         <router-link :to="list.path" @click.native="visited(list.path)">
-          {{ list.path }}
+          {{ $t(`menu.${list.path}`) }}
         </router-link>
       </li>
       <!-- <li><router-link :to="switchLocalePath('ru')">Ru</router-link></li>

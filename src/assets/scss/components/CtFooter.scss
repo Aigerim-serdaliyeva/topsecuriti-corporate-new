@@ -29,7 +29,16 @@ footer {
       text-transform: lowercase;
       line-height: normal;
       white-space: pre;
-    }     
+    }         
+}
+.dark-footer {
+    background: #000;
+    color: #fff;
+    svg {
+        path {
+            fill: #fff;
+        }
+    }
 }
 
 @media (min-width:960px) {

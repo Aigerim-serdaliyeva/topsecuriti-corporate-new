@@ -1,4 +1,4 @@
-.ct-index__products {
+.ct-index__services {
     text-align: center; 
     font-family: Spectral-semibold;    
     ul {
@@ -6,22 +6,60 @@
         justify-content: center;
         li {
             text-transform: lowercase;
-        }  
+            background: #fff;
+            cursor: pointer;
+           
+        }              
     }
+    .primary-list {
+        li:hover {
+            background: #FFB800;        
+        }      
+        li.visited {
+            background:  #4C4C4C;
+            color: #fff
+        }              
+    } 
     &__component {
         display: flex;
+        background: #fff;
         .ct-child {
             flex:1;            
         }
         .ct-content {
             position: relative;
             border: vw(1) solid #999999;
+            h2,li,a {
+                text-transform: lowercase;
+            }
+            ul {
+                display: block;
+            }
+            li {
+                font-family: NewCycle;
+                color: #4C4C4C;
+                text-align: left; 
+                position: relative;
+            }
+            a {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;  
+                font-family: Spectral-semibold;                    
+                z-index: 10;
+                background: #fff;
+                cursor: pointer;                
+                &:hover {
+                    background: #FFB800;
+                }
+            }
         }
     }
 }
 
 @media (min-width: 960px) {
-    .ct-index__products {
+    .ct-index__services {
         h2 {
             font-size: vw(50);            
         }
@@ -43,21 +81,14 @@
             .ct-content {
                 padding-top: vw(62);    
                 h2 {
-                    font-size: vw(35);
-                    text-transform: lowercase;
+                    font-size: vw(35);                    
                 }
                 ul {
                     margin: 0;
-                    padding: 0 vw(94);
-                    display: block;
-                    li {
-                        text-align: left;                        
-                        font-family: NewCycle;
-                        font-size: vw(30);
-                        text-transform: lowercase;
-                        color: #4C4C4C;
-                        margin-top: vw(20);
-                        position: relative;
+                    padding: 0 vw(94);                    
+                    li {                                               
+                        font-size: vw(30);                        
+                        margin-top: vw(20);                        
                         &::before {
                             content: '•'; 
                             position: absolute;
@@ -70,27 +101,27 @@
                     }
                 }
                 a {
-                    position: absolute;
                     bottom: vw(-40.5);left: 0;right: 0;margin: auto;
                     height: vw(81);
-                    width: vw(357);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;                    
+                    width: vw(357);                  
                     border: vw(1) solid #999999;
                     font-size: vw(25);
-                    font-family: Spectral-semibold;
-                    text-transform: lowercase;
-                    z-index: 10;
-                    background: #fff;
                 }
             }           
         }
-        .component-personal {
-            .ct-image {
-                background: url('./assets/images/component-personal.jpg') no-repeat;
-                @include coverCenter;
-            }
-        }
     }    
+}
+
+.webp .component-personal {            
+    .ct-image {
+        background: url('./assets/images/component-personal.webp') no-repeat;
+        @include coverCenter;
+    }
+}
+
+.no-webp .component-personal {            
+    .ct-image {
+        background: url('./assets/images/component-personal.webp') no-repeat;
+        @include coverCenter;
+    }
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <ct-menu />
     <router-view />
-    <ct-footer />
+    <ct-footer class="dark-footer" />
   </div>
 </template>
 

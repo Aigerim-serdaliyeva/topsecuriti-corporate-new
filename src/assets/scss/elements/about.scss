@@ -1,0 +1,45 @@
+.ct-about {
+    text-align: center;
+    line-height: normal;
+    .article {
+        display: flex;
+        justify-content: center; align-items: center;
+    }   
+    h2 {
+        font-family: Spectral-bold;
+        color: #212121;
+    }
+    p {
+        font-family: NewCycle;
+    }    
+}
+
+@media (min-width:960px) {
+    .ct-about {            
+        .ct-pages-content__wrap {
+            padding-bottom: vw(20);
+        }
+        .article {
+            @include size(100%, 100%);  
+            svg { 
+                @include size (vw(358), vw(409));           
+            }
+        }
+        h2 {
+            font-size: vw(50);            
+            padding: vw(97) 0 vw(40);            
+            border-bottom: vw(1) solid #FFB800;
+        }
+        p {
+            font-size: vw(25);
+            padding: vw(20) 0;
+        }
+        img {
+            @include size(vw(639), 100%);
+            object-fit: cover;
+            padding: vw(20) 0;
+            border-top: vw(1) solid #FFB800;
+            border-bottom: vw(1) solid #FFB800;
+        }        
+    }
+}
