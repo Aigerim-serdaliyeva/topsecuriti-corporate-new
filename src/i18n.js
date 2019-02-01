@@ -10,7 +10,7 @@ const messages = {
       products: "Продукты",
       news: "Новости",
       team: "Команда",
-      partners: "Партнеры",
+      partners: "Клиенты",
       contacts: "Контакты"
     }
   },

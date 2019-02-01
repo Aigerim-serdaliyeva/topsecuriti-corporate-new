@@ -6,7 +6,7 @@
                 p Значимость этих проблем настолько очевидна, что начало повседневной лляет оляет ояет оработы по формированию позиции позволяет оценить значение ляет оляет ляет ояет оосоответствующий условий активизации. Значимость этих проблем настолько очевидна, что начало повседнеляет оляет овной работыляет оляет о по формированию позиции позволяет оценить значение соответствующий условий активизации.
         .ct-pages-content        
             .ct-pages-content__wrap
-                h2 НАШИ ПАРТНЕРЫ
+                h2 НАШИ КЛИЕНТЫ
                 .ct-partners__list                     
                         article(v-for="(item,index) in partners", :key="index") 
                             img(:class="`partners-${item.img}`", :src="require(`@/assets/images/partners/${item.img}.png`)", alt="")                        
@@ -21,7 +21,7 @@ import BeginLogo from "@/components/svg-components/BeginLogo.vue";
 
 export default {
   metaInfo: {
-    title: "Партнеры"
+    title: "Клиенты"
   },
   components: {
     BeginLogo
