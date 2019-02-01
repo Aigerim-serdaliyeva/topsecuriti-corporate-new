@@ -97,3 +97,14 @@
     </g>
   </svg>
 </template>
+
+<script>
+export default {
+    props: {
+        viewbox: {
+            type: String,
+            required: true
+        }
+    }
+}
+</script>

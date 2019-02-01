@@ -10,8 +10,8 @@
            -->
           <div class="ct-welcome__wrap">
             <div class="logo-svg-parent">
-              <welcome-svg v-if="isMobile()"/>
-              <welcome-svg v-else/>
+              <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!isMobile()"/>
+              <welcome-svg :viewbox="welcomeSvgMobile" v-else/>
             </div>
             <div class="ct-welcome__description">
               <h2>
@@ -43,6 +43,12 @@ import WelcomeSvg from "./svg-components/WelcomeSvg";
 import AboutScroll from "./svg-components/AboutScroll";
 
 export default {
+  data() {
+      return {
+          welcomeSvgDesktop: '',
+          welcomeSvgMobile: ''
+      }
+  },
   components: {
     WelcomeSvg,
     AboutScroll
@@ -50,9 +56,9 @@ export default {
   methods: {
       isMobile() {
           if(window.matchMedia("(max-width:960px)").matches) {
-              return false
-          } else {
               return true
+          } else {
+              return false
           }
       }
   },
