@@ -100,11 +100,11 @@
 
 <script>
 export default {
-    props: {
-        viewbox: {
-            type: String,
-            required: true
-        }
+  props: {
+    viewbox: {
+      type: String,
+      required: false
     }
-}
+  }
+};
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section class="ct-index__services">
-    <h2>НАШИ ПРОДУКТЫ</h2>
-    <ul class="primary-list">
+    <h2>НАШИ УСЛУГИ</h2>
+    <ul class="primary-list dnm">
       <li
         v-for="(item, index) in componentsList"
         :key="index"
@@ -11,7 +11,12 @@
         {{ item.text }}
       </li>
     </ul>
-    <component :is="currentComponent" />
+    <component v-if="!isMobile()" :is="currentComponent" />
+    <div v-else>
+        <individuals />
+        <legal-entities />
+        <private-security />
+    </div>
   </section>
 </template>
 
@@ -39,6 +44,13 @@ export default {
   methods: {
     changeComponent(comp) {
       this.currentComponent = comp;
+    },
+        isMobile() {
+      if (window.matchMedia("(max-width:960px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 };

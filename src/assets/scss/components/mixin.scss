@@ -27,8 +27,14 @@
     @return ($px * 0.10319) + vh;
 }
 
+// desktop
 @function vw($px) {
     @return ($px * 0.05208) + vw;
+}
+
+// mobile
+@function vwm($px) {
+    @return ($px * 0.26666666) + vw;
 }
 
 // Em function

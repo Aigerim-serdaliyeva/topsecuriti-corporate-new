@@ -1,6 +1,7 @@
 .ct-index__services {
     text-align: center; 
-    font-family: Spectral-semibold;    
+    font-family: Spectral-semibold;   
+    line-height: normal;
     ul {
         display: flex;  
         justify-content: center;
@@ -22,15 +23,14 @@
     } 
     &__component {
         display: flex;
-        background: #fff;
-        .ct-child {
-            flex:1;            
-        }
+        background: #fff; 
         .ct-content {
-            position: relative;
-            border: vw(1) solid #999999;
+            position: relative;            
             h2,li,a {
                 text-transform: lowercase;
+            }
+            h2 {
+                font-family: Spectral-semibold;
             }
             ul {
                 display: block;
@@ -78,8 +78,12 @@
         &__component {
             height: vw(562);
             margin: 0 vw(281); 
+            .ct-child {
+                flex:1;            
+            }
             .ct-content {
                 padding-top: vw(62);    
+                border: vw(1) solid #999999;
                 h2 {
                     font-size: vw(35);                    
                 }
@@ -87,8 +91,7 @@
                     margin: 0;
                     padding: 0 vw(94);                    
                     li {                                               
-                        font-size: vw(30);                        
-                        margin-top: vw(20);                        
+                        font-size: vw(30);                                                                       
                         &::before {
                             content: '•'; 
                             position: absolute;
@@ -123,5 +126,56 @@
     .ct-image {
         background: url('./assets/images/component-personal.webp') no-repeat;
         @include coverCenter;
+    }
+}
+
+@media (max-width:960px) {
+    .ct-index__services  {       
+        .ct-image {
+            @include size(vwm(258), vwm(315));            
+            padding: 0 vwm(30);
+            margin: auto;
+        }
+        h2 {
+            font-size: vwm(30);
+            padding: vwm(70) 0 vwm(41);
+        }        
+        &__component {
+            display: block;
+            padding-bottom: vwm(44);
+            h2 {
+                font-size: vwm(18);
+                padding: 0;
+                text-transform: lowercase;
+            }
+            .ct-content {
+                width: vwm(315);
+                margin: auto;  
+                border: vwm(0.366259) solid #999999;
+            }
+            ul {
+                margin: auto;
+                padding: 0 vwm(30) vwm(31);                
+                li {
+                    position: relative;
+                    margin-left: vwm(30);                    
+                    &::before {
+                        content: '•'; 
+                        position: absolute;
+                        top: 0;
+                        left: vwm(-15);                                                                        
+                        font-size: vwm(17);                            
+                    }  
+                }
+            }
+            a {
+                    bottom: vwm(-17);left: 0;right: 0;margin: auto;                                
+                @include size(vwm(34), vwm(152));              
+                border: vwm(1) solid #999999;
+                font-size: vwm(14);
+                text-transform: lowercase;                                
+                color: #4C4C4C;
+            }
+        }    
     }
 }

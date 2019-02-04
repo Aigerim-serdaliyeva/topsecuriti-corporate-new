@@ -4,14 +4,14 @@
     <div v-if="this.$route.path === '/'">
       <div id="trigger1" />
       <div id="pin1">
-        <div class="ct-welcome" >
+        <div class="ct-welcome">
           <!-- Импортировал svg как компонент чтобы в будущем при расширении логики
                я мог использовать props
            -->
           <div class="ct-welcome__wrap">
             <div class="logo-svg-parent">
-              <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!isMobile()"/>
-              <welcome-svg :viewbox="welcomeSvgMobile" v-else/>
+              <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!isMobile()" />
+              <welcome-svg :viewbox="welcomeSvgMobile" v-else />
             </div>
             <div class="ct-welcome__description">
               <h2>
@@ -30,11 +30,7 @@
     <!-- Меню для всех страниц кроме основной , так как в основном меню должно выходить спустя скролл, 
          на других страницах меню изначально должно быть фиксированным  
     -->
-    <ct-nav
-      v-if="this.$route.path !== '/'"
-      :lists-prop="$store.state.lists"
-      :fixed="true"
-    />
+    <ct-nav v-if="this.$route.path !== '/'" :lists-prop="lists" :fixed="true" />
   </header>
 </template>
 
@@ -44,28 +40,28 @@ import AboutScroll from "./svg-components/AboutScroll";
 
 export default {
   data() {
-      return {
-          welcomeSvgDesktop: '',
-          welcomeSvgMobile: ''
-      }
+    return {
+      welcomeSvgDesktop: "",
+      welcomeSvgMobile: ""
+    };
   },
   components: {
     WelcomeSvg,
     AboutScroll
   },
   methods: {
-      isMobile() {
-          if(window.matchMedia("(max-width:960px)").matches) {
-              return true
-          } else {
-              return false
-          }
+    isMobile() {
+      if (window.matchMedia("(max-width:960px)").matches) {
+        return true;
+      } else {
+        return false;
       }
+    }
   },
   computed: {
     lists() {
-      return this.$store.state.lists;
-    },
+      return this.$store.state.menu;
+    }
   }
 };
 </script>

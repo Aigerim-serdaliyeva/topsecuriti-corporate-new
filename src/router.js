@@ -7,6 +7,9 @@ Vue.use(Router);
 Vue.use(Meta);
 
 export default new Router({
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   routes: [
     {
       path: "/",
@@ -16,34 +19,32 @@ export default new Router({
     {
       path: "/about",
       name: "about",
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () => import("./views/About.vue")
     },
     {
       path: "/products",
       name: "products",
-      component: () =>
-        import(/* webpackChunkName: "products" */ "./views/Products.vue")
+      component: () => import("./views/Products.vue")
     },
     {
       path: "/news",
       name: "news",
-      component: () => import(/* webpackChunkName: "news" */ "./views/News.vue")
+      component: () => import("./views/News.vue")
+    },
+    {
+      path: "/news/post/:id",
+      name: "posts",
+      component: () => import("./views/News.vue")
     },
     {
       path: "/partners",
       name: "partners",
-      component: () =>
-        import(/* webpackChunkName: "partners" */ "./views/Partners.vue")
+      component: () => import("./views/Partners.vue")
     },
     {
       path: "/contacts",
       name: "contacts",
-      component: () =>
-        import(/* webpackChunkName: "contacts" */ "./views/Contacts.vue")
+      component: () => import("./views/Contacts.vue")
     }
-  ],
-  scrollBehavior() {
-    return { x: 0, y: 0 };
-  }
+  ]
 });

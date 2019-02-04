@@ -2,16 +2,16 @@
     height: auto;            
     line-height: normal;
     h2 {        
-        font-family: Spectral-semibold;
-        text-align: center;
+        font-family: Spectral-semibold; 
+        text-align: center; 
     }
     h3 {
-        font-family: Spectral-bold;
+        font-family: Spectral-bold; 
         color: #4C4C4C;        
     }
     ul {
-        display: flex;
-        flex-wrap: wrap;    
+        display: flex;  
+        flex-wrap: wrap;        
         flex-direction: column; 
         align-content: center;   
         li {

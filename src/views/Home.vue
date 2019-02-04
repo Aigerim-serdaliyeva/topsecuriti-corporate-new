@@ -11,7 +11,8 @@
         оказываемых услуг в сфере охраны.<br />
         Мы сделали акцент на основополагающие пункты безопасности:
       </p>
-      <ct-index-description-list />
+      <ct-index-description-list v-if="!isMobile()" />
+      <ct-index-description-list-mobile v-else />
       <p>
         Цель нашей компании - Дать людям чувство защищенности и уверенности в
         охране
@@ -42,6 +43,7 @@ import CtNav from "@/components/CtNav";
 import CtIndexServices from "@/components/CtIndexServices";
 import CtIndexNews from "@/components/CtIndexNews";
 import CtIndexDescriptionList from "@/components/CtIndexDescriptionList.vue";
+import CtIndexDescriptionListMobile from "@/components/CtIndexDescriptionListMobile.vue";
 import { TimelineLite } from "gsap";
 
 export default {
@@ -52,14 +54,15 @@ export default {
     CtNav,
     CtIndexServices,
     CtIndexNews,
-    CtIndexDescriptionList
+    CtIndexDescriptionList,
+    CtIndexDescriptionListMobile
   },
   data() {
     return {};
   },
   computed: {
     lists() {
-      return this.$store.state.lists;
+      return this.$store.state.menu;
     },
     scrolledData() {
       return this.$store.state.scrolledData;
@@ -121,6 +124,13 @@ export default {
         opacity: 1,
         transform: "translateY(0)"
       });
+    },
+    isMobile() {
+      if (window.matchMedia("(max-width:960px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 };

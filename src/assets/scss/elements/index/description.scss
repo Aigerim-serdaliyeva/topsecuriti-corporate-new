@@ -1,14 +1,7 @@
-.webp .ct-index__description__bg {
-    background: url('./assets/images/index-description-bg.webp') no-repeat;
-    @include coverCenter();
-}
 
-.no-webp .ct-index__description__bg {
-    background: url('./assets/images/index-description-bg.jpg') no-repeat;
-    @include coverCenter();
-}
 
 .ct-index__description {
+    line-height: normal; 
     text-align: center;
     &__bg {      
       width: 100%;  
@@ -24,11 +17,7 @@
         line-height: normal;
     }
     ul {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;     
-        align-content: space-between;   
+        width: 100%;        
         li {
             white-space: pre;
             font-family: NewCycle;
@@ -40,11 +29,11 @@
 }
 
 
-@media (min-width: 960px) {
-    .ct-index__description {        
+@media (min-width: 960px) {    
+    .ct-index__description {               
         h1 {   
-            padding: vw(170) 0 vw(30) 0;
-            font-size: vw(90);            
+            padding: vw(99) 0 vw(20) 0;
+            font-size: vw(90);               
         }
         p {
             font-size: vw(30);
@@ -68,12 +57,64 @@
             position: absolute;
             bottom: 0; top: vw(188.76);
             left: 0; right: 0;  margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;     
+            align-content: space-between;   
             li {                
                 @include size(vw(66), 33%);
                 font-size: vw(20);
                 line-height: normal;                
             }
         }
-
     }    
+
+    .webp .ct-index__description__bg {
+        background: url('./assets/images/index-description-bg.webp') no-repeat;
+        @include coverCenter();
+    }
+    
+    .no-webp .ct-index__description__bg {
+        background: url('./assets/images/index-description-bg.jpg') no-repeat;
+        @include coverCenter();
+    }
+}
+
+@media (max-width: 960px) {
+    .ct-index__description {
+        &__bg {
+            height: vwm(412);            
+        }        
+        h1 {   
+            padding: vwm(70) 0 vwm(30);
+            font-size: vwm(30);            
+        }
+        p {
+            font-size: vwm(18);
+            padding: 0 vwm(28) vwm(40);
+        }
+        img {
+            @include size(vwm(127.97), vwm(127.97))
+        }
+        span {
+            position: relative;
+            display: block;
+            font-size: 14px;
+            color: #5C5C5C;
+            padding: vwm(10.03) 0 vwm(20);
+        }
+        li:last-child span {
+            padding-bottom: vwm(60.73);
+        }     
+    }      
+    
+    .webp .ct-index__description__bg {
+        background: url('./assets/images/index-description/description-mobile.jpg') no-repeat;
+        @include coverCenter();
+    }
+    
+    .no-webp .ct-index__description__bg {
+        background: url('./assets/images/index-description/description-mobile.jpg') no-repeat;
+        @include coverCenter();
+    }
 }
