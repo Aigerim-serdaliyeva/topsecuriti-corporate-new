@@ -13,9 +13,9 @@
     </ul>
     <component v-if="!isMobile()" :is="currentComponent" />
     <div v-else>
-        <individuals />
-        <legal-entities />
-        <private-security />
+      <individuals />
+      <legal-entities />
+      <private-security />
     </div>
   </section>
 </template>
@@ -45,7 +45,7 @@ export default {
     changeComponent(comp) {
       this.currentComponent = comp;
     },
-        isMobile() {
+    isMobile() {
       if (window.matchMedia("(max-width:960px)").matches) {
         return true;
       } else {

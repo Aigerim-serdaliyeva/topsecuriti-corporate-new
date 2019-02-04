@@ -1,18 +1,10 @@
-.webp .ct-index__bydirector {
-    background:url('./assets/images/bydirector.webp') no-repeat;
-    @include coverCenter;
-}
-
-.no-webp .ct-index__bydirector {
-    background:url('./assets/images/bydirector.jpg') no-repeat;
-    @include coverCenter;
-}
 
 .ct-index__bydirector {          
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    line-height: normal;
     p {        
         color: #fff;
         text-align: center;        
@@ -38,4 +30,38 @@
             margin-top: vw(58);
         }
     }
+    .webp .ct-index__bydirector {
+        background:url('./assets/images/bydirector.webp') no-repeat;
+        @include coverCenter;
+    }
+    
+    .no-webp .ct-index__bydirector {
+        background:url('./assets/images/bydirector.jpg') no-repeat;
+        @include coverCenter;
+    }
+    
+}
+
+@media (max-width: 960px) {
+    .ct-index__bydirector {
+        padding: vwm(100) 0 vwm(79);
+        p {
+            font-size: vwm(18);
+            padding: 0 vwm(15);
+        }   
+        span {
+            font-size: vwm(14);
+            margin-top: vwm(48);
+        }     
+        
+    }
+    .webp .ct-index__bydirector {
+        background:url('./assets/images/bydirector/mobile-bg.jpg') no-repeat;
+        @include coverCenter;
+    }
+    
+    .no-webp .ct-index__bydirector {
+        background:url('./assets/images/bydirector/mobile-bg.jpg') no-repeat;
+        @include coverCenter;
+    }    
 }

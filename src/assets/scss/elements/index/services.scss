@@ -139,6 +139,8 @@
         h2 {
             font-size: vwm(30);
             padding: vwm(70) 0 vwm(41);
+            text-transform: lowercase;
+            
         }        
         &__component {
             display: block;
@@ -147,6 +149,7 @@
                 font-size: vwm(18);
                 padding: 0;
                 text-transform: lowercase;
+                padding-top: vwm(5);                
             }
             .ct-content {
                 width: vwm(315);
@@ -169,7 +172,7 @@
                 }
             }
             a {
-                    bottom: vwm(-17);left: 0;right: 0;margin: auto;                                
+                bottom: vwm(-17);left: 0;right: 0;margin: auto;                                
                 @include size(vwm(34), vwm(152));              
                 border: vwm(1) solid #999999;
                 font-size: vwm(14);
