@@ -3,7 +3,7 @@
     text-align: center;
     color: #4C4C4C; 
     .article {
-        display: flex;
+       
         align-items: center;
         justify-content: center;
         p {
@@ -40,6 +40,7 @@
 @media (min-width: 960px) {
     .ct-partners {        
         .article {
+            display: flex;
             @include size(100%, 100%);  
             svg {
                 @include size (vw(358), vw(409));
@@ -121,3 +122,90 @@
     }
 }
 
+
+@media (max-width: 960px) {
+    .ct-partners {
+        .article {     
+            padding: vwm(50) 0;       
+            @include size(100%, 100%);  
+            svg {
+                @include size (vwm(154.93), 100%);
+            }
+            p {
+                text-align: center;                                
+                font-size: vwm(18);
+                padding:  vwm(36.07) vwm(18) 0 ;
+            }
+        } 
+        color: #4C4C4C;
+        h2 {
+            padding: vwm(70) 0 vwm(45.33);
+            font-size: vwm(30);            
+        }
+       
+        article {                              
+            position: relative; 
+            margin-bottom: vwm(65); 
+            width: 100%;       
+            text-align: center;                      
+            div {
+                margin-top: vwm(25);
+            }      
+            img {
+                object-fit: cover;
+                object-position: center;                
+            }
+        }        
+        h3 {
+            font-size: vwm(18);
+            position: relative;  
+            padding-top: vwm(10);                    
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;left: 0;right: 0;
+                margin: auto;      
+                height: vwm(1);  
+                width: vwm(278) ;              
+                background:#CACACA;                          
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;left: 0;right: 0;
+                margin: auto;
+                height: vwm(1);   
+                width: vwm(100);             
+                background:#CACACA;
+            }
+        }
+        p {
+            font-size: vwm(14);
+        } 
+    
+        .partners-global {
+            @include size(vww(64.69), vwm(278));
+        }
+        .partners-bbhs {
+            @include size(vwm(55.49), vwm(278));
+        }
+        .partners-pest {            
+            @include size(vwm(103), vwm(258.29));        
+        }
+        .partners-muratov {
+            @include size(vwm(156.33), vwm(191.28));
+        }
+        .partners-cleaning {
+            @include size(vwm(97.69), vwm(260.43));                        
+        }
+        .partners-newestate {
+            @include size(vwm(173.91), vwm(143.84))
+        }     
+        .partners-lady {
+            @include size(vwm(175.04), vwm(264.34))            
+        }
+        .partners-hr {
+            @include size(vwm(141.09), vwm(187.44));
+        }   
+    }
+}

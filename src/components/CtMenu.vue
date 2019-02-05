@@ -18,25 +18,28 @@
                 Новый стандарт качества охранных компаний
               </h2>
               <!-- кнопка подробнее в welcome блоке svg-->
-              <a v-scroll-to="'#nav'"><about-scroll /> </a>
+              <a v-scroll-to="'#indescr'"><about-scroll /> </a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Menu -->
-    <ct-nav :lists-prop="lists" :fixed="false" />
+    <ct-nav id="indescr" :lists-prop="lists" :fixed="false" />
     <!-- <ct-nav :lists-prop="lists" :fixed="false" /> -->
     <!-- Меню для всех страниц кроме основной , так как в основном меню должно выходить спустя скролл, 
          на других страницах меню изначально должно быть фиксированным  
     -->
     <ct-nav v-if="this.$route.path !== '/'" :lists-prop="lists" :fixed="true" />
+    <!-- Мобильное меню -->
+    <ct-nav-mobile v-if="isMobile()" />
   </header>
 </template>
 
 <script>
 import WelcomeSvg from "./svg-components/WelcomeSvg";
 import AboutScroll from "./svg-components/AboutScroll";
+import CtNavMobile from "./CtNavMobile";
 
 export default {
   data() {
@@ -47,7 +50,8 @@ export default {
   },
   components: {
     WelcomeSvg,
-    AboutScroll
+    AboutScroll,
+    CtNavMobile
   },
   methods: {
     isMobile() {

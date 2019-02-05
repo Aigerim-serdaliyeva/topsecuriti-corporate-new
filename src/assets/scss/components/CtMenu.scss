@@ -4,59 +4,150 @@
 ul,li {
 list-style-type: none;
     }
-nav {
-    top: 0;
-    left: 0; 
-    width: 100%;
-    z-index: 100;    
-    border-bottom: vw(1) solid #999999;
-    display: flex;
-    background: #F4F4F4;
-    transform: translateY(0);    
-    ul {        
-        display: flex;   
-        flex:1;
-        align-items: center;                            
-    }
 
-    a {
-        text-decoration: none;
-        color: #4C4C4C;        
-        text-transform: uppercase;
-        font-family: Spectral-bold;
-    }
-    .logo {          
-        height: 100%;                     
-        border-right: vw(0.990099) solid #999999;        
-        svg {            
-            height: 100%;
+    @media (min-width: 960px) {
+        nav {
+            height: vw(100); 
+            top: 0;
+            left: 0; 
             width: 100%;
-            max-width: 100%;            
+            z-index: 100;    
+            border-bottom: vw(1) solid #999999;
+            display: flex;
+            background: #F4F4F4;
+            transform: translateY(0); 
+            ul {
+                display: flex;   
+                flex:1;
+                align-items: center;     
+            }     
+            a {
+                font-size: vw(20);                        
+                text-decoration: none;
+                color: #4C4C4C;        
+                text-transform: uppercase;
+                font-family: Spectral-bold;
+            }
+            li {
+                margin-right: vw(67);        
+            }
+            .logo {
+                width: vw(127.72);        
+                margin-right: vw(163);
+                height: 100%;                     
+                border-right: vw(0.990099) solid #999999;     
+                svg {
+                    height: 100%;
+                    width: 100%;
+                    max-width: 100%; 
+                }
+            }
         }
-    }         
+        }
+        
+        @media (max-width: 960px) {   
+            .nav-mobile {
+                padding: vwm(6) 0;
+                height: auto;
+                width: 100%;
+                position: fixed;
+                z-index: 300;
+                top: 0; left: 0;
+                background: url('~@/assets/images/body.jpg'); 
+                text-align: center;                
+                
+                .burger {
+                    position: absolute;
+                    top: vwm(15);
+                    left: vwm(10);                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    svg {
+                        @include size(vwm(10), vwm(13));
+                        overflow: visible;
+                    }
+                }                
+                .nav-svg-mobile {
+                    height: vwm(28);
+                    width: vwm(96.43);
+                    transition: 0.3s;
+                    rect {
+                        opacity: 0.45;
+                        transition: 0.3s;
+                    }                   
+                    path {
+                        transition: 0.3s;
+                    }
+                }      
+                ul {    
+                    line-height: normal;                                     
+                    li {                        
+                        margin-bottom: vhm(36);
+                        a {
+                            font-family: Spectral-medium;                           
+                            color: #4C4C4C;
+                            font-size: vhm(30);
+                        }
+                    }                  
+                }          
+        }    
+            .nav-active {
+                padding-bottom: vwm(200);    
+                 
+                z-index: 300;
+                @include coverCenter;                  
+                .nav-svg-mobile {
+                    height: 29.06vh !important;
+                    width: 100% !important;
+                    rect {
+                        opacity: 1 !important;                        
+                    }
+                    path:nth-child(n+12) {
+                        fill: #EF3B39;                        
+                    }
+                    rect:nth-child(5) {
+                        fill: #EF3B39 ;
+                    }
+                    rect:nth-child(6) {
+                        fill: #EF3B39 ;
+                    }
+                }
+                ul {                        
+                    display: block !important;                                               
+                }
+
+            }
+        }
+
+.nav-mobile-enter-active, .nav-mobile-leave-active {
+  transition: 0.3s;
 }
 
-.about .nav-about a, .products .nav-products a, .team .nav-team a,
+.nav-mobile-enter, .nav-mobile-leave-to /* .fade-leave-active до версии 2.1.8 */ {    
+    transform: translateY(-100%)
+  }
+
+
+  .index .nav-index a,.about .nav-about a, .products .nav-products a, .team .nav-team a,
  .news .nav-news a, .partners .nav-partners a, .contacts .nav-contacts a {
     color: #FFB800;;
     border-bottom: 3px solid #FFB800;
-}
-
-// Transition nav-scroll
-.nav-scroll-enter-active {
-  transition: .3s ; 
-}
-.nav-scroll-leave-active {
-    transition: .3s; 
-} 
-.nav-scroll-enter, .nav-scroll-leave-to /* .nav-scroll-leave-active до версии 2.1.8 */ {
-   transform: translateY(-100%);   
 }
 
 // Класс используется на главной странице при скролле welcome блока с анимацией чтобы сделать меню фиксированным 
 .nav_fixed {
     position: fixed;
 }
+
+
+
+
+
+
+
+
+
 
 // Проверка если есть поддержка браузером запускается webp или jpg изображение
 .webp .ct-welcome {
@@ -67,28 +158,6 @@ nav {
     background: url('./assets/images/welcome.jpg') no-repeat;
     @include coverCenter();
 }
-
-@media (min-width: 960px) {
-nav {
-    height: vw(100);    
-    a {
-        font-size: vw(20);                        
-    }
-    li {
-        margin-right: vw(67);        
-    }
-    .logo {
-        width: vw(127.72);        
-        margin-right: vw(163);
-    }
-}
-}
-
-@media (max-width: 960px) {
-
-}
-
-
 
 // Стили для welcome блока
 .ct-welcome {        
@@ -152,16 +221,19 @@ nav {
 
 @media (max-width: 960px) {
     .ct-welcome__description {
-        font-size: vh(18);        
+        font-size: vhm(18);        
         h2 {
-            margin: vh(40) 0 vh(34); 
+            margin: vhm(20) 0 0; 
+            padding: 0 vhm(28);
          }
-        svg {                         
-            @include size(vh(71), vh(187));                                        
+        svg {  
+            position: relative;                
+            top: vhm(113.27);       
+            @include size(vhm(46.93), vhm(123.6));                                        
          }    
     }
 
     #svg-item  {
-        @include size(vh(172.53), vh(197.11));
+        @include size(vhm(172.53), vhm(197.11));
     }    
 }

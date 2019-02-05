@@ -25,6 +25,10 @@ a {
     background: url('~@/assets/images/body.jpg');
 }
 
+img {
+    max-width: 100%;
+}
+
 .ct-pages-content {
     height: auto; 
     width: 100%;

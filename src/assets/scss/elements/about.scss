@@ -43,3 +43,25 @@
         }        
     }
 }
+
+@media (max-width: 960px) {
+    .ct-about {     
+        padding-bottom: vwm(30);   
+        h2 {
+            font-size: vwm(30);
+            padding: vwm(52) 0 vwm(30);
+        }
+        p {
+            font-size: vwm(18);
+            padding:0 vwm(18);
+        }
+        img {
+            padding: vwm(10) 0;
+            margin: vwm(10) 0;
+            @include size(vwm(344), 100%);
+            object-fit: cover;
+            border-top: vwm(1) solid #FFB800;
+            border-bottom: vwm(1) solid #FFB800;
+        }
+    }
+}

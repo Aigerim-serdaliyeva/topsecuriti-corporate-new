@@ -37,6 +37,10 @@
     @return ($px * 0.26666666) + vw;
 }
 
+@function vhm($px) {
+    @return ($px * 0.14922250) + vh;
+}
+
 // Em function
 $browser-context: 16; // Default
 

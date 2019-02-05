@@ -1,5 +1,5 @@
 <template>
-  <nav id="nav" :class="{ nav_fixed: fixed }">
+  <nav v-if="!isMobile()" id="nav" :class="{ nav_fixed: fixed }">
     <div class="logo">
       <router-link to="/" @click.native="visited('index')">
         <!-- logo в меню svg -->
@@ -8,11 +8,7 @@
     </div>
     <ul :class="visitedData">
       <li v-for="list in listsProp" :class="`nav-${list.path}`" :key="list.id">
-        <router-link
-          :to="`/${list.path}`"
-          @click.native="visited(list.path)"
-          replace
-        >
+        <router-link :to="`/${list.path}`" @click.native="visited(list.path)">
           {{ $t(`menu.${list.path}`) }}
         </router-link>
       </li>
@@ -46,6 +42,13 @@ export default {
   methods: {
     visited(path) {
       this.$store.commit("changeVisitedData", path);
+    },
+    isMobile() {
+      if (window.matchMedia("(max-width:960px)").matches) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 };

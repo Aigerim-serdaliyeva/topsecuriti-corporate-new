@@ -6,7 +6,7 @@ Vue.use(Vuex);
 const store = () =>
   new Vuex.Store({
     state: {
-      visitedData: "",
+      visitedData: "index",
       scrolledData: false,
       number: 0,
       menu: [
@@ -14,7 +14,7 @@ const store = () =>
         { id: 2, path: "news" },
         { id: 3, path: "partners" },
         { id: 4, path: "contacts" }
-      ],
+      ],      
       indexNews: require("@/assets/json/index-news.json"),
       mainNews: require("@/assets/json/main-news.json"),
       aside: require("@/assets/json/aside.json")

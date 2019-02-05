@@ -1,9 +1,7 @@
 <template>
   <div class="ct-index">
-    <transition name="nav-scroll">
-      <ct-nav v-show="scrolledData" :lists-prop="lists" :fixed="true" />
-    </transition>
-
+    <ct-nav v-show="scrolledData" :lists-prop="lists" :fixed="true" />
+    <div v-if="isMobile" id="indescr"></div>
     <section class="ct-index__description">
       <h1>Top security kz</h1>
       <p>
@@ -17,7 +15,7 @@
         Цель нашей компании - Дать людям чувство защищенности и уверенности в
         охране
       </p>
-      <div id="indescr" class="ct-index__description__bg" />
+      <div class="ct-index__description__bg" />
     </section>
     <ct-index-services />
 
@@ -94,29 +92,39 @@ export default {
     },
     pinContainerScene() {
       let svgPath = document.querySelectorAll(".svg-test path");
+      const tl = new TimelineLite();
       svgPath.forEach((el, index) => {
         if (index !== 1 && index !== 2 && index !== 3) {
           // Задаю рандомные значения для позиций каждого элемента в svg
-          let left = Math.floor(Math.random() * 100) - 50;
-          let top = Math.floor(Math.random() * 50) - 25;
-          // Указываю стили с позицией
-          el.style.transform = `translate(${left}vw,${top}vh)`;
+          let left,top;
+          if(window.matchMedia("(max-width:960px)").matches) {
+              left = Math.floor(Math.random() * 200) - 100;
+              top = Math.floor(Math.random() * 100) - 50;
+          } else {
+              left = Math.floor(Math.random() * 100) - 50;
+              top = Math.floor(Math.random() * 50) - 25;
+          }
+          
+          // Указываю стили с позицией          
+          tl.set(el, {
+              transform: `translate(${left}vw,${top}vh)`
+          })                    
           // Создаю аттрибуты и вставляю туда значения чтобы знать позиции,
           // и позже уменьшать их до нуля чтобы все элементы встали на свое место
           el.setAttribute("data-x", left);
           el.setAttribute("data-y", top);
         }
       });
-      document.querySelector(".svg-test #path2").style.transform =
-        "translate(-40vw, 10vh) rotate(-50deg)";
-
-      document.querySelector(".svg-test #path3").style.transform =
-        "translate(20vw, 50vh) rotate(-30deg)";
-
-      document.querySelector(".svg-test #path4").style.transform =
-        "translate(50vw, -40vh) rotate(80deg)";
-
-      const tl = new TimelineLite();
+      
+      tl.set(".svg-test #path2", {
+          transform: "translate(-40vw, 10vh) rotate(-50deg)"
+      })
+      tl.set(".svg-test #path3", {
+          transform: "translate(20vw, 50vh) rotate(-30deg)"
+      })
+      tl.set(".svg-test #path4", {
+          transform: "translate(50vw, -40vh) rotate(80deg)"
+      })            
       tl.to(svgPath, 0.5, {
         transform: "translate(0,0)",
         delay: 0.5
