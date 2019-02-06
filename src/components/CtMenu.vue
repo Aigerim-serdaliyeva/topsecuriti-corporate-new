@@ -10,7 +10,7 @@
            -->
           <div class="ct-welcome__wrap">
             <div class="logo-svg-parent">
-              <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!isMobile()" />
+              <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!$isMobile()" />
               <welcome-svg :viewbox="welcomeSvgMobile" v-else />
             </div>
             <div class="ct-welcome__description">
@@ -32,7 +32,7 @@
     -->
     <ct-nav v-if="this.$route.path !== '/'" :lists-prop="lists" :fixed="true" />
     <!-- Мобильное меню -->
-    <ct-nav-mobile v-if="isMobile()" />
+    <ct-nav-mobile v-if="$isMobile()" />
   </header>
 </template>
 
@@ -52,15 +52,6 @@ export default {
     WelcomeSvg,
     AboutScroll,
     CtNavMobile
-  },
-  methods: {
-    isMobile() {
-      if (window.matchMedia("(max-width:960px)").matches) {
-        return true;
-      } else {
-        return false;
-      }
-    }
   },
   computed: {
     lists() {

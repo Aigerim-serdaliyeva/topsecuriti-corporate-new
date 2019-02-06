@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="!isMobile()" id="nav" :class="{ nav_fixed: fixed }">
+  <nav v-if="!$isMobile()" id="nav" :class="{ nav_fixed: fixed }">
     <div class="logo">
       <router-link to="/" @click.native="visited('index')">
         <!-- logo в меню svg -->
@@ -42,13 +42,6 @@ export default {
   methods: {
     visited(path) {
       this.$store.commit("changeVisitedData", path);
-    },
-    isMobile() {
-      if (window.matchMedia("(max-width:960px)").matches) {
-        return true;
-      } else {
-        return false;
-      }
     }
   }
 };

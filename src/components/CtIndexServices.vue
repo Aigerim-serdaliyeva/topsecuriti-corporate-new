@@ -11,7 +11,7 @@
         {{ item.text }}
       </li>
     </ul>
-    <component v-if="!isMobile()" :is="currentComponent" />
+    <component v-if="!$isMobile()" :is="currentComponent" />
     <div v-else>
       <individuals />
       <legal-entities />
@@ -44,13 +44,6 @@ export default {
   methods: {
     changeComponent(comp) {
       this.currentComponent = comp;
-    },
-    isMobile() {
-      if (window.matchMedia("(max-width:960px)").matches) {
-        return true;
-      } else {
-        return false;
-      }
     }
   }
 };

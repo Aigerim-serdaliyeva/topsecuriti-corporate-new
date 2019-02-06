@@ -1,6 +1,12 @@
 <template>
   <div class="ct-index__services__component component-personal">
-    <div class="ct-image ct-child" />
+    <div class="ct-image ct-child">
+      <picture>
+        <source srcset="~@/assets/images/welcome.webp" type="image/webp" />
+        <source srcset="~@/assets/images/welcome.jpg" type="image/jpeg" />
+        <img src="~@/assets/images/welcome.jpg" alt="Alt Text!" />
+      </picture>
+    </div>
     <div class="ct-content ct-child">
       <h2>Частная охрана</h2>
       <ul>

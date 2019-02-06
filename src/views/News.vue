@@ -1,11 +1,11 @@
 <template lang="pug">                   
     .ct-news
-      begin-bg.begin-bg-news
+      begin-bg.begin-bg-news      
       .ct-pages-content
         .ct-pages-content__wrap
               //- Current news
               //- через aside я определяю number чтобы вытаскивать определенные новости
-              article
+              article#news-start                  
                   h2 {{ news[number].title }}
                   .line.line-primary.line-yellow
                   p {{ news[number].primContent}}
@@ -19,7 +19,7 @@
               aside
                   h2 Другие новости
                   .aside-container
-                      section(v-for="(item,index) in aside" , :key="index", @click="$store.commit('changeNumber', index)")
+                      section(v-for="(item,index) in aside" , :key="index", v-scroll-to="{el: '#news-start',offset: -50}" @click="$store.commit('changeNumber', index)")
                           img(src="~@/assets/images/news/aside.jpg") 
                           .content
                               h3 {{ item.title }}

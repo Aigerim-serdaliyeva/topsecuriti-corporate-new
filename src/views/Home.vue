@@ -1,7 +1,7 @@
 <template>
   <div class="ct-index">
     <ct-nav v-show="scrolledData" :lists-prop="lists" :fixed="true" />
-    <div v-if="isMobile" id="indescr"></div>
+    <div v-if="$isMobile" id="indescr"></div>
     <section class="ct-index__description">
       <h1>Top security kz</h1>
       <p>
@@ -9,7 +9,7 @@
         оказываемых услуг в сфере охраны.<br />
         Мы сделали акцент на основополагающие пункты безопасности:
       </p>
-      <ct-index-description-list v-if="!isMobile()" />
+      <ct-index-description-list v-if="!$isMobile()" />
       <ct-index-description-list-mobile v-else />
       <p>
         Цель нашей компании - Дать людям чувство защищенности и уверенности в
@@ -132,13 +132,6 @@ export default {
         opacity: 1,
         transform: "translateY(0)"
       });
-    },
-    isMobile() {
-      if (window.matchMedia("(max-width:960px)").matches) {
-        return true;
-      } else {
-        return false;
-      }
     }
   }
 };

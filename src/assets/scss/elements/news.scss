@@ -1,4 +1,4 @@
-.ct-news {
+.ct-news {    
     .ct-pages-content__wrap {        
         line-height: normal;
         h2,h3 {
@@ -13,6 +13,7 @@
         }
         .line-brown {
             background: #CACACA;
+            transition: 0.3s;
         }
         article {
             h2 {                
@@ -29,6 +30,10 @@
             section {
                 display: flex;
                 cursor: pointer;
+                &:hover .line-brown {
+                    width: 100%;
+                    background: #FFB800 ;
+                }
             }
             .content {
                 flex:1;

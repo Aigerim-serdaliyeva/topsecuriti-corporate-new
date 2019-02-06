@@ -24,6 +24,12 @@
     &__component {
         display: flex;
         background: #fff; 
+        .ct-image {
+            img {
+                @include size(100%,100%);
+                object-fit: cover;
+            }
+        }
         .ct-content {
             position: relative;            
             h2,li,a {
@@ -115,25 +121,12 @@
     }    
 }
 
-.webp .component-personal {            
-    .ct-image {
-        background: url('./assets/images/component-personal.webp') no-repeat;
-        @include coverCenter;
-    }
-}
 
-.no-webp .component-personal {            
-    .ct-image {
-        background: url('./assets/images/component-personal.webp') no-repeat;
-        @include coverCenter;
-    }
-}
 
 @media (max-width:960px) {
     .ct-index__services  {       
         .ct-image {
-            @include size(vwm(258), vwm(315));            
-            padding: 0 vwm(30);
+            @include size(vwm(258), vwm(315));                        
             margin: auto;
         }
         h2 {

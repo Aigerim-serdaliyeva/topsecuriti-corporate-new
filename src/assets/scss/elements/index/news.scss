@@ -49,11 +49,14 @@
             align-content: center;   
             li {    
                 @include size(auto, vw(482));
-                box-shadow: 0 vw(4) vw(12) rgba(0, 0, 0, 0.25);                  
+                border: vw(1) solid #DFDFDF;                                
                 margin: 0 vw(16) vw(16) 0;
                 &:nth-child(3n) {
                     margin-right: 0;
-                }                                                                                                                                                
+                }         
+                &:hover {
+                    box-shadow: 0 vw(4) vw(12) rgba(0, 0, 0, 0.25);  
+                }                                                                                                                                       
             }              
             img {
                 @include size(vw(322), 100%);                                
@@ -96,7 +99,7 @@
             white-space: pre;
         }   
         img {
-            @include size(vwm(250), 100%    )
+            @include size(vwm(250), 100%)
         }
         article {            
             padding: vwm(20) vwm(17) vwm(29);  
