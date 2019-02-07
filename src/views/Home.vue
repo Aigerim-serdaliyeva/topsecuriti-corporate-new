@@ -2,7 +2,7 @@
   <div class="ct-index">
     <ct-nav v-show="scrolledData" :lists-prop="lists" :fixed="true" />
     <div v-if="$isMobile" id="indescr"></div>
-    <section class="ct-index__description">
+    <section ref="etarget" class="ct-index__description etarget">
       <h1>Top security kz</h1>
       <p>
         Компания создавалась с целью поднять на новый уровень качества
@@ -69,6 +69,7 @@ export default {
   mounted() {
     this.$nextTick(this.pinContainerScene);
     this.$nextTick(this.triggerMenu);
+    this.$nextTick(this.hoverAnim);
   },
   destroyed() {
     // Destroy ScrollMagic when our component is removed from DOM
@@ -76,6 +77,23 @@ export default {
     this.$store.commit("hideScrolledData");
   },
   methods: {
+    hoverAnim() {
+      let target = this.$refs.etarget;
+      let x, y;
+      let start = false;
+      if (start) {
+        setInterval(() => {
+          x = Math.floor(Math.random() * 40);
+          y = Math.floor(Math.random() * 300);
+          target.style.setProperty("--size", "0");
+          setTimeout(() => {
+            target.style.setProperty("--x", `${x}%`);
+            target.style.setProperty("--y", `${y}px`);
+            target.style.setProperty("--size", "300px");
+          }, 1000);
+        }, 2000);
+      }
+    },
     triggerMenu() {
       let self = this;
       const scene2 = new this.$scrollmagic.Scene({

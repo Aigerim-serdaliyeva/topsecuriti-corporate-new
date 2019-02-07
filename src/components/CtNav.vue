@@ -12,6 +12,7 @@
           {{ $t(`menu.${list.path}`) }}
         </router-link>
       </li>
+      <li><router-link to="/storyblok">Storyblok </router-link></li>
       <!-- <li><router-link :to="switchLocalePath('ru')">Ru</router-link></li>
       <li><router-link :to="switchLocalePath('kz')">Kz</router-link></li> -->
     </ul>

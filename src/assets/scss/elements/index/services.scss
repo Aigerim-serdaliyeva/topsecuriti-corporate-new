@@ -1,15 +1,16 @@
 .ct-index__services {
     text-align: center; 
     font-family: Spectral-semibold;   
-    line-height: normal;
+    line-height: normal;    
     ul {
         display: flex;  
         justify-content: center;
+        
         li {
             text-transform: lowercase;
             background: #fff;
-            cursor: pointer;
-           
+            cursor: pointer;             
+            pointer-events: all;
         }              
     }
     .primary-list {
@@ -55,7 +56,8 @@
                 font-family: Spectral-semibold;                    
                 z-index: 10;
                 background: #fff;
-                cursor: pointer;                
+                cursor: pointer;   
+                pointer-events: all;             
                 &:hover {
                     background: #FFB800;
                 }

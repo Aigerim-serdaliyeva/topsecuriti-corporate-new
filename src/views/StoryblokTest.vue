@@ -1,5 +1,7 @@
-<template lang="pug">                   
-    component(:blok="story.content", :is="story.content.component")                                  
+<template>
+  <div>
+    <component :blok="story.content" :is="story.content.component"></component>
+  </div>
 </template>
 
 <script>

@@ -45,6 +45,11 @@ export default new Router({
       path: "/contacts",
       name: "contacts",
       component: () => import("./views/Contacts.vue")
+    },
+    {
+      path: "/storyblok",
+      name: "storyblok",
+      component: () => import("./views/StoryblokTest.vue")
     }
   ]
 });
