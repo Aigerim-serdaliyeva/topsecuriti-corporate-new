@@ -37,7 +37,6 @@ import StoryblokNewsItem from "./components/StoryblokNewsItem";
 Vue.component("storyblok-news", StoryblokNews);
 Vue.component("storyblok-news-item", StoryblokNewsItem);
 
-
 // *** /Storyblok
 Vue.config.productionTip = false;
 
