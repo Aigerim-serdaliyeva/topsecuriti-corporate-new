@@ -3,37 +3,40 @@ import App from "./App.vue";
 import store from "./store";
 import router from "./router";
 
-// Plugins
+// *** Plugins
 import { i18n } from "./i18n";
 import VueScrollTo from "vue-scrollto";
 import "./plugins/modernizr";
 import "./plugins/scrollmagic";
 import isMobile from "./plugins/isMobile";
 import StoryblokVue from "storyblok-vue";
+// *** /Plugins
 
-// Global components
-import BeginBg from "./components/BeginBg.vue";
-import CtNav from "./components/CtNav.vue";
-
-// Vue use
+// *** Vue use
 Vue.use(isMobile);
 Vue.use(VueScrollTo);
 Vue.use(StoryblokVue);
+// *** /Vue use
 
-// Vue component
+// *** Global components
+import BeginBg from "./components/BeginBg.vue";
+import CtNav from "./components/CtNav.vue";
+
 Vue.component("begin-bg", BeginBg);
 Vue.component("ct-nav", CtNav);
+// *** /Global components
 
 // *** Storyblok
 // Import pages
-import Puge from "./components/Puge";
+import StoryblokNews from "./components/StoryblokNews";
 
 // Import Components
-import Teaser from "./components/Teaser";
+import StoryblokNewsItem from "./components/StoryblokNewsItem";
 
 // Component
-Vue.component("puge", Puge);
-Vue.component("teaser", Teaser);
+Vue.component("storyblok-news", StoryblokNews);
+Vue.component("storyblok-news-item", StoryblokNewsItem);
+
 
 // *** /Storyblok
 Vue.config.productionTip = false;

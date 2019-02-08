@@ -7,39 +7,51 @@ list-style-type: none;
 
     @media (min-width: 960px) {
         nav {
-            height: vw(100); 
+            height: vw(70); 
             top: 0;
             left: 0; 
             width: 100%;
-            z-index: 100;    
-            border-bottom: vw(1) solid #999999;
+            z-index: 100;                
             display: flex;
-            background: #F4F4F4;
-            transform: translateY(0); 
+            background: #4C4C4C;
+            transform: translateY(0);             
             ul {
                 display: flex;   
                 flex:1;
                 align-items: center;     
-            }     
-            a {
+            }   
+           
+            .nav-item a {
                 font-size: vw(20);                        
                 text-decoration: none;
-                color: #4C4C4C;        
+                color: #fff;        
                 text-transform: uppercase;
                 font-family: Spectral-bold;
-            }
+                line-height: normal;                  
+                &:hover {                    
+                    color: #FFB800;
+                    border-bottom: 3px solid #FFB800;         
+                }
+            } 
+                    
             li {
-                margin-right: vw(67);        
+                margin-right: vw(67);                                 
+   
             }
             .logo {
                 width: vw(127.72);        
                 margin-right: vw(163);
                 height: 100%;                     
-                border-right: vw(0.990099) solid #999999;     
+                border-right: vw(0.990099) solid #999999;                
                 svg {
                     height: 100%;
                     width: 100%;
-                    max-width: 100%; 
+                    max-width: 100%;
+                    &:hover {
+                        path {
+                            fill: #FFB800;
+                        }
+                    } 
                 }
             }
         }
@@ -187,7 +199,7 @@ list-style-type: none;
      transform: translateY(5vh);
      line-height: normal;
      svg {                                                           
-         cursor: pointer;
+         cursor: pointer;    
      }    
  }
 
@@ -200,7 +212,10 @@ list-style-type: none;
 #svg-item {
     position: relative;    
     z-index: 10;          
-    overflow: visible;         
+    overflow: visible;     
+    path {
+        opacity: 0;
+    }    
 }
 
 @media (min-width: 960px) {

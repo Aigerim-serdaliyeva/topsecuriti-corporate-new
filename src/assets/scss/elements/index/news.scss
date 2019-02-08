@@ -17,7 +17,7 @@
         p {
             font-family: NewCycle;
             color: #4C4C4C;
-        }
+        }    
         img {
             object-fit: cover;
         }
@@ -36,17 +36,17 @@
 }
 
 @media (min-width: 960px) {
-    .ct-index__news {   
+    .ct-index__news { 
+        padding-bottom: vw(100);  
         h2 {
             font-size: vw(50);                
         }                     
         ul {
-            height: vw(2200);                                    
+            height: auto;                                    
             margin-top: vw(60);
             display: flex;  
-            flex-wrap: wrap;        
-            flex-direction: column; 
-            align-content: center;   
+            flex-wrap: wrap; 
+            justify-content: center;                               
             li {    
                 @include size(auto, vw(482));
                 border: vw(1) solid #DFDFDF;                                

@@ -27,8 +27,7 @@
         aside {
             background: #F9F9F9;
             line-height: normal;
-            section {
-                display: flex;
+            section {                
                 cursor: pointer;
                 &:hover .line-brown {
                     width: 100%;

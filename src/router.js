@@ -1,12 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 import Meta from "vue-meta";
 
-Vue.use(Router);
-Vue.use(Meta);
-
-export default new Router({
+const router = new Router({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
@@ -14,7 +10,7 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: () => import("./views/Home.vue")
     },
     {
       path: "/about",
@@ -45,11 +41,11 @@ export default new Router({
       path: "/contacts",
       name: "contacts",
       component: () => import("./views/Contacts.vue")
-    },
-    {
-      path: "/storyblok",
-      name: "storyblok",
-      component: () => import("./views/StoryblokTest.vue")
     }
   ]
 });
+
+Vue.use(Router);
+Vue.use(Meta);
+
+export default router;

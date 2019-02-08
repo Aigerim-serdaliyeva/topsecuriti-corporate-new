@@ -19,6 +19,7 @@
 
 <script>
 import BeginLogo from "@/components/svg-components/BeginLogo.vue";
+import Visited from "@/mixins/visited";
 
 export default {
   metaInfo: {
@@ -26,7 +27,7 @@ export default {
   },
   components: {
     BeginLogo
-  }
+  },
+  mixins: [Visited]
 };
-
 </script>

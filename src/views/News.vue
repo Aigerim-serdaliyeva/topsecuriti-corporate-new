@@ -3,19 +3,11 @@
 </template>
 
 <script>
-// 1. Require the Storyblok client
-import StoryblokClient from "storyblok-js-client";
-
-// 2. Set your token
-const token = "D87XrUmzF3z7gsn6eOrSlgtt";
-
-// 3. Initialize the client with the preview token so we can access our API easily
-// from your space dashboard at https://app.storyblok.com
-let storyapi = new StoryblokClient({
-  accessToken: token
-});
+import Visited from "@/mixins/visited";
+import StoryblokNews from "@/mixins/storyblok_news";
 
 export default {
+  mixins: [Visited, StoryblokNews],
   data() {
     return {
       story: {
@@ -24,35 +16,6 @@ export default {
         }
       }
     };
-  },
-  created() {
-    window.storyblok.init({
-      accessToken: token
-    });
-    window.storyblok.on("change", () => {
-      this.getStory("home", "draft");
-    });
-    window.storyblok.pingEditor(() => {
-      if (window.storyblok.isInEditor()) {
-        this.getStory("home", "draft");
-      } else {
-        this.getStory("home", "published");
-      }
-    });
-  },
-  methods: {
-    getStory(slug, version) {
-      storyapi
-        .get("cdn/stories/" + slug, {
-          version: version
-        })
-        .then(response => {
-          this.story = response.data.story;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
   }
 };
 </script>

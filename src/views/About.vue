@@ -14,11 +14,13 @@
 
 <script>
 import BeginLogo from "@/components/svg-components/BeginLogo.vue";
+import Visited from "@/mixins/visited";
 
 export default {
   metaInfo: {
     title: "О нас"
   },
+  mixins: [Visited],
   components: {
     BeginLogo
   }
