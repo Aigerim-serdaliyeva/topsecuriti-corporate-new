@@ -12,7 +12,7 @@
                         .end-line
                         .content
                             span 3 января, 2018
-                            span Подробнее     
+                            span Подробнее
         
     </section>
 </template>

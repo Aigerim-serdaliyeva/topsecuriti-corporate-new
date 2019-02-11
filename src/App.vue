@@ -7,6 +7,9 @@
 </template>
 
 <style lang="scss">
+html {
+  font-family: Spectral-regular, Sans-Serif;
+}
 @import "./assets/scss/style.scss";
 </style>
 

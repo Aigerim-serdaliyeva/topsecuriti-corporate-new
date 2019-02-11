@@ -1,3 +1,6 @@
+
+
+
 @mixin overlay() {
     content: '';
         position: absolute;
@@ -10,6 +13,10 @@
 @mixin coverCenter() {
     background-size: cover;
     background-position:center;
+}
+
+@mixin suka() {
+    border-bottom: 1px solid #000;
 }
 
 @mixin size($height,$width) {

@@ -111,3 +111,27 @@
         }
     } 
 }
+
+@media (max-width: 960px) {
+    .ct-contacts {
+        .article {                 
+            @include size(100%, 100%);  
+            svg {
+                @include size (vwm(154.93), 100%);
+            }
+        }
+        .ct-pages-content__wrap {
+            p {
+                padding:0 vwm(18) vwm(15);       
+            }
+            button {
+                margin-bottom: vwm(15);
+                border: vwm(1) solid #999999;            
+                box-shadow: 0 vwm(2) vwm(2) rgba(0, 0, 0, 0.25);
+            }
+            input {
+                text-align: center;
+            }
+        }
+    }
+}

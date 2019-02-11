@@ -19,7 +19,7 @@
         ul           
             li(v-for="(item,index) in blok.body.slice(0, 6)")                    
                 router-link(to='/news' @click.native="$store.commit('changeNumber', number)" )                                                      
-                    component(:number="index", :key="item._uid",  :blok="item", :is="item.component")                                                                                                                       
+                    component(:type="'index'" :number="index", :key="item._uid",  :blok="item", :is="item.component")                                                                                                                       
 </template>
 
 <script>

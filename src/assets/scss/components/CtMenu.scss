@@ -194,10 +194,9 @@ list-style-type: none;
      align-items: center;
      flex-direction: column;
      font-family: Spectral-regular;     
-     text-align: center;     
-     opacity: 0;
+     text-align: center;          
      transform: translateY(5vh);
-     line-height: normal;
+     line-height: normal;     
      svg {                                                           
          cursor: pointer;    
      }    
@@ -212,10 +211,7 @@ list-style-type: none;
 #svg-item {
     position: relative;    
     z-index: 10;          
-    overflow: visible;     
-    path {
-        opacity: 0;
-    }    
+    overflow: visible;          
 }
 
 @media (min-width: 960px) {
