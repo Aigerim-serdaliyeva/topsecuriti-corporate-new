@@ -13,7 +13,7 @@
           </div>
           <div class="ct-welcome__description">
             <h2>
-              Новый стандарт качества охранных компаний
+              Безопасность, доступная каждому
             </h2>
             <!-- кнопка подробнее в welcome блоке svg-->
             <a v-scroll-to="'#indescr'"><about-scroll /> </a>

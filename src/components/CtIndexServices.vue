@@ -1,5 +1,5 @@
 <template>
-  <section class="ct-index__services">
+  <section class="ct-index__services" v-if="false">
     <h2>НАШИ УСЛУГИ</h2>
     <ul class="primary-list dnm">
       <li

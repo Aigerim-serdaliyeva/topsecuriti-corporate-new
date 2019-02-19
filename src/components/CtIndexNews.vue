@@ -1,5 +1,5 @@
 <template lang="pug">
-    <section class="ct-index__news">
+    <section class="ct-index__news" >
         h2= 'НОВОСТИ\n КОМПАНИИ'            
         ul                
             li(v-for="(item,index) in news", :key="index")

@@ -49,9 +49,13 @@
 
 @media (min-width: 960px) {    
     .ct-index__description {               
-        h1 {   
+        p:first-child {   
             padding: vw(99) 0 vw(20) 0;
-            font-size: vw(90);               
+            font-size: vw(50);
+            text-align: center;  
+            font-weight: bold;    
+            font-family: Spectral-semibold;  
+            text-transform: lowercase;                   
         }
         p {
             font-size: vw(30);
