@@ -8,6 +8,7 @@ import { i18n } from "./i18n";
 import VueScrollTo from "vue-scrollto";
 import "./plugins/modernizr";
 import "./plugins/scrollmagic";
+import "./plugins/siema";
 import isMobile from "./plugins/isMobile";
 import StoryblokVue from "storyblok-vue";
 // *** /Plugins

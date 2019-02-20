@@ -24,8 +24,22 @@
         }
     }
     .description-list  {
-        position: relative;
-    } 
+        position: relative;                        
+        article {                                          
+            p {
+                color: #EF3B39;
+                font-family: Spectral-extrabold;                                                
+                transition: 0.4s ease-in-out;
+            }
+            span {                                                
+                color: #000;
+                display: block;                
+                font-family: NewCycle;                
+                position: relative;                
+            }                 
+        }
+    }  
+       
     .eventtarget {
         position: relative;
         &::before {
@@ -48,46 +62,93 @@
 
 
 @media (min-width: 960px) {    
-    .ct-index__description {               
-        p:first-child {   
-            padding: vw(99) 0 vw(20) 0;
+    .ct-index__description {                               
+        h2 {
             font-size: vw(50);
-            text-align: center;  
-            font-weight: bold;    
-            font-family: Spectral-semibold;  
-            text-transform: lowercase;                   
-        }
-        p {
-            font-size: vw(30);
-            padding: 0 vw(221);
+            margin:vw(100) 0 vw(50);            
         }
         &__bg {
-            height: vw(734);
-            margin: vw(50) 0 vw(60) 0;
+            height: vw(734);            
         }
-        .description-list {
-            margin: vw(60) 0  vw(120);            
-        }
-        .sprites {                                                  
-                @include size(vw(316.24), vw(1105.24));
-                margin: auto;
-                background: url('~@/assets/images/sprites/description.png') no-repeat;   
-                background-size: contain;                     
-        }
-        ul {            
-            @include size(vw(270), vw(1494));            
-            position: absolute;
-            bottom: 0; top: vw(188.76);
-            left: 0; right: 0;  margin: auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;     
-            align-content: space-between;   
-            li {                
-                @include size(vw(66), 33%);
-                font-size: vw(20);
-                line-height: normal;                
+        .description-list { 
+            position: relative;
+            margin-bottom: vw(58);
+            &::before {
+                @include before();
+                bottom: vw(-58); left: 0;
+                @include size(vw(58),100%);
+                z-index: 2;
+                background:#FFB800;
+                z-index: 10;
             }
+            
+            &__block {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: vw(106); 
+                &:last-child {
+                 padding-bottom: vw(60);
+                }
+                article {
+                    display: flex;
+                    align-items: center;
+                    @include size(vw(120),auto); 
+                    p {
+                        width: vw(567);
+                        font-size: vw(24);                  
+                    }   
+                    &:hover p {
+                        font-size: vw(22);
+                        color: #000;
+                    }  
+                    span {
+                        font-size: vw(18);                                               
+                    } 
+                    img {
+                        @include size(vw(107), vw(107));                
+                    }      
+                    &:first-child {
+                        text-align: right;
+                        img { margin-left: vw(13); }
+                        p {
+                            white-space: pre;
+                        }
+                        span {
+                            white-space: normal;
+                        }
+                    }                
+                    &:last-child {                    
+                        text-align: left;
+                        img { margin-right: vw(13); }                    
+                    }
+                    
+                } 
+            }       
+            &__first {
+                justify-content: center;
+                position: relative;
+                margin-bottom: vw(30);
+                article {
+                    flex-direction: column;
+                    align-items: center;
+                    p {
+                        text-align: center;                        
+                        width: auto;
+                    }
+                    span {
+                        width: vw(880);
+                    }
+                }
+            }
+            &__bg {
+                position: absolute;
+                left: 0; right: 0; bottom: vw(-40); margin: auto;    
+                z-index: -1;            
+                @include size(vw(670), vw(356));                          
+                background: url('~@/assets/images/index-description/description-list__bg.png') no-repeat;
+                @include coverCenter;
+            }     
+          
         }
     }    
 
@@ -111,19 +172,33 @@
             padding: vwm(70) 0 vwm(30);
             font-size: vwm(30);            
         }
-        p {
-            font-size: vwm(18);
-            padding: 0 vwm(28) vwm(40);
+        h2 {
+            font-size: vwm(29);
+            padding: vwm(70) 0 vwm(40);
+            color: #000;
         }
         img {
             @include size(vwm(127.97), vwm(127.97))
         }
+        p {
+            font-size: vwm(18);
+            padding: vwm(20) 0 vwm(50);
+            font-family: Spectral-extrabold;
+            color: #000;
+        }
         span {
             position: relative;
             display: block;
-            font-size: 14px;
-            color: #5C5C5C;
-            padding: vwm(10.03) 0 vwm(20);
+            font-size: vwm(18);
+            color: #000;
+            padding: 0 0 vwm(20);
+            font-family: NewCycle;
+        }
+        
+        ul {
+            li {
+                white-space: normal;
+            }
         }
         li:last-child span {
             padding-bottom: vwm(60.73);
@@ -144,9 +219,7 @@
 .etarget {
   position: relative;        
   overflow: hidden;       
-
-  &::before {
-        
+  &::before {        
     content: '';
     position: absolute;
     left: var(--x);

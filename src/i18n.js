@@ -11,7 +11,10 @@ const messages = {
       news: "Новости",
       team: "Команда",
       partners: "Клиенты",
-      contacts: "Контакты"
+      contacts: "Контакты",
+      equipment: "Оборудование",
+      article: "Статьи",
+      services: "Услуги"
     }
   },
   kz: {

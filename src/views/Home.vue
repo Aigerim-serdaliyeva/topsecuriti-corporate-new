@@ -2,23 +2,6 @@
   <div class="ct-index">
     <ct-nav v-show="scrolledData" :lists-prop="lists" :fixed="true" />
     <div v-if="$isMobile" id="indescr"></div>
-    <section ref="etarget" class="ct-index__description etarget">
-      <p>7 причин довериться TOP SECURITY KZ</p>
-      <p>
-        Компания создавалась с целью поднять на новый уровень качества
-        оказываемых услуг в сфере охраны.<br />
-        Мы сделали акцент на основополагающие пункты безопасности:
-      </p>
-      <ct-index-description-list v-if="!$isMobile()" />
-      <ct-index-description-list-mobile v-else />
-      <p>
-        Цель нашей компании - Дать людям чувство защищенности и уверенности в
-        охране
-      </p>
-      <div class="ct-index__description__bg" />
-    </section>
-    <ct-index-services />
-
     <section class="ct-index__bydirector">
       <p>
         Охранная организация TOP SECURITY KZ – добросовестный и надежный
@@ -30,6 +13,44 @@
         TOP SECURITY KZ – залог вашей уверенности и спокойствия.
       </p>
     </section>
+    <section ref="etarget" class="ct-index__description etarget">
+      <h2>7 причин довериться TOP SECURITY KZ</h2>
+      <ct-index-description-list v-if="!$isMobile()" />
+      <ct-index-description-list-mobile v-else />
+      <div class="ct-index__description__bg" />
+    </section>
+    <section>
+      <div class="ct-index__clients">
+        <h2>ПОД НАШЕЙ ЗАЩИТОЙ</h2>
+        <div class="client-slider">
+          <div
+            v-for="(item, index) in partners"
+            :key="index"
+            class="client-slider__block"
+          >
+            <img
+              :class="`partners-${item.img}`"
+              :src="require(`@/assets/images/partners/${item.img}.png`)"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="client-slider-mobile">
+          <div
+            v-for="(item, index) in partners"
+            :key="index"
+            class="client-slider__block"
+          >
+            <img
+              :class="`partners-${item.img}`"
+              :src="require(`@/assets/images/partners/${item.img}.png`)"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <ct-index-services />
 
     <component :blok="story.content" :is="story.content.component"> </component>
   </div>
@@ -60,6 +81,36 @@ export default {
   data() {
     return {
       bool: true,
+      partners: [
+        { img: "global", title: "“Global”", text: "Охранное агенство" },
+        {
+          img: "bbhs",
+          title: "“BLACKBERRY HILLS”",
+          text: "Жилой комплекс"
+        },
+        { img: "pest", title: "“Pest Hunter”", text: "Охранное агенство" },
+        {
+          img: "muratov",
+          title: "Muratov Partners",
+          text: "Юридическое агентство"
+        },
+        {
+          img: "cleaning",
+          title: "Cleaning Master",
+          text: "Клининг сервис"
+        },
+        {
+          img: "newestate",
+          title: "New Estate",
+          text: "Строительная компания"
+        },
+        { img: "lady", title: "Lady's Secrets", text: "Салон красоты" },
+        {
+          img: "hr",
+          title: "Human Reserve",
+          text: "Рекрутинговое агентство"
+        }
+      ],
       story: {
         content: {
           body: []
@@ -79,6 +130,16 @@ export default {
     this.$nextTick(this.pinContainerScene);
     this.$nextTick(this.triggerMenu);
     this.$nextTick(this.hoverAnim);
+    // eslint-disable-next-line
+    let tr = new Siema({
+      selector: ".client-slider",
+      perPage: 3
+    });
+    // eslint-disable-next-line
+    let tr2 = new Siema({
+      selector: ".client-slider-mobile",
+      perPage: 3
+    });
   },
   destroyed() {
     // Destroy ScrollMagic when our component is removed from DOM

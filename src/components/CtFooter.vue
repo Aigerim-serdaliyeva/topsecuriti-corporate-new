@@ -1,10 +1,10 @@
 <template lang="pug">
   - 
     var lists = [
-      { h2: 'КОНТАКТЫ', p: 'email@email.kz \n+70707007745 \ntopsecurity.kz' },
-      { h2: 'АДРЕС', p: 'г. Алматы ул. \Улица' },
+      { h2: 'КОНТАКТЫ', p: 'info@topsecurity.kz \n+7 (727) 346-76-57 \ntopsecurity.kz' },
+      { h2: 'АДРЕС', p: 'Казахстан, г.Алматы, \nмкр.Алатау, \nул.Асемтау 58' },
       { h2: 'ПРОЕКТЫ', p: 'promo.topsecurity.kz \napp.topsecurity.kz' },
-    ]
+    ]    
     var copyright = 'Copyright © 2019 Top Security KZ. All Rights Reserved.'
 
   <footer>

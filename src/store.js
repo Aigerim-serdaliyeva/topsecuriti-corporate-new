@@ -10,10 +10,13 @@ const store = () =>
       scrolledData: false,
       number: 0,
       menu: [
-        { id: 1, path: "about" },
-        { id: 2, path: "news" },
-        { id: 3, path: "partners" },
-        { id: 4, path: "contacts" }
+        { path: "about" },
+        // { path: "services" },
+        // { path: "equipment" },
+        { path: "partners" },
+        { path: "news" },
+        // { path: "article" },
+        { path: "contacts" }
       ],
       indexNews: require("@/assets/json/index-news.json"),
       mainNews: require("@/assets/json/main-news.json"),

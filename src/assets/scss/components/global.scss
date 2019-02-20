@@ -6,6 +6,7 @@
 
 .df {
     display: flex;
+
 }
 
 .dfi {
@@ -67,3 +68,10 @@ img {
 .ct-index__news {
     display: none;
 }
+
+.description-list__span-enter-active, .description-list__span-leave-active {
+    transition: 0.4s ease-in-out; max-height: vw(200);
+  }
+  .description-list__span-enter, .description-list__span-leave-to /* .description-list__span-leave-active до версии 2.1.8 */ {
+     max-height: 0; opacity: 0;
+  }

@@ -8,9 +8,9 @@
     </div>
     <ul :class="visitedData">
       <li
-        v-for="list in listsProp"
+        v-for="(list, index) in listsProp"
         :class="[`nav-${list.path}`, 'nav-item']"
-        :key="list.id"
+        :key="index"
       >
         <router-link :to="`/${list.path}`" @click.native="visited(list.path)">
           {{ $t(`menu.${list.path}`) }}
