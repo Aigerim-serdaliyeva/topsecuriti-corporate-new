@@ -7,9 +7,10 @@
         .ct-pages-content        
             .ct-pages-content__wrap
                 h2 НАШИ КЛИЕНТЫ
-                .ct-partners__list                     
+                .ct-partners__list                                             
                         article(v-for="(item,index) in partners", :key="index") 
-                            img(:class="`partners-${item.img}`", :src="require(`@/assets/images/partners/${item.img}.png`)", alt="")                        
+                            a(:href="'http://' + item.href", target="_blank")
+                                img(:class="`partners-${item.img}`", :src="require(`@/assets/images/partners/${item.img}.png`)", alt="")                        
                             div
                                 h3 {{item.title}}
                                 p {{item.text}}
@@ -31,33 +32,53 @@ export default {
   data() {
     return {
       partners: [
-        { img: "global", title: "“Global”", text: "Охранное агенство" },
+        {
+          img: "global",
+          title: "“Global”",
+          text: "Строительная компания",
+          href: ""
+        },
         {
           img: "bbhs",
           title: "“BLACKBERRY HILLS”",
-          text: "Жилой комплекс"
+          text: "Жилой комплекс",
+          href: "bbhills.kz"
         },
-        { img: "pest", title: "“Pest Hunter”", text: "Охранное агенство" },
+        {
+          img: "pest",
+          title: "“Pest Hunter”",
+          text: "Услуги дезинфекции",
+          href: "pesthunter.kz"
+        },
         {
           img: "muratov",
           title: "Muratov Partners",
-          text: "Юридическое агентство"
+          text: "Юридическое агентство",
+          href: "muratov.kz"
         },
         {
           img: "cleaning",
           title: "Cleaning Master",
-          text: "Клининг сервис"
+          text: "Клининг сервис",
+          href: "cleaningmaster.kz"
         },
         {
           img: "newestate",
           title: "New Estate",
-          text: "Строительная компания"
+          text: "Строительная компания",
+          href: "newestate.kz"
         },
-        { img: "lady", title: "Lady's Secrets", text: "Салон красоты" },
+        {
+          img: "lady",
+          title: "Lady's Secrets",
+          text: "Салон красоты",
+          href: "ladyssecrets.kz"
+        },
         {
           img: "hr",
           title: "Human Reserve",
-          text: "Рекрутинговое агентство"
+          text: "Рекрутинговое агентство",
+          href: "humanreserve.kz"
         }
       ]
     };

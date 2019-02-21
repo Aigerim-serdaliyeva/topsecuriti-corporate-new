@@ -11,11 +11,12 @@ footer {
       font-family: Spectral-semibold;
       text-transform: uppercase;
     }
-    p {
+    a {
       font-family: Spectral-light;
       text-transform: lowercase;
       line-height: normal;
       white-space: pre;
+      color: #fff;
     }
     .line {
       background: #FFB800;
@@ -62,7 +63,7 @@ footer {
       article {
         margin-left: vw(13.98);
       }
-      p {        
+      a {        
         font-size: vw(20);                
       } 
       .line {
@@ -88,7 +89,7 @@ footer {
             font-size: vwm(18); 
             margin-bottom: vwm(12);
         }
-        p {
+        a {
             margin: vwm(12) 0 vwm(20);
             font-size: vwm(14);
         }

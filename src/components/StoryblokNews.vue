@@ -25,9 +25,6 @@
 <script>
 export default {
   props: ["blok"],
-  metaInfo: {
-    title: "Новости"
-  },
   computed: {
     number() {
       return this.$store.state.number;

@@ -19,6 +19,22 @@ Vue.use(VueScrollTo);
 Vue.use(StoryblokVue);
 // *** /Vue use
 
+// *** Font awesome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faAngleLeft);
+library.add(faAngleRight);
+library.add(faArrowCircleLeft);
+library.add(faArrowCircleRight);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+// *** /Font awesome
+
 // *** Global components
 import BeginBg from "./components/BeginBg.vue";
 import CtNav from "./components/CtNav.vue";

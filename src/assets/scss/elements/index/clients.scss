@@ -1,30 +1,46 @@
 .ct-index__clients {
+    position: relative;
     h2 {
         font-family: Spectral-semibold;
         text-align: center;
+    }
+    .client-slider__button  {
+        position: absolute;
+        cursor: pointer;
+        z-index: 20;      
+        color:#000             
     }
 }
 
 @media(min-width: 960px) {
     .ct-index__clients {
         padding-bottom: vw(100);
+      
         h2 {
             font-size: vw(70);
             padding: vw(100) 0;
         }      
         .client-slider__block {
-            height: vw(400);
+            height: vw(200);
             display: flex;
             align-items: center;
             justify-content: center;
-            img {
-                object-fit: cover;
-                object-position: center;
-            }
+
         }  
         .client-slider-mobile {
             display: none;
-        }        
+        }  
+        .client-slider__button {            
+            font-size: vw(100); 
+            top: vw(330);  
+                      
+        }      
+        .client-slider__button__left {
+           left: vw(30);
+        }
+        .client-slider__button__right {
+            right: vw(30);
+        }
     }
 }
 
@@ -32,13 +48,15 @@
     .ct-index__clients {        
         h2 {
             font-size: vwm(30);
-            padding: vwm(50) 0 0;
+            padding: vwm(50) 0;
         }      
-        .client-slider__block {    
+        .client-slider__block {   
+            margin-bottom: vwm(50);
             height: vwm(200);        
             display: flex;
             align-items: center;
-            justify-content: center;     
+            justify-content: center;   
+            cursor: pointer;  
             img {                
                 object-fit: cover;
                 object-position: center;
@@ -46,7 +64,17 @@
         }
         .client-slider {
             display: none;
-        }         
+        }   
+        .client-slider__button {            
+            font-size: vwm(60); 
+            top: vwm(240);              
+        }      
+        .client-slider__button__left {
+           left: vwm(10);
+        }
+        .client-slider__button__right {
+            right: vwm(10);
+        }      
                  
     }
 }
