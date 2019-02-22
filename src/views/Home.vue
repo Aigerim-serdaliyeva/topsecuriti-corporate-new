@@ -19,15 +19,13 @@
       <ct-index-description-list-mobile v-else />
       <div class="ct-index__description__bg" />
     </section>
-    <index-clients />    
-    
+    <index-clients />
   </div>
 </template>
 
 <script>
 import { TimelineLite } from "gsap";
 import Visited from "@/mixins/visited";
-
 
 // *** Components
 import CtNav from "@/components/CtNav";
@@ -42,7 +40,7 @@ export default {
   },
   mixins: [Visited],
   components: {
-    CtNav,    
+    CtNav,
     CtIndexDescriptionList,
     CtIndexDescriptionListMobile,
     indexClients
@@ -149,7 +147,7 @@ export default {
             transform: "translateY(0)"
           });
       });
-    }    
+    }
   }
 };
 </script>

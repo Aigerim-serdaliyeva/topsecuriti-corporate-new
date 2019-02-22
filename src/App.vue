@@ -1,9 +1,11 @@
-<template>
-  <div id="app">
-    <ct-menu />
-    <router-view />
-    <ct-footer class="dark-footer" />
-  </div>
+<template lang="pug">
+    div
+        div(id="app", v-if="true")
+            <ct-menu />
+            <router-view />
+            <ct-footer class="dark-footer" />
+        div(v-if="false")
+            site-off
 </template>
 
 <style lang="scss">
@@ -16,11 +18,13 @@ html {
 <script>
 import CtMenu from "./components/CtMenu.vue";
 import CtFooter from "./components/CtFooter.vue";
+import SiteOff from "./components/SiteOff.vue";
 
 export default {
   components: {
     CtMenu,
-    CtFooter
+    CtFooter,
+    SiteOff
   }
 };
 </script>
