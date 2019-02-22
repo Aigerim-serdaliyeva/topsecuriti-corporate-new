@@ -14,14 +14,14 @@
 
 @media(min-width: 960px) {
     .ct-index__clients {
-        padding-bottom: vw(100);
-      
+        padding:0 vw(100) vw(100);
+        
         h2 {
             font-size: vw(70);
             padding: vw(100) 0;
         }      
         .client-slider__block {
-            height: vw(200);
+            height: vw(200);            
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,18 +49,31 @@
         h2 {
             font-size: vwm(30);
             padding: vwm(50) 0;
-        }      
+        }              
         .client-slider__block {   
             margin-bottom: vwm(50);
+            width: 80%;
+            margin: auto;
             height: vwm(200);        
             display: flex;
             align-items: center;
             justify-content: center;   
-            cursor: pointer;  
-            img {                
-                object-fit: cover;
-                object-position: center;
-            }
+            cursor: pointer;              
+        }
+        .client-slider__block2 {
+            background-size: 60% 70% !important;
+        }
+        .client-slider__block4 {
+            background-size: 30% 60% !important;
+        }
+        .client-slider__block6 {
+            background-size: 70% 70% !important;
+        }
+        .client-slider__block7 {
+            background-size: 50% 50% !important;
+        }
+        .client-slider__block8 {
+            background-size: 50% 70% !important;
         }
         .client-slider {
             display: none;

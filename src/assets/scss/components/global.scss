@@ -75,3 +75,34 @@ img {
   .description-list__span-enter, .description-list__span-leave-to /* .description-list__span-leave-active до версии 2.1.8 */ {
      max-height: 0; opacity: 0;
   }
+
+
+  .new-h2 {
+    font-family: Spectral-bold, sans-serif;    
+  }
+
+  .new-p {
+        font-family: NewCycle, sans-serif;
+  }
+
+  .new-h2, .new-p {
+      line-height: normal;
+  }
+
+  @media (min-width: 960px) {
+      .new-h2 {
+          font-size: vw(50);
+      }
+      .new-p {
+        font-size: vw(25);
+      }
+  }
+
+  @media (max-width: 960px) {
+      .new-h2 {
+          font-size: vwm(30);
+      }
+      .new-p {
+          font-size: vwm(18 );
+      }
+  }

@@ -14,8 +14,11 @@
     .ct-pages-content__wrap {        
         background: #F9F9F9;        
     }
-    h2,h3 {
+    h2 {
         font-family: Spectral-bold;        
+    }
+    h3 {
+        font-family: Newcycle;
     }
     .ct-partners__list {
         display: flex;
@@ -23,16 +26,25 @@
     }
     article {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: column;        
         align-items: center;
         div {
             width: 100%;
         }
     }
-    p {
-        font-family: NewCycle;
-    }
+    .ct-partners__list {
+        p {
+            font-family: Spectral-light;
+            font-style: italic;
+            color: #7C7C7C; 
+            
+        }
+        span {
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }    
 
 }
 
@@ -62,55 +74,60 @@
             width: 33.33%;                
             position: relative; 
             margin-bottom: vw(100);
+            padding: 0 vw(60);
             div {
-                margin-top: vw(58);
+                margin-top: vw(30);
             }      
         }        
         h3 {
-            font-size: vw(30);
-            position: relative;                      
+            font-size: vw(24);
+            position: relative;   
+            padding-bottom: vw(10);                   
             &::before {
                 content: '';
                 position: absolute;
                 top: 0;left: 0;right: 0;
                 margin: auto;      
                 height: vw(1);
-                width: vw(353.74);
+                width: vw(370);
                 background:#CACACA;                          
             }
             &::after {
                 content: '';
                 position: absolute;
                 bottom: 0;left: 0;right: 0;
-                margin: auto;
+                margin: auto;                
                 height: vw(1);
                 width: vw(88.93);
                 background:#CACACA;
             }
+
         }
         p {
-            font-size: vw(20);
+            font-size: vw(18);
         }
         img {
-            object-fit: cover;            
+            object-fit: cover;  
+                  
         }
         .partners-global {
-            @include size(vw(88), vw(376));
+            @include size(vw(70), vw(299));
         }
         .partners-bbhs {
-            @include size(vw(75.49), vw(376));
+            @include size(vw(70), vw(348.66));
         }
         .partners-pest {            
-            @include size(vw(103), vw(258.29));        
+            @include size(vw(70), vw(213));    
+                
         }
         .partners-muratov {
-            @include size(vw(173), vw(210.45));
+            @include size(vw(140), vw(170.31));
         }
         .partners-cleaning {
-            @include size(vw(135.63), vw(375.77));                        
+            @include size(vw(140), vw(375.77));                        
         }
         .partners-newestate {
-            @include size(vw(172.84), vw(142.13))
+            @include size(vw(140), vw(115.13))
         }     
         .partners-lady {
             @include size(vw(172.96), vw(261.19))            
@@ -147,7 +164,8 @@
             position: relative; 
             margin-bottom: vwm(65); 
             width: 100%;       
-            text-align: center;                      
+            text-align: center;   
+                          
             div {
                 margin-top: vwm(25);
             }      
@@ -158,8 +176,7 @@
         }        
         h3 {
             font-size: vwm(18);
-            position: relative;  
-            padding-top: vwm(10);                    
+            position: relative;                                
             &::before {
                 content: '';
                 position: absolute;
@@ -181,7 +198,11 @@
         }
         p {
             font-size: vwm(14);
+            
         } 
+        h3,p {
+            padding: 0 vwm(40) vwm(5);
+        }
     
         .partners-global {
             @include size(vww(64.69), vwm(278));

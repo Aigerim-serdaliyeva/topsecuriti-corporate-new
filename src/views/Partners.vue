@@ -14,6 +14,7 @@
                             div
                                 h3 {{item.title}}
                                 p {{item.text}}
+                                    span {{item.span}}
 
 </template>
 
@@ -31,56 +32,7 @@ export default {
   mixins: [Visited],
   data() {
     return {
-      partners: [
-        {
-          img: "global",
-          title: "“Global”",
-          text: "Строительная компания",
-          href: ""
-        },
-        {
-          img: "bbhs",
-          title: "“BLACKBERRY HILLS”",
-          text: "Жилой комплекс",
-          href: "bbhills.kz"
-        },
-        {
-          img: "pest",
-          title: "“Pest Hunter”",
-          text: "Услуги дезинфекции",
-          href: "pesthunter.kz"
-        },
-        {
-          img: "muratov",
-          title: "Muratov Partners",
-          text: "Юридическое агентство",
-          href: "muratov.kz"
-        },
-        {
-          img: "cleaning",
-          title: "Cleaning Master",
-          text: "Клининг сервис",
-          href: "cleaningmaster.kz"
-        },
-        {
-          img: "newestate",
-          title: "New Estate",
-          text: "Строительная компания",
-          href: "newestate.kz"
-        },
-        {
-          img: "lady",
-          title: "Lady's Secrets",
-          text: "Салон красоты",
-          href: "ladyssecrets.kz"
-        },
-        {
-          img: "hr",
-          title: "Human Reserve",
-          text: "Рекрутинговое агентство",
-          href: "humanreserve.kz"
-        }
-      ]
+      partners: require("@/assets/json/clients-main.json")
     };
   }
 };

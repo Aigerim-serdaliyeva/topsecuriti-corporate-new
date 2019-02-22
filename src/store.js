@@ -11,11 +11,11 @@ const store = () =>
       number: 0,
       menu: [
         { path: "about" },
-        // { path: "services" },
-        // { path: "equipment" },
+        { path: "services" },
+        { path: "equipment" },
         { path: "partners" },
         { path: "news" },
-        // { path: "article" },
+        { path: "article" },
         { path: "contacts" }
       ],
       indexNews: require("@/assets/json/index-news.json"),

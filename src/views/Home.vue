@@ -19,147 +19,35 @@
       <ct-index-description-list-mobile v-else />
       <div class="ct-index__description__bg" />
     </section>
-    <section>
-      <div class="ct-index__clients">
-        <h2>ПОД НАШЕЙ ЗАЩИТОЙ</h2>
-        <div
-          class="client-slider__button client-slider__button__left"
-          @click="changeSlide('left')"
-        >
-          <font-awesome-icon icon="angle-left" />
-        </div>
-        <div
-          class="client-slider__button client-slider__button__right"
-          @click="changeSlide('right')"
-        >
-          <font-awesome-icon icon="angle-right" />
-        </div>
-        <div class="client-slider">
-          <div
-            v-for="(item, index) in partners"
-            :key="index"
-            class="client-slider__block"
-            :style="{
-              background:
-                'url(' +
-                require(`@/assets/images/partners/${item.img}.png`) +
-                ') no-repeat center / contain'
-            }"
-          >
-            <a
-              :href="'http://' + item.href"
-              target="_blank"
-              style="height:100%; width:100%"
-            >
-            </a>
-          </div>
-        </div>
-        <div class="client-slider-mobile">
-          >
-          <div
-            v-for="(item, index) in partners"
-            :key="index"
-            class="client-slider__block"
-            :style="{
-              background:
-                'url(' +
-                require(`@/assets/images/partners/${item.img}.png`) +
-                ') no-repeat center / contain'
-            }"
-          ></div>
-        </div>
-      </div>
-    </section>
-    <ct-index-services />
-
-    <component :blok="story.content" :is="story.content.component"> </component>
+    <index-clients />    
+    
   </div>
 </template>
 
 <script>
-import CtNav from "@/components/CtNav";
-import CtIndexServices from "@/components/CtIndexServices";
-import CtIndexNews from "@/components/CtIndexNews";
-import CtIndexDescriptionList from "@/components/CtIndexDescriptionList.vue";
-import CtIndexDescriptionListMobile from "@/components/CtIndexDescriptionListMobile.vue";
 import { TimelineLite } from "gsap";
 import Visited from "@/mixins/visited";
-import StoryblokNews from "@/mixins/storyblok_news";
 
-let slider, sliderMobile;
+
+// *** Components
+import CtNav from "@/components/CtNav";
+import CtIndexDescriptionList from "@/components/CtIndexDescriptionList.vue";
+import CtIndexDescriptionListMobile from "@/components/CtIndexDescriptionListMobile.vue";
+import indexClients from "@/components/index/indexClients.vue";
+// *** /Components
 
 export default {
   metaInfo: {
     title: "Главная"
   },
-  mixins: [Visited, StoryblokNews],
+  mixins: [Visited],
   components: {
-    CtNav,
-    CtIndexServices,
-    CtIndexNews,
+    CtNav,    
     CtIndexDescriptionList,
-    CtIndexDescriptionListMobile
+    CtIndexDescriptionListMobile,
+    indexClients
   },
-  data() {
-    return {
-      bool: true,
-      partners: [
-        {
-          img: "global",
-          title: "“Global”",
-          text: "Строительная компания",
-          href: ""
-        },
-        {
-          img: "pest",
-          title: "“Pest Hunter”",
-          text: "Услуги дезинфекции",
-          href: "pesthunter.kz"
-        },
-        {
-          img: "muratov",
-          title: "Muratov Partners",
-          text: "Юридическое агентство",
-          href: "muratov.kz"
-        },
-        {
-          img: "cleaning",
-          title: "Cleaning Master",
-          text: "Клининг сервис",
-          href: "cleaningmaster.kz"
-        },
-        {
-          img: "newestate",
-          title: "New Estate",
-          text: "Строительная компания",
-          href: "newestate.kz"
-        },
-        {
-          img: "bbhs",
-          title: "“BLACKBERRY HILLS”",
-          text: "Жилой комплекс",
-          href: "bbhills.kz"
-        },
-        {
-          img: "lady",
-          title: "Lady's Secrets",
-          text: "Салон красоты",
-          href: "ladyssecrets.kz"
-        },
-        {
-          img: "hr",
-          title: "Human Reserve",
-          text: "Рекрутинговое агентство",
-          href: "humanreserve.kz"
-        }
-      ],
-      story: {
-        content: {
-          body: []
-        }
-      }
-    };
-  },
+
   computed: {
     lists() {
       return this.$store.state.menu;
@@ -172,18 +60,6 @@ export default {
     this.$nextTick(this.pinContainerScene);
     this.$nextTick(this.triggerMenu);
     this.$nextTick(this.hoverAnim);
-    // eslint-disable-next-line
-    slider = new Siema({
-      selector: ".client-slider",
-      perPage: 4,
-      draggable: false
-    });
-    // eslint-disable-next-line
-    sliderMobile = new Siema({
-      selector: ".client-slider-mobile",
-      perPage: 1,
-      draggable: false
-    });
   },
   destroyed() {
     // Destroy ScrollMagic when our component is removed from DOM
@@ -206,21 +82,6 @@ export default {
             target.style.setProperty("--size", "300px");
           }, 1000);
         }, 2000);
-      }
-    },
-    changeSlide(direction) {
-      if (window.matchMedia("(max-width:960px)").matches) {
-        if (direction === "right") {
-          sliderMobile.next();
-        } else {
-          sliderMobile.prev();
-        }
-      } else {
-        if (direction === "right") {
-          slider.next();
-        } else {
-          slider.prev();
-        }
       }
     },
     triggerMenu() {
@@ -288,8 +149,7 @@ export default {
             transform: "translateY(0)"
           });
       });
-    },
-    created() {}
+    }    
   }
 };
 </script>

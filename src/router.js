@@ -25,12 +25,7 @@ const router = new Router({
       path: "/news",
       name: "news",
       component: () => import("./views/News.vue")
-    },
-    {
-      path: "/news/post/:id",
-      name: "posts",
-      component: () => import("./views/News.vue")
-    },
+    },    
     {
       path: "/partners",
       name: "partners",
@@ -40,7 +35,23 @@ const router = new Router({
       path: "/contacts",
       name: "contacts",
       component: () => import("./views/Contacts.vue")
-    }
+    },
+    {
+        path: "/equipment",
+        name: "equipment",
+        component: () => import("./views/Equipment.vue")
+      },
+      {
+        path: "/services",
+        name: "services",
+        component: () => import("./views/Services.vue")
+      },
+      {
+        path: "/article",
+        name: "article",
+        component: () => import("./views/Article.vue")
+      },      
+
   ]
 });
 

@@ -140,10 +140,8 @@ list-style-type: none;
     transform: translateY(-100%)
   }
 
-
-  .index .nav-index a,.about .nav-about a, .products .nav-products a, .team .nav-team a,
- .news .nav-news a, .partners .nav-partners a, .contacts .nav-contacts a {
-    color: #FFB800;;
+.nav_active_yellow a {
+    color: #FFB800 !important;
     border-bottom: 3px solid #FFB800;
 }
 
