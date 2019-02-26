@@ -48,6 +48,14 @@
     @return ($px * 0.14922250) + vh;
 }
 
+@function h($px) {
+    @return (($px / 900) * 100) + vh;
+}
+
+@function w($px) {
+    @return (($px / 1440) * 100) + vw;
+}
+
 // Em function
 $browser-context: 16; // Default
 

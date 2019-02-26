@@ -1,6 +1,95 @@
-@import 'index/description.scss';
-@import 'index/services.scss';
-@import 'index/bydirector.scss';
-@import 'index/news.scss';
-@import 'index/clients.scss';
 
+// Проверка если есть поддержка браузером запускается webp или jpg изображение
+.webp .ct-welcome {
+    background: url('./assets/images/welcome.webp') no-repeat;
+    @include coverCenter();
+}
+.no-webp .ct-welcome {
+    background: url('./assets/images/welcome.jpg') no-repeat;
+    @include coverCenter();
+}
+
+
+
+.ct-index {
+// Стили для welcome блока
+    .ct-welcome {        
+        width: 100%;
+        opacity: 0;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+        &::after {        
+            @include overlay();        
+            background: rgba(0,0,0,0.75);
+        }    
+     } 
+     #svg-item {
+        position: relative;    
+        z-index: 10;          
+        overflow: visible;          
+    }   
+    .ct-welcome__description {
+         position: relative;
+         z-index: 10;
+         width: 100%;          
+         color: #fff;     
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         font-family: Spectral-regular;     
+         text-align: center;          
+         transform: translateY(5vw);
+         line-height: normal;     
+         svg {                                                           
+             cursor: pointer;
+             position: absolute;  left: 0; 
+         }             
+    }
+    .logo-svg-parent {
+        width: 100%;
+        display: flex;
+        justify-content: center;    
+     }     
+}
+
+@media (min-width: 960px) {
+    .ct-welcome__description {
+        font-size: w(20);
+        margin-top: w(86.45);        
+        h2 {            
+            white-space: pre;
+            width: w(345);
+            text-align: center;
+         }
+        svg {                         
+            @include size(w(144.5), 100%);  
+            top: w(-10);                                
+         }   
+         
+    }
+    #svg-item  {
+        @include size(w(268.55), w(306.8));
+    }
+}
+
+@media (max-width: 960px) {
+    .ct-welcome__description {
+        font-size: vwm(18);        
+        h2 {
+            margin: vwm(20) 0 0; 
+            padding: 0 vwm(28);
+         }
+        svg {  
+            position: relative;                
+            top: vwm(113.27);       
+            @include size(vwm(46.93), vwm(123.6));                                        
+         }    
+    }
+
+    #svg-item  {
+        @include size(vwm(172.53), vwm(197.11));
+    }    
+}

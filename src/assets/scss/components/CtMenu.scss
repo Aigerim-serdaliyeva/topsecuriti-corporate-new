@@ -1,26 +1,19 @@
-* {
-    box-sizing: border-box;
-}
-ul,li {
-list-style-type: none;
-    }
 
-    @media (min-width: 960px) {
-        nav {
-            height: vw(70); 
-            top: 0;
-            left: 0; 
-            width: 100%;
+@media (min-width: 960px) {
+        nav {            
+            @include size(vw(60), 100%);
+            position: absolute;
+            top: 0; left: 0;             
             z-index: 100;                
             display: flex;
-            background: #4C4C4C;
-            transform: translateY(0);             
+            background: linear-gradient(180deg, #262626 0%, #161616 100%);
+            transform: translateY(0);     
+            border-bottom: vw(2) solid #FFB800;
             ul {
                 display: flex;   
                 flex:1;
                 align-items: center;     
-            }   
-           
+            }              
             .nav-item a {
                 font-size: vw(20);                        
                 text-decoration: none;
@@ -29,18 +22,15 @@ list-style-type: none;
                 font-family: Spectral-bold;
                 line-height: normal;                  
                 &:hover {                    
-                    color: #FFB800;
-                    border-bottom: 3px solid #FFB800;         
+                    color: #FFB800;                    
                 }
-            } 
-                    
+            }                     
             li {
-                margin-right: vw(67);                                 
-   
+                margin-right: vw(70);                                    
             }
             .logo {
-                width: vw(127.72);        
-                margin-right: vw(163);
+                width: vw(79);        
+                margin-right: vw(70);
                 height: 100%;                     
                 border-right: vw(0.990099) solid #999999;                
                 svg {
@@ -66,8 +56,7 @@ list-style-type: none;
                 z-index: 300;
                 top: 0; left: 0;
                 background: url('~@/assets/images/body.jpg'); 
-                text-align: center;                
-                
+                text-align: center;                                
                 .burger {
                     position: absolute;
                     top: vwm(15);
@@ -141,8 +130,7 @@ list-style-type: none;
   }
 
 .nav_active_yellow a {
-    color: #FFB800 !important;
-    border-bottom: 3px solid #FFB800;
+    color: #FFB800 !important;    
 }
 
 // Класс используется на главной странице при скролле welcome блока с анимацией чтобы сделать меню фиксированным 
@@ -150,99 +138,3 @@ list-style-type: none;
     position: fixed;
 }
 
-
-
-
-
-
-
-
-
-
-// Проверка если есть поддержка браузером запускается webp или jpg изображение
-.webp .ct-welcome {
-    background: url('./assets/images/welcome.webp') no-repeat;
-    @include coverCenter();
-}
-.no-webp .ct-welcome {
-    background: url('./assets/images/welcome.jpg') no-repeat;
-    @include coverCenter();
-}
-
-// Стили для welcome блока
-.ct-welcome {        
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;      
-    &::after {        
-        @include overlay();        
-        background: rgba(0,0,0,0.75);
-    }    
- }
-
- .ct-welcome__description {
-     position: relative;
-     z-index: 10;
-     width: 100%;          
-     color: #fff;     
-     display: flex;
-     align-items: center;
-     flex-direction: column;
-     font-family: Spectral-regular;     
-     text-align: center;          
-     transform: translateY(5vh);
-     line-height: normal;     
-     svg {                                                           
-         cursor: pointer;    
-     }    
- }
-
- .logo-svg-parent {
-    width: 100%;
-    display: flex;
-    justify-content: center;    
- }
-
-#svg-item {
-    position: relative;    
-    z-index: 10;          
-    overflow: visible;          
-}
-
-@media (min-width: 960px) {
-    .ct-welcome__description {
-        font-size: vh(25);
-        h2 {
-            margin: vh(40) 0 vh(34); 
-         }
-        svg {                         
-            @include size(vh(71), vh(187));                                        
-         }    
-    }
-
-    #svg-item  {
-        @include size(vh(358), vh(409));
-    }
-}
-
-@media (max-width: 960px) {
-    .ct-welcome__description {
-        font-size: vhm(18);        
-        h2 {
-            margin: vhm(20) 0 0; 
-            padding: 0 vhm(28);
-         }
-        svg {  
-            position: relative;                
-            top: vhm(113.27);       
-            @include size(vhm(46.93), vhm(123.6));                                        
-         }    
-    }
-
-    #svg-item  {
-        @include size(vhm(172.53), vhm(197.11));
-    }    
-}

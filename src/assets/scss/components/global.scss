@@ -2,6 +2,13 @@
     display: none;
 }
 
+* {
+    box-sizing: border-box;
+}
+ul,li {
+list-style-type: none;
+    }
+
 // *** Личные классы
 
 .df {
@@ -17,7 +24,7 @@
 
 
 body {    
-    background: #F4F4F4;    
+    background: #F4F4F4;     
 }
 
 a {
