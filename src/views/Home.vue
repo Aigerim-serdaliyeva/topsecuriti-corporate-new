@@ -1,25 +1,19 @@
 <template lang="pug">
-  <div class="ct-index">
-    <div class="ct-welcome" ref="ctwelcome">      
-      <div class="ct-welcome__wrap">
-        <div class="logo-svg-parent">
-          <welcome-svg :viewbox="welcomeSvgDesktop" v-if="!$isMobile()" />
-          <welcome-svg :viewbox="welcomeSvgMobile" v-else />
-        </div>
-        <div class="ct-welcome__description">
-            h2= "Безопасность, доступная \nкаждому."
-            index-dick
-        </div>
-      </div>
-    </div>
-  </div>
+  .ct-index
+    div(class="ct-welcome full-section flex flex-all-center",ref="ctwelcome")      
+      .ct-welcome__wrap
+        .logo-svg-parent
+          welcome-svg(:viewbox="welcomeSvgDesktop", v-if="!$isMobile()")
+          welcome-svg(:viewbox="welcomeSvgMobile" v-else)         
+        .ct-welcome__description
+            h2= "Безопасность, доступная каждому"            
+                    
 </template>
 
 <script>
 import { TimelineLite } from "gsap";
 import Visited from "@/mixins/visited";
 import WelcomeSvg from "@/components/svg-components/WelcomeSvg";
-import IndexDick from "@/components/svg-components/IndexDick";
 
 export default {
   metaInfo: {
@@ -33,8 +27,7 @@ export default {
     };
   },
   components: {
-    WelcomeSvg,
-    IndexDick
+    WelcomeSvg
   },
   computed: {
     lists() {
@@ -42,15 +35,11 @@ export default {
     }
   },
   mounted() {
-    // *** Для анимации без лагов
-    let welcome = this.$refs.ctwelcome;
-    welcome.style.opacity = 1;
     this.pinContainerScene();
-    // *** /Для анимации без лагов
   },
   methods: {
     pinContainerScene() {
-      let svgPath = document.querySelectorAll(".svg-test path");
+      const svgPath = document.querySelectorAll(".svg-test path");
       const tl = new TimelineLite();
 
       svgPath.forEach((el, index) => {

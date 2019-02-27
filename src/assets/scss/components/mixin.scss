@@ -30,6 +30,11 @@
     margin: auto;
 }
 
+@mixin flex-all-center() {
+    display: flex; justify-content: center; align-items: center;
+    flex-direction: column
+}
+
 @function vh($px) {
     @return ($px * 0.10319) + vh;
 }

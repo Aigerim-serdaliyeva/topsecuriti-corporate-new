@@ -1,0 +1,19 @@
+.ct-services {
+    background: url('~@/assets/images/services/primary-bg.jpg') no-repeat;
+    @include coverCenter;
+    h2, &__partners {
+        position: relative;        
+    }
+    h2 {
+        text-transform: uppercase;
+    }
+}
+
+@media(min-width:960px) {
+    .ct-services {
+        @include flex-all-center();
+        h2 {
+            font-size: vw(40);
+        }
+    }
+}

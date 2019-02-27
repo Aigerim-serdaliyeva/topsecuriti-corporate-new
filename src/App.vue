@@ -1,16 +1,13 @@
 <template lang="pug">
     div
         div(id="app", v-if="true")
-            ct-menu
-            router-view            
+            ct-menu(v-if="true")
+            router-view(:key="$route.fullPath")            
         div(v-if="false")
             site-off
 </template>
 
 <style lang="scss">
-html {
-  font-family: Spectral-regular, Sans-Serif;
-}
 @import "./assets/scss/style.scss";
 </style>
 

@@ -7,19 +7,18 @@
             z-index: 100;                
             display: flex;
             background: linear-gradient(180deg, #262626 0%, #161616 100%);
-            transform: translateY(0);     
-            border-bottom: vw(2) solid #FFB800;
+            transform: translateY(0);                 
             ul {
                 display: flex;   
                 flex:1;
                 align-items: center;     
             }              
             .nav-item a {
-                font-size: vw(20);                        
+                font-size: vw(19);                        
                 text-decoration: none;
                 color: #fff;        
-                text-transform: uppercase;
-                font-family: Spectral-bold;
+                text-transform: uppercase;    
+                font-family: Geometos;                                                   
                 line-height: normal;                  
                 &:hover {                    
                     color: #FFB800;                    

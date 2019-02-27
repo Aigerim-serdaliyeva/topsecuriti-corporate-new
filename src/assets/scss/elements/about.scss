@@ -1,67 +1,121 @@
-.ct-about {
-    text-align: center;
-    line-height: normal;
-    .article {
-        display: flex;
-        justify-content: center; align-items: center;
-    }   
-    h2 {
-        font-family: Spectral-bold;
-        color: #212121;
-    }
-    p {
-        font-family: NewCycle;
-    }    
+.ct-about { 
+    h1 {
+        font-family: Beausans;
+    }       
+    &__advantages {
+        position: relative;      
+        p {
+            background: url('~@/assets/images/about/secondary-article.png') no-repeat;
+        background-size: cover;
+        background-position: center left;
+            font-family: Geometos;
+            text-align: right;                        
+        }
+        span {
+            font-family: Beausans;
+        }
+    }     
 }
 
-@media (min-width:960px) {
-    .ct-about {            
-        .ct-pages-content__wrap {
-            padding-bottom: vw(20);
-        }
-        .article {
-            @include size(100%, 100%);  
-            svg { 
-                @include size (vw(358), vw(409));           
-            }
-        }
-        h2 {
-            font-size: vw(50);            
-            padding: vw(97) 0 vw(40);            
-            border-bottom: vw(1) solid #FFB800;
-        }
+.about_original {
+    background:url('~@/assets/images/about/primary-bg.jpg') no-repeat;
+    @include coverCenter;
+    position: relative;
+    * {
+        position: relative;
+    }
+}
+
+.about_advantages {
+    background:url('~@/assets/images/about/secondary-bg.jpg') no-repeat;
+    @include coverCenter;
+    position: relative;
+
+}
+
+@media (min-width:960px) {    
+    .about_original {
+        display: flex;        
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about_advantages {
+        display: flex;
+        flex-direction: column;        
+        justify-content: space-between;
+    }
+    .ct-about {       
+      &__logo {
+          @include size(w(129.55), w(148));          
+      }               
+      h1 {
+          font-size: vw(24);
+          width: 100%;
+          padding: vh(39) w(182);
+          text-align: center;
+          margin: vh(96.45) 0 vh(138);
+          background: url('~@/assets/images/about/primary-article.png') no-repeat;
+          @include coverCenter;
+      }      
+      a {
+        align-self: center;
+      }
+      &__advantages {                   
+        display: flex;               
+        section:last-child {
+            display: flex;  
+            position: relative;     
+            align-items: flex-end;       
+        }          
+        article {
+            display: flex;
+            align-items: center;
+            margin-bottom: vh(50);
+        }     
         p {
-            font-size: vw(25);
-            padding: vw(20) 0;
+            width: vw(710);
+            font-size: vw(22);
+            margin-right: vw(51);  
+            padding: vh(29) vw(40);                           
+        }
+        span {
+            display: block;
+            font-size: vw(19);
+            margin-top: vh(14);
         }
         img {
-            @include size(vw(639), 100%);
-            object-fit: cover;
-            padding: vw(20) 0;
-            border-top: vw(1) solid #FFB800;
-            border-bottom: vw(1) solid #FFB800;
-        }        
+            @include size(vh(77), vh(77))
+        }
+        &__man {
+            background: url('~@/assets/images/about/man.png') no-repeat;
+            @include coverCenter;            
+            @include size(vh(652), vh(376));
+            margin: 0 vw(57);
+        }
+        &__images {
+             display: flex; height: vh(652);
+             flex-direction: column; justify-content: center;
+             position: relative;
+            img {
+                margin-top: vh(82);
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+        &__last-img {
+            background: url('~@/assets/images/about/advantages-7.svg') no-repeat;
+            @include coverCenter;
+            @include size(vh(117), vh(117));
+            position: absolute; top: vh(-117); right: vw(117);            
+        }
+      }
     }
 }
 
 @media (max-width: 960px) {
     .ct-about {     
-        padding-bottom: vwm(30);   
-        h2 {
-            font-size: vwm(30);
-            padding: vwm(52) 0 vwm(30);
-        }
-        p {
-            font-size: vwm(18);
-            padding:0 vwm(18);
-        }
-        img {
-            padding: vwm(10) 0;
-            margin: vwm(10) 0;
-            @include size(vwm(344), 100%);
-            object-fit: cover;
-            border-top: vwm(1) solid #FFB800;
-            border-bottom: vwm(1) solid #FFB800;
-        }
+
     }
 }
