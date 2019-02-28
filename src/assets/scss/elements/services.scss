@@ -15,5 +15,10 @@
         h2 {
             font-size: vw(40);
         }
+        &__items {
+            display: flex;
+            justify-content: space-between;
+            
+        }
     }
 }
