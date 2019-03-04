@@ -1,19 +1,25 @@
 <template lang="pug">
   .ct-index
-    div(class="ct-welcome full-section flex flex-all-center",ref="ctwelcome")      
-      .ct-welcome__wrap
-        .logo-svg-parent
-          welcome-svg(:viewbox="welcomeSvgDesktop", v-if="!$isMobile()")
-          welcome-svg(:viewbox="welcomeSvgMobile" v-else)         
+    div(class="ct-welcome full-section flex flex-all-center-column",ref="ctwelcome")                    
+        welcome-svg.ct-welcome__logo              
         .ct-welcome__description
             h2= "Безопасность, доступная каждому"            
-                    
+        .ct-welcome__headphone
+            headphone
+            p Связаться с нами            
+        .ct-welcome__copyright
+            | All Rights Reserved 2019 «TopSecurity»   
+        .ct-welcome__hidden  
+            a.ct-welcome__hidden__option
+                img(src="~@/assets/images/component-personal.jpg", alt="")             
+
 </template>
 
 <script>
 import { TimelineLite } from "gsap";
 import Visited from "@/mixins/visited";
 import WelcomeSvg from "@/components/svg-components/WelcomeSvg";
+import Headphone from "@/components/svg-components/index/Headphone.vue";
 
 export default {
   metaInfo: {
@@ -27,7 +33,8 @@ export default {
     };
   },
   components: {
-    WelcomeSvg
+    WelcomeSvg,
+    Headphone
   },
   computed: {
     lists() {

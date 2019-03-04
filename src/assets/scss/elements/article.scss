@@ -1,0 +1,86 @@
+.ct-article {
+    &__wrap {
+        section:first-child {
+            h2 {  color: #EF3B39; font-family: ProtoSans; text-transform: uppercase; }
+            p { color: #111111; opacity:0.8; }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .ct-article {
+        @include flex-align-end();        
+        &__wrap {
+            position: relative;
+            display: flex;
+            width: 100%;
+            section:first-child {                
+                @include size(auto, w(1225));
+                background: url('~@/assets/images/article/text-bg.png') no-repeat;
+                background-size: 100% 100%;
+                @include flex-align-center();
+                article {
+                    margin: auto;                    
+                    @include size(h(842), 70%);                                                
+                    padding: h(70) 0;                    
+                }            
+                h2 {
+                    font-size: w(30);
+                    margin-bottom: h(20);                    
+                    flex: 1;
+                }
+                p {
+                    @include size(90%, 100%);                    
+                    font-size: w(25);                    
+                    overflow-y: scroll;  
+                    padding-right: w(68);
+                    @include scrollRed();
+                }
+            }
+            section:last-child {
+                @include size(h(659), w(534.67));
+                
+                margin-left: w(84.33);
+                overflow-y: scroll;      
+                @include scrollWhite();   
+                padding-right: w(20);       
+            }
+            &__aside-item {
+                padding: h(21.8) 0;
+                display: flex;      
+                justify-content: space-between;
+                @include border_top_bot(w(2));                          
+                img {
+                    @include size(100%,w(160.43));                                   
+                }
+                article {
+                    flex:0.95;                    
+                }
+                h2 {
+                    font-size: w(17);
+                    text-transform: uppercase;                    
+                    border-bottom: w(1) solid #fff;
+                }
+                p {
+                    font-size: w(16);         
+                    margin: w(9.17) 0;           
+                }
+                &__date {
+                    border-top: w(1) solid #fff;
+                    padding-top: w(2);
+                    @include flex-justify-space();
+                    a,span {
+                        display: block;
+                        font-family: Beausans;
+                        font-size: w(16);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 960px) {    
+
+}

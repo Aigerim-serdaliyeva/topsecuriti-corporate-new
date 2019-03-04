@@ -12,9 +12,7 @@ const store = () =>
       menu: [
         { path: "about" },
         { path: "services" },
-        { path: "equipment" },
         { path: "partners" },
-        { path: "news" },
         { path: "article" },
         { path: "contacts" }
       ],

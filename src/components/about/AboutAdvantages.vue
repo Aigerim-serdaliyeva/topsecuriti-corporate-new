@@ -7,22 +7,7 @@
         ]
         
     section(class="full-section ct-about about_advantages")        
-        a(class="transition-button transition-button_bottom") Назад
-            trans-but-bot.bottom
-        .ct-about__advantages            
-            section
-                each item,index in advantages
-                    article
-                        p= item.title
-                            span= item.text 
-                        img(src="~@/assets/images/about/advantages-1.svg", alt="")  
-            section                
-                .ct-about__advantages__man           
-                .ct-about__advantages__images                         
-                    img(src="~@/assets/images/about/advantages-4.svg", alt="")
-                    img(src="~@/assets/images/about/advantages-5.svg", alt="")
-                    img(src="~@/assets/images/about/advantages-6.svg", alt="")
-                    .ct-about__advantages__last-img               
+                
 </template>
 
 <script>

@@ -1,124 +1,71 @@
+.menu {
+    @include posabs();
+    z-index: 10;    
+}
 
-@media (min-width: 960px) {
-        nav {            
-            @include size(vw(60), 100%);
-            position: absolute;
-            top: 0; left: 0;             
-            z-index: 100;                
-            display: flex;
-            background: linear-gradient(180deg, #262626 0%, #161616 100%);
-            transform: translateY(0);                 
-            ul {
-                display: flex;   
-                flex:1;
-                align-items: center;     
+nav {  
+.nav-item a {
+    color: #fff;                                                                                        
+    text-transform: uppercase;
+    font-family: ProtoSans;    
+    position: relative;                                                                
+    &:hover {                    
+        color: #EF3B39;                    
+    }
+}
+}
+
+@media(min-width: 960px) {
+    .menu {
+        @include size(w(103), 100%);
+        background:url('~@/assets/images/header/menu-bg.png') no-repeat;
+        @include coverCenter;
+        @include flex-justify-space();
+
+        &__line {
+            position: absolute; bottom: w(-30); left: 0;
+            @include size(w(80), w(863));
+        }
+        &__logo {
+            @include size(100%, w(259)); 
+            background: url('~@/assets/images/header/menu-logo-bg.svg') no-repeat;
+            @include coverCenter;
+            @include flex-align-center;
+            svg {
+                @include size(w(78), w(90));
+                margin-left: w(25);
+            }
+        }
+    }
+    nav {    
+        align-self: flex-end;                                                         
+        ul {
+            display: flex;                   
+            align-items: center;     
+        }              
+        .nav-item a {
+            font-size: w(30);   
+            &::before {
+                @include before();
+                top: 0; left: 0; 
+                @include size(100%, 100%);
+                background: #fff;
+                transform: skewX(-20deg) scale(1.5);
+                z-index: -1;                                                      
+                opacity: 0;
             }              
-            .nav-item a {
-                font-size: vw(19);                        
-                text-decoration: none;
-                color: #fff;        
-                text-transform: uppercase;    
-                font-family: Geometos;                                                   
-                line-height: normal;                  
-                &:hover {                    
-                    color: #FFB800;                    
-                }
-            }                     
-            li {
-                margin-right: vw(70);                                    
-            }
-            .logo {
-                width: vw(79);        
-                margin-right: vw(70);
-                height: 100%;                     
-                border-right: vw(0.990099) solid #999999;                
-                svg {
-                    height: 100%;
-                    width: 100%;
-                    max-width: 100%;
-                    &:hover {
-                        path {
-                            fill: #FFB800;
-                        }
-                    } 
-                }
-            }
+            &:hover::before {
+                opacity: 1;
+            }                                      
+        }                     
+        li {
+            margin-right: w(70);                                    
         }
-        }
-        
-        @media (max-width: 960px) {   
-            .nav-mobile {
-                padding: vwm(6) 0;
-                height: auto;
-                width: 100%;
-                position: fixed;
-                z-index: 300;
-                top: 0; left: 0;
-                background: url('~@/assets/images/body.jpg'); 
-                text-align: center;                                
-                .burger {
-                    position: absolute;
-                    top: vwm(15);
-                    left: vwm(10);                    
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    svg {
-                        @include size(vwm(10), vwm(13));
-                        overflow: visible;
-                    }
-                }                
-                .nav-svg-mobile {
-                    height: vwm(28);
-                    width: vwm(96.43);
-                    transition: 0.3s;
-                    rect {
-                        opacity: 0.45;
-                        transition: 0.3s;
-                    }                   
-                    path {
-                        transition: 0.3s;
-                    }
-                }      
-                ul {    
-                    line-height: normal;                                     
-                    li {                        
-                        margin-bottom: vhm(36);
-                        a {
-                            font-family: Spectral-medium;                           
-                            color: #4C4C4C;
-                            font-size: vhm(30);
-                        }
-                    }                  
-                }          
-        }    
-            .nav-active {
-                padding-bottom: vwm(200);    
-                 
-                z-index: 300;
-                @include coverCenter;                  
-                .nav-svg-mobile {
-                    height: 29.06vh !important;
-                    width: 100% !important;
-                    rect {
-                        opacity: 1 !important;                        
-                    }
-                    path:nth-child(n+12) {
-                        fill: #EF3B39;                        
-                    }
-                    rect:nth-child(5) {
-                        fill: #EF3B39 ;
-                    }
-                    rect:nth-child(6) {
-                        fill: #EF3B39 ;
-                    }
-                }
-                ul {                        
-                    display: block !important;                                               
-                }
+    }    
+}
 
-            }
-        }
+        
+    
 
 .nav-mobile-enter-active, .nav-mobile-leave-active {
   transition: 0.3s;
@@ -129,7 +76,10 @@
   }
 
 .nav_active_yellow a {
-    color: #FFB800 !important;    
+    color: #EF3B39 !important;    
+    &::before {
+        opacity: 1 !important;
+    }
 }
 
 // Класс используется на главной странице при скролле welcome блока с анимацией чтобы сделать меню фиксированным 

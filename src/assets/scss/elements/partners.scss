@@ -1,34 +1,53 @@
 .ct-partners {
     background: url('~@/assets/images/services/primary-bg.jpg') no-repeat;
-    @include coverCenter;
-    h2, &__partners {
-        position: relative;        
-    }
-    h2 {
-        text-transform: uppercase;
-    }
+    @include coverCenter;        
 }
 
 
 @media (min-width: 960px) {
     .ct-partners {
         @include flex-all-center();
-      h2 {
-          font-size: vw(40);
-          margin-bottom: vh(82);
-      }
-      &__partners {
-          &__item {
-              @include size(vh(160), vw(1022));
-              background: url('~@/assets/images/secondary-article.png') no-repeat;
-              @include coverCenter;
-              padding: 0 vw(58);
-              display: flex; align-items: center; justify-content: space-between;
-              img {
-                  max-width: vw(279);
-              }
-          }
-      }
+        &__wrap {
+            position: relative;            
+            background: url('~@/assets/images/partners/bg.png') no-repeat;
+            @include coverCenter;
+            @include size(w(429), 100%);
+            @include flex-align-center();
+            &__slider {                
+                width: 100%;
+                color: #000;
+                &__image {                    
+                    @include flex-all-center();                                        
+                }                                           
+                .partners-1 {                                     
+                    @include size(w(72),w(307))
+                }                                    
+                .partners-2 {                    
+                    @include size(w(144),w(150))
+                }            
+                .partners-3 {                    
+                    @include size(w(150),w(121.88))
+                }            
+                .partners-4 {                    
+                    @include size(w(67),w(335))
+                }            
+                .partners-5 {                    
+                    @include size(w(144),w(175))
+                }            
+                .partners-6 {                    
+                    @include size(w(108),w(299))
+                }            
+                .partners-7 {                    
+                    @include size(w(144.21),w(224.72))
+                }            
+                .partners-8 {                    
+                    @include size(w(108.16),w(143.55))
+                }                  
+                .partners-9 {                    
+                    @include size(w(108.16),w(271.59))
+                }                  
+            }
+        }
     }    
 }
 

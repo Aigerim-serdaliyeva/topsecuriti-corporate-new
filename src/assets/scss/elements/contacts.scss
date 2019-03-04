@@ -1,40 +1,33 @@
 .ct-contacts {
-    text-align: center;
-    line-height: normal;
-    .article {
-        display: flex; justify-content: center;
-            align-items: center;
-    }
-    .ct-pages-content__wrap {
-        text-align: center;
-        background: url('~@/assets/images/body.jpg');
-        padding-top: vw(100);
+    &__wrap {
+        position: relative; 
         h2 {
-            font-family: Spectral-bold;
-            color: #4C4C4C;
-        }
-        p {
-            font-family: NewCycle;
-            color: #4C4C4C;
-        }
-        p.input-text {
-            font-family: Spectral-regular;
-        }        
+            color: #111111;
+            font-family: Beausans;
+        }       
         input {
-            color: #B0B0B0 ;
-            font-family: NewCycle;
-            line-height: normal;
+            text-align: center;
+            @include flex-all-center();
+            font-family: Beausans; 
+            color:#111111;  
             &::placeholder {
-                color: #B0B0B0 ;
+                color: #111111;
+                opacity: 0.15;
+            }  
+        }        
+        button {
+            outline: none;
+            border: none;  
+            background:#EF3B39;
+            cursor: pointer;
+            span {
+                display: block;
+                color: #fff;
+                font-family: ProtoSans;
+                text-transform: uppercase;
             }
         }
-        button {
-            color: #4C4C4C;            
-            background: #FFFFFF;
-            font-family: Spectral-regular;
-            cursor: pointer;
-        }
-    }   
+    }
 }
 
 .ct-contacts .map {
@@ -44,94 +37,58 @@
 
 @media (min-width: 960px) {
     .ct-contacts {
-        .article {
-            @include size(100%, 100%);            
+    @include flex-align-center();
+      &__wrap {        
+          @include size(h(628), 100%);                    
+          background: url('~@/assets/images/contacts/text-bg.png') no-repeat;
+          background-size: 100% 100%;
+          @include flex-align-center();
+          justify-content: flex-end;         
+          section:first-child {
+              @include flex-all-center-column();
+              @include size(auto, w(602));
+              text-align: center;
+          }
+          h2 {
+            font-size: w(24);
         }
-        svg {            
-            @include size(vw(358), vw(409));            
-        }    
-        .ct-pages-content__wrap {
-            box-shadow: 0 vw(4) vw(19) rgba(0, 0, 0, 0.25);
-            h2 {
-                font-size: vw(50);
-            }
-            h2.primary {
-                padding-bottom: vw(50);
-                position: relative;
-                &::before {
-                    @include before();
-                    bottom: 0; left: 0; right: 0;
-                    height: vw(1);
-                    width: vw(1416);                
-                    background:#CACACA;;
-                }
-            }
-            h2.secondary {
-                padding-top: vw(90);
-            }
-            p {
-                font-size: vw(25);
-            }
-            p.primary {
-                padding: vw(80) vw(166);
-            } 
-            .map {
-                @include size(vw(594), 100%)
-            } 
-            p.secondary {
-                position: relative;
-                padding-bottom: vw(30);
-                margin-bottom: vw(21);
-                &::before {
-                    @include before();
-                    bottom: 0;left: 0;right: 0;
-                    height: vw(3);
-                    width: vw(709);
-                    background: #FFB800;                    
-                }
-            }   
-            input {
-                text-align: center;
-                font-size: vw(25);
-                padding: vw(10) 0;
-                width: vw(478);
-                border: vw(1) solid #999999;
-                box-shadow: 0 vw(4) vw(4) rgba(0, 0, 0, 0.25);                
-            }  
-            .input-text-secondary {
-               margin-top: vw(39); 
-            }
-            button {        
-                margin: vw(60) 0 vw(40);         
-                padding: vw(15) vw(28);
-                font-size: vw(25);
-                border: vw(1) solid #999999;            
-                box-shadow: 0 vw(4) vw(4) rgba(0, 0, 0, 0.25);
-            }              
+        input {                                
+          margin: w(35) auto;                
+          border: w(2) solid #EF3B39;                
+          box-shadow: 0 w(4) w(4) rgba(0, 0, 0, 0.25);
+          @include size(w(61), w(466));
+          font-size: w(24);                                                     
         }
-    } 
+        button {                  
+            transform: skewX(-20deg);                  
+            box-shadow: 0 w(2) w(2) rgba(0, 0, 0, 0.4);                            
+            span {             
+              font-size: w(24);
+              transform: skewX(20deg);              
+              padding: w(20);        
+            }          
+        }
+        section:last-child {     
+            @include size(auto, w(960));     
+            align-self: flex-start;    
+            margin-left: w(182);       
+            margin-top: w(2);                 
+        }
+        .map {
+            @include size(h(363), 100%);                
+        }
+        p {
+            font-size: w(24);
+            color: #000;
+            padding: w(20) w(86) 0;            
+            text-align: center;
+        }
+      }
+    }
 }
 
 @media (max-width: 960px) {
     .ct-contacts {
-        .article {                 
-            @include size(100%, 100%);  
-            svg {
-                @include size (vwm(154.93), 100%);
-            }
-        }
-        .ct-pages-content__wrap {
-            p {
-                padding:0 vwm(18) vwm(15);       
-            }
-            button {
-                margin-bottom: vwm(15);
-                border: vwm(1) solid #999999;            
-                box-shadow: 0 vwm(2) vwm(2) rgba(0, 0, 0, 0.25);
-            }
-            input {
-                text-align: center;
-            }
-        }
+   
     }
 }

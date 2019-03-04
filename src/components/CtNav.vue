@@ -1,11 +1,5 @@
 <template>
   <nav v-if="!$isMobile()" id="nav" :class="{ nav_fixed: fixed }">
-    <div class="logo">
-      <router-link to="/" @click.native="visited('index')">
-        <!-- logo в меню svg -->
-        <nav-logo />
-      </router-link>
-    </div>
     <ul :class="visitedData">
       <li
         v-for="(list, index) in listsProp"
@@ -20,12 +14,7 @@
   </nav>
 </template>
 <script>
-import NavLogo from "./svg-components/NavLogo";
-
 export default {
-  components: {
-    NavLogo
-  },
   props: {
     listsProp: {
       type: Array,

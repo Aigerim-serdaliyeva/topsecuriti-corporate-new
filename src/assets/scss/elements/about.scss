@@ -1,116 +1,131 @@
 .ct-about { 
-    h1 {
-        font-family: Beausans;
-    }       
-    &__advantages {
-        position: relative;      
-        p {
-            background: url('~@/assets/images/about/secondary-article.png') no-repeat;
-        background-size: cover;
-        background-position: center left;
-            font-family: Geometos;
-            text-align: right;                        
+    overflow-x: hidden; 
+    &__wrap {
+        &__icons {
+            svg { cursor: pointer; }
         }
-        span {
-            font-family: Beausans;
-        }
-    }     
+    }
+}
+
+.opacity-to-0 {
+    opacity: 0 !important;    
 }
 
 .about_original {
     background:url('~@/assets/images/about/primary-bg.jpg') no-repeat;
     @include coverCenter;
-    position: relative;
-    * {
-        position: relative;
-    }
-}
-
-.about_advantages {
-    background:url('~@/assets/images/about/secondary-bg.jpg') no-repeat;
-    @include coverCenter;
-    position: relative;
-
+    position: relative;  
 }
 
 @media (min-width:960px) {    
     .about_original {
-        display: flex;        
-        align-items: center;
+        display: flex;                
+        align-items: flex-end;
         justify-content: center;
-        flex-direction: column;
     }
     .about_advantages {
         display: flex;
         flex-direction: column;        
         justify-content: space-between;
     }
-    .ct-about {       
-      &__logo {
-          @include size(w(129.55), w(148));          
-      }               
-      h1 {
-          font-size: vw(24);
-          width: 100%;
-          padding: vh(39) w(182);
-          text-align: center;
-          margin: vh(96.45) 0 vh(138);
-          background: url('~@/assets/images/about/primary-article.png') no-repeat;
-          @include coverCenter;
-      }      
-      a {
-        align-self: center;
-      }
-      &__advantages {                   
-        display: flex;               
-        section:last-child {
-            display: flex;  
-            position: relative;     
-            align-items: flex-end;       
-        }          
-        article {
-            display: flex;
-            align-items: center;
-            margin-bottom: vh(50);
-        }     
-        p {
-            width: vw(710);
-            font-size: vw(22);
-            margin-right: vw(51);  
-            padding: vh(29) vw(40);                           
-        }
-        span {
-            display: block;
-            font-size: vw(19);
-            margin-top: vh(14);
-        }
-        img {
-            @include size(vh(77), vh(77))
-        }
-        &__man {
-            background: url('~@/assets/images/about/man.png') no-repeat;
-            @include coverCenter;            
-            @include size(vh(652), vh(376));
-            margin: 0 vw(57);
-        }
-        &__images {
-             display: flex; height: vh(652);
-             flex-direction: column; justify-content: center;
-             position: relative;
-            img {
-                margin-top: vh(82);
-                &:first-child {
-                    margin-top: 0;
+    .ct-about {   
+        &__hidden {
+            background: url('~@/assets/images/about/hidden-bg.png') no-repeat;
+            background-size: 100% 100%;
+            @include size(h(400), w(950));
+            position: absolute; top: 0; right: 0; bottom: 0; margin: auto;
+            @include flex-all-center;
+            transform: translateX(100%);            
+            article {
+                @include size(auto, w(669));
+                margin-left: w(100);
+                h2 {
+                    font-family: ProtoSans;
+                    color: #EF3B39;                     
+                    font-size: w(40);                    
+                }
+                p {
+                    font-size: w(28);
+                    color: rgba(17, 17, 17, 0.8);
                 }
             }
-        }
-        &__last-img {
-            background: url('~@/assets/images/about/advantages-7.svg') no-repeat;
-            @include coverCenter;
-            @include size(vh(117), vh(117));
-            position: absolute; top: vh(-117); right: vw(117);            
-        }
-      }
+        }    
+        &__wrap {
+            position: relative;
+            display: flex;            
+            section {
+                display: flex;
+            }
+            section:first-child {
+                align-items: center;
+            }  
+            section:last-child {
+                flex-direction: column;
+                justify-content: center;
+                margin-left: w(193);
+                opacity: 1;
+                transition: 0.3s ease-in-out;
+            }
+            &__man {
+                @include size(h(826), h(438))
+            } 
+            &__text {
+                @include size(auto, w(741));                
+                p {
+                    font-size: w(30);
+                    color: #fff;
+                    padding-bottom: w(109);
+                }
+                button {                                                  
+                    border: w(10) solid #fff;   
+                    padding: w(10);
+                    span {                                                                         
+                        padding-bottom: 0;                        
+                        border-bottom: w(1) solid #fff;                                               
+                        font-size: w(36);                        
+                        text-shadow: 0 w(4) w(4) rgba(0, 0, 0, 0.25);
+                    }                    
+                }
+            }
+  
+            &__icons {
+                position: relative;                
+                svg {
+                    @include size(h(90), h(90));
+                    display: block;
+                    margin-bottom: h(25);    
+                    &:hover {
+                        path {
+                            fill: #EF3B39;
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &:nth-child(1) {
+                        margin-left: h(48);
+                    }
+                    &:nth-child(2) {
+                        margin-left: h(104);
+                    }
+                    &:nth-child(3) {
+                        margin-left: h(151);
+                    }
+                    &:nth-child(4) {
+                        margin-left: h(170);
+                    }
+                    &:nth-child(5) {
+                        margin-left: h(172);
+                    }
+                    &:nth-child(6) {
+                        margin-left: h(138);
+                    }
+                    &:nth-child(7) {
+                        margin-left: h(106);
+                    }
+                }                
+            } 
+        }          
     }
 }
 
