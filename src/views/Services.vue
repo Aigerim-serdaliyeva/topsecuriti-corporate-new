@@ -1,7 +1,7 @@
 <template lang="pug">
-    section(class="full-section_pad ct-services")        
+    section(v-if="!isMobile", class="full-section_pad ct-services")        
         .ct-services__wrap 
-            .ct-services__wrap__icons
+            .ct-services__wrap__icons(ref="icons")
                 article(v-for="(item,index) in servicesItems" :key="index", @mouseover="showInfo(index)", @mouseleave="hideInfo")
                     img(:src="require(`@/assets/images/services/services-${index + 1}.png`)", alt="") 
                     p {{item.first}}     
@@ -16,15 +16,42 @@
                         span Premium
             .ct-services__wrap__hidden(ref="hiddenText")
                 article
+                    img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
                     h2 {{servicesList[number].h2}} 
-                    p  {{servicesList[number].p}} 
-                                                                          
+                    p  {{servicesList[number].p}}           
+
+    section(v-else-if="isMobile", class="full-section ct-services default-bg")
+        .ct-services__wrap 
+            mobile-header(:title="`Услуги`")
+            main 
+                .ct-services__wrap__icons(ref="icons")
+                    article(v-for="(item,index) in servicesItems" :key="index", @click="showMobileInfo(index)")
+                        img(:src="require(`@/assets/images/services/services-${index + 1}.png`)", alt="") 
+                        p {{item.first}}     
+                        p {{item.last}}  
+                .ct-services__wrap__text(ref="defaultText")
+                    p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.
+                    h2  Охранная сигнализация
+                    article
+                        button.button-bold
+                            span Standart
+                        button.button-bold
+                            span Premium 
+                .ct-services__wrap__hidden(ref="hiddenText")
+                    article
+                        img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
+                        h2 {{servicesList[number].h2}} 
+                        p  {{servicesList[number].p}}                                                                                           
+
+
+
+                                                                                  
 </template>
 
 <script>
 import TweenLite from "gsap/TweenLite";
 // eslint-disable-next-line
-let hiddenText, defaultText;
+let hiddenText, icons, defaultText;
 
 export default {
   data() {
@@ -35,12 +62,14 @@ export default {
         { first: "Мобильный", last: "Телохранитель" }
       ],
       servicesList: require("@/assets/json/services.json"),
-      number: 0
+      number: 0,
+      triggerMobile: false    
     };
   },
   mounted() {
     hiddenText = this.$refs.hiddenText;
     defaultText = this.$refs.defaultText;
+    icons = this.$refs.icons;
   },
   methods: {
     showInfo(index) {
@@ -51,6 +80,9 @@ export default {
       TweenLite.to(hiddenText, 0.3, {
         x: "7%"
       });
+      TweenLite.to(icons, 0.3, {
+          opacity: 0.5
+      });      
     },
     hideInfo() {
       TweenLite.to(defaultText, 0.1, {
@@ -59,6 +91,28 @@ export default {
       TweenLite.to(hiddenText, 0.3, {
         x: "120%"
       });
+    TweenLite.to(icons, 0.3, {
+          opacity: 1
+      });  
+    },
+    showMobileInfo(index) {
+           this.triggerMobile = true;
+        this.number = index;
+        if(this.triggerMobile) {
+            TweenLite.to(defaultText, 0.3, {
+              opacity: 0
+            });
+            TweenLite.to(hiddenText, 0.3, {
+              x: "0%"
+            });            
+        } else {
+            TweenLite.to(defaultText, 0.3, {
+              opacity: 1
+            });
+            TweenLite.to(hiddenText, 0.3, {
+              x: "100%"
+            });                        
+        }      
     }
   }
 };

@@ -1,17 +1,36 @@
 <template lang="pug">
-  .ct-index
-    div(class="ct-welcome full-section flex flex-all-center-column",ref="ctwelcome")                    
-        welcome-svg.ct-welcome__logo              
-        .ct-welcome__description
-            h2= "Безопасность, доступная каждому"            
-        .ct-welcome__headphone
-            headphone
-            p Связаться с нами            
-        .ct-welcome__copyright
-            | All Rights Reserved 2019 «TopSecurity»   
-        .ct-welcome__hidden  
-            a.ct-welcome__hidden__option
-                img(src="~@/assets/images/component-personal.jpg", alt="")             
+    section.ct-index(v-if="!isMobile")
+      div(class="ct-welcome full-section flex flex-all-center-column",ref="ctwelcome")                    
+          welcome-svg.ct-welcome__logo              
+          .ct-welcome__description
+              h2= "Безопасность, доступная каждому"            
+          .ct-welcome__headphone
+              headphone                          
+          p Связаться с нами              
+          .ct-welcome__copyright
+              | All Rights Reserved 2019 «TopSecurity»   
+          .ct-welcome__hidden.hidden_left  
+              img(src="~@/assets/images/component-personal.jpg")
+          .ct-welcome__hidden.hidden_right  
+              img(src="~@/assets/images/component-personal.jpg")         
+
+    section(v-else-if="isMobile" ,class="full-section ct-index")  
+        .ct-index__wrap  
+            .ct-index__wrap__toggle
+            .ct-index__wrap__svg
+                img(src="~@/assets/images/mobile/index-logo.svg", alt="")     
+            .ct-index__wrap__text                      
+                h1 Безопасность, доступная каждому
+            .ct-index__wrap__choose
+                p Мобильный #[br] телохранитель
+                p Промо-сайт
+            .ct-index__wrap__headphone
+                headphone             
+            p Связаться с нами                                
+            .ct-index__wrap__copyright                   
+                | All Rights Reserved 2019 «TopSecurity»      
+
+                        
 
 </template>
 
@@ -41,8 +60,10 @@ export default {
       return this.$store.state.menu;
     }
   },
-  mounted() {
-    this.pinContainerScene();
+  mounted() {      
+      if(window.matchMedia("(min-width: 960px)").matches) {
+          this.pinContainerScene();
+      }
   },
   methods: {
     pinContainerScene() {

@@ -1,9 +1,10 @@
 <template lang="pug">
     div
         div(id="app", v-if="true")
-            ct-menu(v-if="true")
-            router-view(:key="$route.fullPath")            
-        div(v-if="false")
+            ct-menu(v-if="!isMobile")
+            transition(:name="transitionName", mode="out-in")
+                router-view(:key="$route.fullPath")            
+        div(v-else)
             site-off
 </template>
 
@@ -19,6 +20,18 @@ export default {
   components: {
     CtMenu,
     SiteOff
+  },
+  data() {
+      return {
+          transitionName: ''
+      }      
+  },
+  watch: {
+  '$route' (to, from) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
   }
+}
 };
 </script>

@@ -5,10 +5,22 @@
         @include before();
         top: 0; left: 0;
         @include size(100%,100%);
-        pointer-events: none;
-        background: linear-gradient(180deg, rgba(67, 32, 0, 0.18) 0%, rgba(0, 0, 0, 0.54) 100%);
-    }           
+        pointer-events: none;        
+        }      
+    @media (min-width: 960px) {
+        &::before {
+            background: linear-gradient(180deg, rgba(67, 32, 0, 0.18) 0%, rgba(0, 0, 0, 0.54) 100%);
+        }
+    }
+    @media (max-width: 960px) {    
+        overflow-x: hidden;            
+        @include size(100vh,100%);        
+        &::before {
+            background: linear-gradient(180deg, rgba(37, 20, 0, 0.18) 23.4%, rgba(37, 20, 0, 0.27) 100%);
+        }
+    }     
 }
+
 .full-section_pad {
     @include size(100vh,100%); 
         &::before {
@@ -22,6 +34,7 @@
         padding-top: w(103);    
     }
 }
+
 
 .flex-all-center {
     justify-content: center; align-items: center;
@@ -129,10 +142,31 @@ p, li,a,button {
 
 body {          
     color: #fff;    
+    
 }
 
 a {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+.default-bg {
+    background: url('~@/assets/images/mobile/default-bg.png') no-repeat;
+    @include coverCenter;
+}
+
+// .slide-left-enter-active, 
+// .slide-left-leave-active {    
+//     transition: 0.5s ease-in-out;
+// } 
+  
+// .slide-left-enter {
+//     transform: translate(100%, 0);
+// }
+// .slide-left-leave-to { 
+//     transform: translate(100%, 0);      
+// }
+  
 

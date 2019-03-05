@@ -1,10 +1,11 @@
-.ct-partners {
-    background: url('~@/assets/images/services/primary-bg.jpg') no-repeat;
-    @include coverCenter;        
-}
+
 
 
 @media (min-width: 960px) {
+    .ct-partners {
+        background: url('~@/assets/images/services/primary-bg.jpg') no-repeat;
+        @include coverCenter;        
+    }
     .ct-partners {
         @include flex-all-center();
         &__wrap {
@@ -55,6 +56,45 @@
 
 @media (max-width:960px) {
     .ct-partners  {       
-     
+        &__wrap {
+            position: relative;
+            main {
+                background:url('~@/assets/images/mobile/partners-bg.png') no-repeat;
+                background-size: 100% 100%;
+                @include flex-align-center-column;
+                padding: wm(150) 0;
+                img {
+                    display: block; margin-bottom: wm(40);
+                    margin-left: auto; margin-right: auto;
+                }
+                .partners-1 {                                     
+                    @include size(wm(127),wm(544))
+                }                                    
+                .partners-2 {                    
+                    @include size(wm(255),wm(266))
+                }            
+                .partners-3 {                    
+                    @include size(wm(308),wm(250))
+                }            
+                .partners-4 {                                        
+                    @include size(wm(118),wm(594))
+                }            
+                .partners-5 {                    
+                    @include size(wm(255),wm(310))
+                }            
+                .partners-6 {                    
+                    @include size(wm(191),wm(530))
+                }            
+                .partners-7 {                    
+                    @include size(wm(300),wm(500))
+                }            
+                .partners-8 {                    
+                    @include size(wm(250),wm(350))
+                }                  
+                .partners-9 {                    
+                    @include size(wm(400),'')
+                }      
+            }
+        }
     }
 }

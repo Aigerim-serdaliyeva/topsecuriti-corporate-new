@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="!$isMobile()" id="nav" :class="{ nav_fixed: fixed }">
+  <nav v-if="!isMobile" id="nav" :class="{ nav_fixed: fixed }">
     <ul :class="visitedData">
       <li
         v-for="(list, index) in listsProp"

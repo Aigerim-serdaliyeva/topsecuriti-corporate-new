@@ -35,23 +35,7 @@
     flex-direction: column
 }
 
-@function vh($px) {
-    @return ($px * 0.10319) + vh;
-}
 
-// desktop
-@function vw($px) {
-    @return ($px * 0.05208) + vw;
-}
-
-// mobile
-@function vwm($px) {
-    @return ($px * 0.26666666) + vw;
-}
-
-@function vhm($px) {
-    @return ($px * 0.14922250) + vh;
-}
 
 @function h($px) {
     @return (($px / 1080) * 100) + vh;
@@ -59,6 +43,15 @@
 
 @function w($px) {
     @return (($px / 1920) * 100) + vw;
+}
+
+
+@function hm($px) {
+    @return (($px / 2338) * 100) + vh;
+}
+
+@function wm($px) {
+    @return (($px / 1080) * 100) + vw;
 }
 
 // Em function

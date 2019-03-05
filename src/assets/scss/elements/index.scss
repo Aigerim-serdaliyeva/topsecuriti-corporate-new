@@ -13,6 +13,7 @@
 // Стили для welcome блока
     .ct-welcome {                
         position: relative;       
+        
         &__description {
             position: relative;            
             width: 100%;          
@@ -31,42 +32,60 @@
         &__headphone {
             position: relative;
             color: #fff;
-        }
-        &__hidden {
-            position: absolute; bottom: 0; left: 0;            
-            overflow: hidden;
-            @include size(40em, 30em);            
-            
-            &__option {                
-                --deg: 50deg;      
-                --widthOption: 50%;                
+        }      
+        &__hidden {                        
                 overflow: hidden; 
                 position: absolute;
-                bottom: 0; left: 0;                                 
-                transform: skewX(var(--deg));             
-                transform-origin: 0 100%;     
-                height: 100%;         
-                width: var(--widthOption);
-                display: flex; align-items: flex-end; 
-                transition: 0.3s ease-in-out;
-                &:hover {                      
-                      height: 100%;
-                      --widthOption: 100%;              
-                }
-                img {     
-                    position: relative;    
-                    transition: 0.3s ease-in-out;                
-                    object-fit: cover;               
-                    @include size(400px,--widthOption);                                                            
-                    transform: skewX(calc(var(--deg) * -1));
-                    transform-origin: inherit;
-                }
-            }
+                bottom: 0;                                                       
+        }
+        .hidden_left {
+            left: 0;
+            $widthHidden: w(900);
+            $widthHidden2: w(-500);                       
+            @include size(w(600), $widthHidden);     
+            $deg: 40deg;            
+            $deg2: $deg * -1; 
+            transform-origin: 0 100%;
+            transform: skewX($deg) translateX($widthHidden2);
+            transition: 0.3s;
+            &:hover {
+                @include size(w(600), w(1000));
+            }                                     
+            img {                 
+                position: absolute;                    
+                @include size(100%,w(600));
+                object-fit: cover;                                                                                                                 
+                transform: skewX($deg2) translateX(w(400));
+                transform-origin: inherit;                    
+            }        
+        }
+        .hidden_right {
+            right: 0;            
+            $widthHidden: w(900);
+            $widthHidden2: w(500);                                       
+            @include size(w(600), $widthHidden);     
+            $deg11: -40deg;
+            $deg22: $deg11 * -1; 
+            border: 1px solid #fff;
+            transform-origin: 100% 100%;
+            transform: skewX($deg11) translateX($widthHidden2);
+            transition: 0.3s;
+            &:hover {
+                @include size(w(600), w(1000));
+            }                                     
+            img {                 
+                position: absolute;                 
+                @include size(100%,w(600));
+                object-fit: cover;                                                                                                                 
+                transform: skewX($deg22) translateX(w(200));
+                transform-origin: inherit;                    
+            }    
         }
      } 
 
 @media (min-width: 960px) {    
     .ct-welcome {
+        overflow: hidden;
         &__description {            
             margin-top: h(64);             
             h2 {                                      
@@ -96,6 +115,71 @@
 
 @media (max-width: 960px) {
     .ct-index {
-   
+        background: url('~@/assets/images/mobile/index-bg.jpg') no-repeat;
+        @include coverCenter;
+        text-align: center;
+        &__wrap {
+            position: relative;
+            @include size(100%, 100%);
+            display: flex; flex-direction: column;
+            justify-content: center;            
+            svg { @include size(100%,100%) }
+            &__svg {
+                img {
+                    @include size(hm(538), hm(616));
+                    margin: auto;                
+                }
+            }       
+            &__text {
+                padding:0 wm(156);
+            }    
+            h1 {
+                font-family: Beausans;
+                font-size: wm(64);
+                text-shadow: 0 wm(4) wm(4) rgba(0, 0, 0, 0.25);                    
+                padding: hm(70) 0 hm(259);           
+            }    
+            &__choose {
+                @include flex-justify-space;
+                padding: 0 wm(60);                           
+                p {
+                    @include flex-align-center;
+                    text-align: left;                    
+                    font-size: wm(42);                                        
+                }
+                p:first-child::before, p:last-child::after {
+                    content: '';
+                    @include size(wm(100), wm(60));
+                    position: relative;
+                    display: block;                                        
+                }
+                p:first-child::before {
+                    background: url('~@/assets/images/mobile/left-angle.svg') no-repeat;
+                    @include coverCenter;                    
+                    position: relative;      
+                    margin-right: wm(40);              
+                }
+                p:last-child::after {
+                    background: url('~@/assets/images/mobile/right-angle.svg') no-repeat;
+                    @include coverCenter;
+                    margin-left: wm(40);
+                }
+                
+            }       
+            &__headphone {
+                @include size(wm(164), wm(198));
+                margin:hm(209) auto hm(70);                
+            }  
+            p {
+                font-size: wm(42);
+            }
+            &__copyright {
+                position: absolute; bottom: hm(40); left: 0; right: 0; margin: auto;
+                font-size: wm(24);
+                width: 100%;
+                color: rgba(255,255,255,0.3);
+                text-align: center;                
+            }
+        }
     }
 }

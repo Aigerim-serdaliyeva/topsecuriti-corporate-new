@@ -1,5 +1,5 @@
 .ct-about { 
-    overflow-x: hidden; 
+    
     &__wrap {
         &__icons {
             svg { cursor: pointer; }
@@ -29,12 +29,13 @@
         justify-content: space-between;
     }
     .ct-about {   
+        overflow-x: hidden; 
         &__hidden {
             background: url('~@/assets/images/about/hidden-bg.png') no-repeat;
             background-size: 100% 100%;
             @include size(h(400), w(950));
             position: absolute; top: 0; right: 0; bottom: 0; margin: auto;
-            @include flex-all-center;
+            @include flex-all-center;            
             transform: translateX(100%);            
             article {
                 @include size(auto, w(669));
@@ -47,7 +48,7 @@
                 p {
                     font-size: w(28);
                     color: rgba(17, 17, 17, 0.8);
-                }
+                }          
             }
         }    
         &__wrap {
@@ -131,6 +132,63 @@
 
 @media (max-width: 960px) {
     .ct-about {     
-
+        &__wrap {
+            position: relative;
+            main {
+                display: flex; justify-content: center;
+                position: relative;
+                padding: 0 wm(80);
+            }
+            section:first-child {
+                margin-right: wm(60);
+                svg {
+                    @include size(wm(120), wm(120));
+                    display: block;
+                    margin-bottom: wm(25);    
+                    &:hover {
+                        path {
+                            fill: #EF3B39;
+                        }
+                    }
+                }
+            }            
+            section:last-child {
+                p {
+                    font-size: wm(50);
+                }
+            }
+            button {                                                  
+                border: wm(17) solid #fff;   
+                padding: wm(20);
+                padding-top: wm(15);
+                margin-top: wm(180);
+                span {                                                                         
+                    padding-bottom: 0;                        
+                    border-bottom: wm(1) solid #fff;                                               
+                    font-size: wm(64);                        
+                    text-shadow: 0 wm(7.1648) wm(7.1648) rgba(0, 0, 0, 0.25);
+                }                    
+            }
+            &__hidden {
+                background: url('~@/assets/images/mobile/default-hidden.png') no-repeat;
+                background-size: 100% 100%;
+                @include size(auto, wm(820));
+                position: absolute; top: 0; right: 0;
+                @include flex-all-center;            
+                transform: translateX(100%);            
+                article {                    
+                    padding: wm(90) wm(111) wm(90) wm(73);
+                    h2 {
+                        font-family: ProtoSans;
+                        color: #EF3B39;                     
+                        font-size: wm(64);                    
+                    }
+                    p {
+                        font-size: wm(46);
+                        color: rgba(17, 17, 17, 0.8);
+                    }          
+                }
+            }    
+        }
     }
 }
