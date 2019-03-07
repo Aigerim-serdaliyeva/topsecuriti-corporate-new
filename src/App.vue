@@ -1,9 +1,10 @@
 <template lang="pug">
     div
-        div(id="app", v-if="true")
-            ct-menu(v-if="!isMobile")
-            transition(:name="transitionName", mode="out-in")
-                router-view(:key="$route.fullPath")            
+        div(id="app", v-if="true")           
+            .body-logo(v-if="!isMobile")             
+            transition(name="slide-left", mode="out-in")
+                router-view
+                    ct-menu(v-if="!isMobile")
         div(v-else)
             site-off
 </template>
@@ -15,23 +16,14 @@
 <script>
 import CtMenu from "./components/CtMenu.vue";
 import SiteOff from "./components/SiteOff.vue";
+/* eslint-disable */
+import TweenLite from "gsap"
 
 export default {
   components: {
     CtMenu,
     SiteOff
   },
-  data() {
-      return {
-          transitionName: ''
-      }      
-  },
-  watch: {
-  '$route' (to, from) {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-  }
-}
+ 
 };
 </script>

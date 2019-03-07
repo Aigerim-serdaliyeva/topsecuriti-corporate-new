@@ -41,7 +41,9 @@ nav {
         align-self: flex-end;                                                         
         ul {
             display: flex;                   
-            align-items: center;     
+            align-items: center;
+            position: relative;
+            bottom: wm(4);     
         }              
         .nav-item a {
             font-size: w(30);   
@@ -50,13 +52,10 @@ nav {
                 top: 0; left: 0; 
                 @include size(100%, 100%);
                 background: #fff;
-                transform: skewX(-20deg) scale(1.5);
+                transform: skewX(-12deg) scale(1.5);
                 z-index: -1;                                                      
                 opacity: 0;
-            }              
-            &:hover::before {
-                opacity: 1;
-            }                                      
+            }                                                         
         }                     
         li {
             margin-right: w(70);                                    

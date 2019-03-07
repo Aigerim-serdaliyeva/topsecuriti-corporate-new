@@ -1,5 +1,6 @@
 <template lang="pug">
     section(v-if="!isMobile" class="full-section_pad ct-partners")
+        <slot />
         .ct-partners__wrap
             .ct-partners__wrap__slider
                 .ct-partners__wrap__slider__image(v-for="(item, index) in 9", :key="index")
@@ -14,16 +15,22 @@
 </template>
 
 <script>
+// eslint-disable-next-line
+let partnersSlider;
 export default {
   mounted() {
-    // eslint-disable-next-line
-    if(window.matchMedia("(min-width:960px)").matches) {
-        const partnersSlider = new Siema({
-      selector: ".ct-partners__wrap__slider",
-      perPage: 6
-    });
+    if (window.matchMedia("(min-width:960px)").matches) {
+      // eslint-disable-next-line
+      partnersSlider = new Siema({
+        selector: ".ct-partners__wrap__slider",
+        perPage: 5,
+        loop: true
+      });
+
+      setInterval(() => {
+        partnersSlider.next();
+      }, 3000);
     }
-    
   }
 };
 </script>

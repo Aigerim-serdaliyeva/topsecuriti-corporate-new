@@ -4,6 +4,8 @@
     .ct-services {
         display: flex; justify-content: flex-end; align-items: center;
         overflow: hidden;
+        background:url('~@/assets/images/ni/services-bg.jpg') no-repeat;
+        @include coverCenter;
         &__wrap {
             position: relative;
             width: 50%;
@@ -49,9 +51,9 @@
                     @include size(auto, 65%);                                    
                     h2 {
                         font-family: ProtoSans;
-                        color: #EF3B39;                     
+                        color: #EF3B39 ;                     
                         font-size: h(35);       
-                        margin-bottom: h(15);                                    
+                        margin-bottom: h(15);                            
                     }
                     p {                        
                         font-size: h(23);
@@ -102,16 +104,16 @@
                     &:first-child {
                         margin-right: h(30);
                     }  
-                    &:last-child {
-                        border-color : #EF3B39;
+                    &:hover {
+                        border-color: #EF3B39;
                         span {
                             color: #EF3B39;
-                            border-bottom: h(1) solid #EF3B39;
+                            border-color: #EF3B39;
                         }
-                    }
+                    }                    
                 }
-                span {          
-                    border-bottom: h(1) solid #fff;          
+                span {      
+                    border-bottom: h(1) solid transparent;                    
                     font-size: h(30);
                 }
             }

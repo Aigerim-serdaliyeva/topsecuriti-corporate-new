@@ -1,5 +1,6 @@
 <template lang="pug">
-    section(v-if="!isMobile", class="full-section_pad ct-services")        
+    section(v-if="!isMobile", class="full-section_pad ct-services")      
+        <slot />  
         .ct-services__wrap 
             .ct-services__wrap__icons(ref="icons")
                 article(v-for="(item,index) in servicesItems" :key="index", @mouseover="showInfo(index)", @mouseleave="hideInfo")
@@ -43,8 +44,6 @@
                         h2 {{servicesList[number].h2}} 
                         p  {{servicesList[number].p}}                                                                                           
 
-
-
                                                                                   
 </template>
 
@@ -63,7 +62,7 @@ export default {
       ],
       servicesList: require("@/assets/json/services.json"),
       number: 0,
-      triggerMobile: false    
+      triggerMobile: false
     };
   },
   mounted() {
@@ -81,8 +80,8 @@ export default {
         x: "7%"
       });
       TweenLite.to(icons, 0.3, {
-          opacity: 0.5
-      });      
+        opacity: 0.5
+      });
     },
     hideInfo() {
       TweenLite.to(defaultText, 0.1, {
@@ -91,28 +90,28 @@ export default {
       TweenLite.to(hiddenText, 0.3, {
         x: "120%"
       });
-    TweenLite.to(icons, 0.3, {
-          opacity: 1
-      });  
+      TweenLite.to(icons, 0.3, {
+        opacity: 1
+      });
     },
     showMobileInfo(index) {
-           this.triggerMobile = true;
-        this.number = index;
-        if(this.triggerMobile) {
-            TweenLite.to(defaultText, 0.3, {
-              opacity: 0
-            });
-            TweenLite.to(hiddenText, 0.3, {
-              x: "0%"
-            });            
-        } else {
-            TweenLite.to(defaultText, 0.3, {
-              opacity: 1
-            });
-            TweenLite.to(hiddenText, 0.3, {
-              x: "100%"
-            });                        
-        }      
+      this.triggerMobile = true;
+      this.number = index;
+      if (this.triggerMobile) {
+        TweenLite.to(defaultText, 0.3, {
+          opacity: 0
+        });
+        TweenLite.to(hiddenText, 0.3, {
+          x: "0%"
+        });
+      } else {
+        TweenLite.to(defaultText, 0.3, {
+          opacity: 1
+        });
+        TweenLite.to(hiddenText, 0.3, {
+          x: "100%"
+        });
+      }
     }
   }
 };

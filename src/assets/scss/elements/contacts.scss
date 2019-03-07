@@ -27,16 +27,15 @@
     }
 }
 
-.ct-contacts .map {
-    background: url('~@/assets/images/contacts/map.png') no-repeat;
-    @include coverCenter;
-}
+
 
 @media (min-width: 960px) {
     .ct-contacts {
+        background:url('~@/assets/images/ni/contacts-bg.jpg') no-repeat;
+        @include coverCenter;
     @include flex-align-center();
       &__wrap {        
-          @include size(h(628), 100%);                    
+          @include size(h(700), 100%);                    
           background: url('~@/assets/images/contacts/text-bg.png') no-repeat;
           background-size: 100% 100%;
           @include flex-align-center();
@@ -47,7 +46,13 @@
               text-align: center;
           }
           h2 {
+              font-family: Beausans;
             font-size: w(24);
+            color: #111111;            
+        }
+        .call-err {
+            padding: 0; margin-bottom: wm(10);
+            color: #EF3B39;
         }
         input {                                
           margin: w(35) auto;                

@@ -1,5 +1,4 @@
-.ct-about { 
-    
+.ct-about {     
     &__wrap {
         &__icons {
             svg { cursor: pointer; }
@@ -11,39 +10,40 @@
     opacity: 0 !important;    
 }
 
-.about_original {
-    background:url('~@/assets/images/about/primary-bg.jpg') no-repeat;
-    @include coverCenter;
-    position: relative;  
-}
-
 @media (min-width:960px) {    
     .about_original {
         display: flex;                
         align-items: flex-end;
         justify-content: center;
-    }
-    .about_advantages {
-        display: flex;
-        flex-direction: column;        
-        justify-content: space-between;
-    }
+        background: url('~@/assets/images/ni/about-bg.jpg') no-repeat;
+        @include coverCenter;        
+    }   
     .ct-about {   
         overflow-x: hidden; 
+        position: relative;
+        &__click {
+            position: absolute;
+            top: 0;left: 0;            
+            z-index: 1;
+            @include size(100%,100%)
+        }
         &__hidden {
             background: url('~@/assets/images/about/hidden-bg.png') no-repeat;
             background-size: 100% 100%;
-            @include size(h(400), w(950));
-            position: absolute; top: 0; right: 0; bottom: 0; margin: auto;
+            @include size(auto, w(950));            
+            position: absolute; top: 0; right: 0;
+            margin-top: hm(700);
+            padding: h(50) 0;
             @include flex-all-center;            
-            transform: translateX(100%);            
+            transform: translateX(100%);                 
             article {
                 @include size(auto, w(669));
                 margin-left: w(100);
                 h2 {
                     font-family: ProtoSans;
                     color: #EF3B39;                     
-                    font-size: w(40);                    
+                    font-size: w(40);
+                    margin-bottom: w(10);                    
                 }
                 p {
                     font-size: w(28);
@@ -63,9 +63,7 @@
             section:last-child {
                 flex-direction: column;
                 justify-content: center;
-                margin-left: w(193);
-                opacity: 1;
-                transition: 0.3s ease-in-out;
+                margin-left: w(193);                                
             }
             &__man {
                 @include size(h(826), h(438))
@@ -80,9 +78,16 @@
                 button {                                                  
                     border: w(10) solid #fff;   
                     padding: w(10);
+                    &:hover {
+                       border-color:  #EF3B39;
+                       span {
+                           color: #EF3B39;;
+                           border-color: #EF3B39;
+                       }
+                    }
                     span {                                                                         
                         padding-bottom: 0;                        
-                        border-bottom: w(1) solid #fff;                                               
+                        border-bottom: w(1) solid transparent;                                               
                         font-size: w(36);                        
                         text-shadow: 0 w(4) w(4) rgba(0, 0, 0, 0.25);
                     }                    
@@ -90,11 +95,21 @@
             }
   
             &__icons {
-                position: relative;                
+                position: relative;                                      
+                .active-about {
+                    path {
+                        fill: #EF3B39;                        
+                    }
+                }         
                 svg {
+                    z-index: 200; 
+                    position: relative;
                     @include size(h(90), h(90));
                     display: block;
                     margin-bottom: h(25);    
+                    path {
+                        pointer-events: none;
+                    }
                     &:hover {
                         path {
                             fill: #EF3B39;
@@ -152,10 +167,8 @@
                     }
                 }
             }            
-            section:last-child {
-                p {
-                    font-size: wm(50);
-                }
+            p {
+                font-size: wm(50);
             }
             button {                                                  
                 border: wm(17) solid #fff;   
@@ -177,14 +190,16 @@
                 @include flex-all-center;            
                 transform: translateX(100%);            
                 article {                    
-                    padding: wm(90) wm(111) wm(90) wm(73);
+                    padding: wm(90) wm(30);
+                    @include flex-align-center-column;
                     h2 {
-                        font-family: ProtoSans;
+                        font-family: ProtoSans;                        
                         color: #EF3B39;                     
-                        font-size: wm(64);                    
+                        font-size: wm(64);    
+                        margin-bottom: wm(20);                
                     }
                     p {
-                        font-size: wm(46);
+                        font-size: wm(46);                        
                         color: rgba(17, 17, 17, 0.8);
                     }          
                 }

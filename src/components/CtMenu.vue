@@ -1,11 +1,11 @@
 <template lang="pug">
-    header#header
+    header#header(ref="ctMenu",v-if="!isMobile")
         .menu
             .menu__logo
                 router-link(to="/", style="z-index:10")
                     menu-logo
             <ct-nav id="indescr" :lists-prop="lists" :fixed="false" />       
-            menu-line.menu__line            
+            menu-line.menu__line    
 </template>
 
 <script>

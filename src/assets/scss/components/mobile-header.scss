@@ -23,7 +23,7 @@
         h2 {
             font-family: ProtoSans;    
             position: relative;
-            bottom: wm(5);
+            margin-top: wm(5);
             margin: 0 wm(50);
             text-transform: uppercase;
             font-size: wm(96);
@@ -33,6 +33,7 @@
 }
 
 .mobile-menu {
+    text-align: left;
     position: fixed; top: 0; left: 0;
     @include size(100vh, 100%);
     z-index: 100;

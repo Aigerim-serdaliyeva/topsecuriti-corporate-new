@@ -9,6 +9,8 @@
 
 @media (min-width: 960px) {
     .ct-article {
+        background:url('~@/assets/images/ni/article-bg.jpg') no-repeat;
+        @include coverCenter;
         @include flex-align-end();        
         &__wrap {
             position: relative;
@@ -27,12 +29,13 @@
                 h2 {
                     font-size: w(30);
                     margin-bottom: h(20);                    
-                    flex: 1;
+                    flex: 1;                    
                 }
                 p {
                     @include size(90%, 100%);                    
                     font-size: w(25);                    
                     overflow-y: scroll;  
+                    -webkit-overflow-scrolling: touch;
                     padding-right: w(68);
                     @include scrollRed();
                 }
@@ -42,26 +45,52 @@
                 
                 margin-left: w(84.33);
                 overflow-y: scroll;      
+                -webkit-overflow-scrolling: touch;
                 @include scrollWhite();   
-                padding-right: w(20);       
+                padding-right: w(20);  
+                
             }
             &__aside-item {
                 padding: h(21.8) 0;
                 display: flex;      
                 justify-content: space-between;
-                @include border_top_bot(w(2));                          
+                border-bottom: w(2) solid #A1A1A1;                                                
+                &:first-child {
+                    border-top: w(2) solid #A1A1A1;                                    
+                }
                 img {
-                    @include size(100%,w(160.43));                                   
+                    @include size(w(130),w(160.43));                                   
                 }
                 article {
                     flex:0.95;                    
                 }
                 h2 {
                     font-size: w(17);
-                    text-transform: uppercase;                    
-                    border-bottom: w(1) solid #fff;
+                    text-transform: uppercase;  
+                    cursor: pointer; 
+                    position: relative;
+                    display: block;
+                    &::before {
+                        @include before();
+                        bottom: 0; left: 0;
+                        @include size(w(1), 0);
+                        background-color: #EF3B39;
+                        transition: 0.3s;
+                    }      
+                    &:hover {
+                        color: #EF3B39;
+                    }           
+                    &:hover::before {
+                        width: 100%;                        
+                    }   
                 }
-                p {
+                .active-border {
+                    color: #EF3B39;
+                    &::before {
+                        width: 100% !important;                        
+                    }
+                }                
+                p {                                        
                     font-size: w(16);         
                     margin: w(9.17) 0;           
                 }

@@ -3,8 +3,8 @@
 
 @media (min-width: 960px) {
     .ct-partners {
-        background: url('~@/assets/images/services/primary-bg.jpg') no-repeat;
-        @include coverCenter;        
+        background:url('~@/assets/images/ni/partners-bg.jpg') no-repeat;
+        @include coverCenter;
     }
     .ct-partners {
         @include flex-all-center();
@@ -21,7 +21,8 @@
                     @include flex-all-center();                                        
                 }                                           
                 .partners-1 {                                     
-                    @include size(w(72),w(307))
+                    @include size(w(72),w(307));
+                    margin-top: w(30);
                 }                                    
                 .partners-2 {                    
                     @include size(w(144),w(150))
@@ -30,22 +31,27 @@
                     @include size(w(150),w(121.88))
                 }            
                 .partners-4 {                    
-                    @include size(w(67),w(335))
+                    @include size(w(67),w(335));
+                    margin-top: w(40);
                 }            
                 .partners-5 {                    
                     @include size(w(144),w(175))
                 }            
                 .partners-6 {                    
-                    @include size(w(108),w(299))
+                    @include size(w(108),w(299));
+                    margin-top: w(15);
                 }            
                 .partners-7 {                    
                     @include size(w(144.21),w(224.72))
                 }            
                 .partners-8 {                    
-                    @include size(w(108.16),w(143.55))
+                    @include size(w(108.16),w(143.55));
+                    margin-top: w(15);
                 }                  
                 .partners-9 {                    
-                    @include size(w(108.16),w(271.59))
+                    @include size(w(158.16),w(271.59));
+                    position: relative;
+                    bottom: w(10);
                 }                  
             }
         }

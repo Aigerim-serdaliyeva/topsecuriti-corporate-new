@@ -7,7 +7,7 @@
         :key="index"
       >
         <router-link :to="`/${list.path}`" @click.native="visited(list.path)">
-          {{ $t(`menu.${list.path}`) }}
+          {{ list.ru }}
         </router-link>
       </li>
     </ul>

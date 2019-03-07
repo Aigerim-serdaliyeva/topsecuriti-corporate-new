@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Meta from "vue-meta";
+import Article from "./views/Article";
+import Home from "./views/Home";
 const router = new Router({
   scrollBehavior() {
     return { x: 0, y: 0 };
@@ -9,7 +11,7 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: () => import("./views/Home.vue")
+      component: Home
     },
     {
       path: "/about",
@@ -22,11 +24,6 @@ const router = new Router({
       component: () => import("./views/Products.vue")
     },
     {
-      path: "/news",
-      name: "news",
-      component: () => import("./views/News.vue")
-    },
-    {
       path: "/partners",
       name: "partners",
       component: () => import("./views/Partners.vue")
@@ -37,11 +34,6 @@ const router = new Router({
       component: () => import("./views/Contacts.vue")
     },
     {
-      path: "/equipment",
-      name: "equipment",
-      component: () => import("./views/Equipment.vue")
-    },
-    {
       path: "/services",
       name: "services",
       component: () => import("./views/Services.vue")
@@ -49,7 +41,7 @@ const router = new Router({
     {
       path: "/article",
       name: "article",
-      component: () => import("./views/Article.vue")
+      component: Article
     }
   ]
 });
