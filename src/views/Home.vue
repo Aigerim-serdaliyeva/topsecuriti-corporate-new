@@ -1,6 +1,7 @@
 <template lang="pug">
     section.ct-index(v-if="!isMobile")
       <slot />
+      
       div(class="ct-welcome full-section flex flex-all-center-column",ref="ctwelcome")                    
           welcome-svg.ct-welcome__logo              
           .ct-welcome__description
