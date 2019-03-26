@@ -1,46 +1,42 @@
 <?php
-	// define("AUTH_SERVER", "smtp.gmail.com");
-	// define("AUTH_PORT", "465");
-	// define("AUTH_LOGIN", "sanch941@gmail.com");
-	// define("AUTH_PASSWORD", "153624sanch_94");
-    // define("EMAIL_FROM", "sanch941@gmail.com");
-	define("AUTH_SERVER", "smtp.yandex.ru");
-	define("AUTH_PORT", "465");
-	define("AUTH_LOGIN", "info@ladyssecrets.kz");
-	define("AUTH_PASSWORD", "In10fo12(!");
-    define("EMAIL_FROM", "info@ladyssecrets.kz");
-    
-	define("EMAIL_NAME", "Top Security Kz");
-	define("EMAIL_SUBJECT", "Заказали звонок");
-	define("EMAIL_BODY", "Имя - %s <br> Телефон - %s");
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
 
-	require __DIR__.'/mailer/PHPMailerAutoload.php';
+require __DIR__.'/mailer/PHPMailerAutoload.php';
 
-	/* make model data */
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
-		$mail = new PHPMailer();
-		$mail->isSMTP();
-		$mail->isHTML(true);
-		$mail->SMTPAuth     = true;
-		$_POST = json_decode(file_get_contents('php://input'), true);
-        $input_name = $_POST["name"];
-        $input_phone = $_POST["phone"];
-        $input_master = $_POST["master"];
-		$mail->SMTPSecure   = true;
-		$mail->CharSet 	= 'utf-8';
-		$mail->Host 	= AUTH_SERVER;
-		$mail->Port     = AUTH_PORT;
-		$mail->Username = AUTH_LOGIN;
-		$mail->Password = AUTH_PASSWORD;
+try {
+    //Server settings
+    $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+    $mail->isSMTP();                                            // Set mailer to use SMTP
+    $mail->Host       = 'smtp.mail.ru';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'info@topsecurity.kz';                     // SMTP username
+    $mail->Password   = 'topqwe123';                               // SMTP password
+    $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port       = 465;      
+    $mail->CharSet 	= 'utf-8';                              // TCP port to connect to
 
-		$mail->SetFrom(EMAIL_FROM, EMAIL_NAME);        
-        $mail->addAddress('info@topsecurity.kz', 'Top Security Kz');
-        $mail->addCC("callcentre@muratov.kz");
-        $mail->addCC("z.bertoleuova@newestate.kz");
-        $mail->addCC("a.zhadraeva@newestate.kz");
+    //Recipients
+    $mail->setFrom('info@topsecurity.kz', 'TopSecurity KZ');
+    $mail->addAddress('info@topsecurity.kz', 'Info');             
+    $mail->addCC("info@newestate.kz");
+    $mail->addCC("callcentre@muratov.kz");
+    $mail->addCC("z.bertoleuova@newestate.kz");
+    $mail->addCC("a.zhadraeva@newestate.kz");    
+    $_POST = json_decode(file_get_contents('php://input'), true);
+    $input_name = $_POST["name"];
+    $input_phone = $_POST["phone"];
 
-		$mail->Subject = EMAIL_SUBJECT;
-		$mail->Body	   = "<p>Имя клиента - $input_name</p> <p>Телефон клиента - $input_phone</p>   ";
+    // Content
+    $mail->isHTML(true);        
+    $mail->Subject = "Заказали звонок";                          // Set email format to HTML    
+    $mail->Body	= "<p>Имя клиента - $input_name</p> <p>Телефон клиента - $input_phone</p>   ";
 
-		$mail->send();
-	
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
