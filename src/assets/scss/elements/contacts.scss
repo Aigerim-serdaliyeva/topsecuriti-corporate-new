@@ -11,7 +11,12 @@
                 color: #111111;
                 opacity: 0.15;
             }  
-        }        
+        }       
+        article {
+            a {
+                color: #111111;
+            } 
+        }
         button {
             outline: none;
             border: none;  
@@ -57,7 +62,7 @@
         input {                                
           margin: w(35) auto;                
           border: w(2) solid #EF3B39;                
-          box-shadow: 0 w(4) w(4) rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           @include size(w(61), w(466));
           font-size: w(24);                                                     
         }
@@ -79,11 +84,48 @@
         .map {
             @include size(h(363), 100%);                
         }
-        p {
+        // .contacts-svg-0 {
+        //     @include size(w(20), w(15));
+        // }
+        // .contacts-svg-1 {
+        //     @include size(w(19), w(19));
+        // }
+        // .contacts-svg-2 {
+        //     @include size(w(17), w(22));
+        // }
+        // .contacts-svg-3 {
+        //     @include size(w(20), w(20));
+        // }
+        // .contacts-svg-4 {
+        //     @include size(w(20), w(20));
+        // }            
+        .cc {
+            padding-left: w(200);
+            article {
+                display: flex; align-items: center;   
+                margin-top: h(14);                  
+                &:nth-child(2) {
+                    display: block;
+                }         
+            }
+            a {
+                font-size: h(22);            
+                color: #111111;                
+                font-family: Beausans;              
+            }
+            svg {
+                width: h(22);
+                max-height: 100%;
+                margin-right: w(15);
+            }            
+        }
+
+        p {                                    
             font-size: w(24);
-            color: #000;
-            padding: w(20) w(86) 0;            
-            text-align: center;
+            color: #000;            
+            padding: w(20) w(86) 0 w(400);            
+            text-align: left;
+            
         }
       }
     }
@@ -117,6 +159,25 @@
                     padding-top: wm(100);
                 } 
             }
+            .cc {                
+                article {
+                    display: flex; align-items: center;   
+                    margin-top: wm(20);    
+                    &:nth-child(2) {
+                        display: block;
+                    }                          
+                }
+                a {
+                    font-size: wm(46);            
+                    color: #111111;
+                    font-family: Beausans;              
+                }
+                svg {
+                    width: wm(35);                        
+                    margin-right: wm(55);
+                }
+           
+            }    
             input {                                
                 margin: wm(50) auto;                
                 border: wm(3.6824) solid #EF3B39;

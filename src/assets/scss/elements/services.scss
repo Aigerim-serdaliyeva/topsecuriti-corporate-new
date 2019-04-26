@@ -1,5 +1,3 @@
-
-
 @media(min-width:960px) {
     .ct-services {
         display: flex; justify-content: flex-end; align-items: center;
@@ -85,8 +83,8 @@
                 }                
                 p {
                     font-size: h(30);
-                    padding: h(92) 0;
-                    width: 80%;
+                    padding: h(92) 0 h(20);
+                    width: 90%;
                     display: block;
                     text-align: center;
                     margin: auto;
@@ -137,10 +135,12 @@
                 article {
                     cursor: pointer;
                 }
-                article:first-child {
+                article:first-child {                    
                     img {  @include size(wm(150), wm(106));}
                 }
                 article:nth-child(2) {
+                    position: relative;
+                    left: wm(20);
                     img { @include size(wm(150), wm(218)); }
                 }
                 article:last-child {
@@ -156,6 +156,7 @@
             }
             &__text {
                 transition: 0.3s ease-in-out;
+                padding-bottom: wm(100);
                 h2 {
                     font-size: wm(50);
                     margin-bottom: wm(50);
@@ -174,7 +175,11 @@
                 }
                 article {
                     display: flex; justify-content: center;
-                }
+                }    
+                .pdf {
+                    display: flex;
+                    justify-content: center;
+                }            
                 button {                                  
                     margin: 0;  
                     border: none;
@@ -182,13 +187,7 @@
                     &:first-child {
                         margin-right: wm(98);
                     }  
-                    &:last-child {
-                        border-color : #EF3B39;
-                        span {
-                            color: #EF3B39;
-                            border-bottom: hm(1) solid #EF3B39;
-                        }
-                    }
+                 
                 }
                 span {          
                     border-bottom: hm(1) solid #fff;          

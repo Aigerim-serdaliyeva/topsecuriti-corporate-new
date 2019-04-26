@@ -21,7 +21,29 @@ nav {
         background:url('~@/assets/images/header/menu-bg.png') no-repeat;
         @include coverCenter;
         @include flex-justify-space();
-
+        &__numbers {
+            pointer-events: none;
+            position: absolute; top: w(12); left: w(277); bottom: 0; margin: auto;
+            a {
+                display: block;   
+                font-family: ProtoSans;             
+                color: #fff;
+                text-align: right;  
+                font-size: w(24);        
+                padding-top: w(6);
+                position: relative;
+                &:first-child {
+                    left: w(-40);
+                }
+                &:nth-child(2) {
+                    left: w(-20);
+                }
+                &:last-child {
+                        
+                }
+            }            
+            
+        }
         &__line {
             position: absolute; bottom: w(-30); left: 0;
             @include size(w(80), w(863));

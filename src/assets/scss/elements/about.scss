@@ -68,6 +68,11 @@
             &__man {
                 @include size(h(826), h(438))
             } 
+            a {
+                z-index: 1000;
+                position: relative;
+                display: block;
+            }
             &__text {
                 @include size(auto, w(741));                
                 p {

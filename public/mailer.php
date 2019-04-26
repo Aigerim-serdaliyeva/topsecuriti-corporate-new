@@ -21,11 +21,8 @@ try {
 
     //Recipients
     $mail->setFrom('info@topsecurity.kz', 'TopSecurity KZ');
-    $mail->addAddress('info@topsecurity.kz', 'Info');             
-    $mail->addCC("info@newestate.kz");
-    $mail->addCC("callcentre@muratov.kz");
-    $mail->addCC("z.bertoleuova@newestate.kz");
-    $mail->addCC("a.zhadraeva@newestate.kz");    
+    $mail->addAddress('info@topsecurity.kz', 'Info');                 
+    $mail->addCC("callcentre@muratov.kz");      
     $_POST = json_decode(file_get_contents('php://input'), true);
     $input_name = $_POST["name"];
     $input_phone = $_POST["phone"];

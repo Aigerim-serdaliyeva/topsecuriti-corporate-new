@@ -8,6 +8,7 @@
     .flex-beetween {
         padding: wm(150) wm(80) wm(85) ;
         @include flex-justify-space;
+        position: relative;
         align-items: center;
     }
     &__title {

@@ -14,7 +14,7 @@
                         p {{articleList[index].p.slice(0,144)+".."}}
                         
                         .ct-article__wrap__aside-item__date
-                            span 3 января, 2018
+                            span {{articleList[index].time}}
                             a(@click="changeArticle(index)") Подробнее                        
     section(v-else-if="isMobile", class="full-section ct-article default-bg")
         .ct-article__wrap

@@ -9,12 +9,21 @@
                     p {{item.last}}
             .ct-services__wrap__text(ref="defaultText")
                 p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.
+                .blya
+                    p.sika Бесплатно:
+                    p.list-style-type                          
+                            ul                           
+                                li Выезд 
+                                li Осмотр помещения
+                                li Монтаж
                 h2  Охранная сигнализация
                 article
-                    button.button-bold
-                        span Standart
-                    button.button-bold
-                        span Premium
+                    a(:href="`${publicPath}Standard.pdf`" target="_blank")                       
+                        button.button-bold
+                            span Standart
+                    a(:href="`${publicPath}Premium.pdf`" target="_blank")                       
+                        button.button-bold
+                            span Premium
             .ct-services__wrap__hidden(ref="hiddenText")
                 article
                     img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
@@ -31,13 +40,21 @@
                         p {{item.first}}     
                         p {{item.last}}  
                 .ct-services__wrap__text(ref="defaultText")
-                    p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.
-                    h2  Охранная сигнализация
-                    article
-                        button.button-bold
-                            span Standart
-                        button.button-bold
-                            span Premium 
+                    p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.                            
+                    .blya
+                        p.sika Бесплатно:
+                        p.list-style-type                          
+                                ul                           
+                                    li Выезд 
+                                    li Осмотр помещения
+                                    li Монтаж                    
+                    .pdf
+                        a(:href="`${publicPath}Standard.pdf`" target="_blank")                       
+                            button.button-bold
+                                span Standart
+                        a(:href="`${publicPath}Premium.pdf`" target="_blank")                       
+                            button.button-bold
+                                span Premium                    
                 .ct-services__wrap__hidden(ref="hiddenText")
                     article
                         img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
@@ -62,7 +79,8 @@ export default {
       ],
       servicesList: require("@/assets/json/services.json"),
       number: 0,
-      triggerMobile: false
+      triggerMobile: false,
+      publicPath: process.env.BASE_URL
     };
   },
   mounted() {
@@ -95,7 +113,7 @@ export default {
       });
     },
     showMobileInfo(index) {
-      this.triggerMobile = true;
+      this.triggerMobile = !this.triggerMobile;
       this.number = index;
       if (this.triggerMobile) {
         TweenLite.to(defaultText, 0.3, {

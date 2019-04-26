@@ -4,13 +4,44 @@
         .ct-partners__wrap
             .ct-partners__wrap__slider
                 .ct-partners__wrap__slider__image(v-for="(item, index) in 9", :key="index")
-                    img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-if="index === 2" href="http://newestate.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 3" href="https://bbhills.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                                      
+                    a(v-else-if="index === 4" href="https://muratov.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 5" href="http://cleaningmaster.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 6" href="http://ladyssecrets.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                          
+                    a(v-else-if="index === 7" href="http://humanreserve.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 8" href="http://pesthunter.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                      
+                    a(v-else)
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
 
     section(v-else-if="isMobile", class="full-section ct-partners default-bg")
         .ct-partners__wrap
             mobile-header(:title="`Клиенты`")
             main
-                img(v-for="(item, index) in 9", :key="index" :class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                              
+                article(v-for="(item, index) in 9", :key="index")
+                    a(v-if="index === 2" href="http://newestate.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 3" href="https://bbhills.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                                      
+                    a(v-else-if="index === 4" href="https://muratov.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 5" href="http://cleaningmaster.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 6" href="http://ladyssecrets.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                          
+                    a(v-else-if="index === 7" href="http://humanreserve.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
+                    a(v-else-if="index === 8" href="http://pesthunter.kz/" target="_blank")
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                                      
+                    a(v-else)
+                        img(:class="`partners-${index + 1}`" :src="require(`@/assets/images/partners/partners-${index + 1}.png`)")                              
 
 </template>
 

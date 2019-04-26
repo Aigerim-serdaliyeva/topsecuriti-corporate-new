@@ -4,6 +4,7 @@ import Meta from "vue-meta";
 import Article from "./views/Article";
 import Home from "./views/Home";
 const router = new Router({
+    mode: 'history',
   scrollBehavior() {
     return { x: 0, y: 0 };
   },

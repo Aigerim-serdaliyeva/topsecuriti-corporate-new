@@ -1,6 +1,9 @@
 <template lang="pug">
     header#header(ref="ctMenu",v-if="!isMobile")
         .menu
+            .menu__numbers(v-if="!isMobile")                
+                a(href="tel:+77010316713") +7 (701) 031-67-13
+                a(href="tel:+77273390452") +7 (727) 339 04 52                                
             .menu__logo
                 router-link(to="/", style="z-index:10")
                     menu-logo
