@@ -2,7 +2,7 @@
     - 
         var text = "Наш офис расположен по адресу г Алматы ул Шевченко 153/1. Телефон : 5335, +7 (701) 031-67-13. Email: info@topsecurity.kz. График работы офиса с 9.00 - 18.00"
         var contacts = [
-            { text: ' г. Алматы, ул. Шевченко ' },
+            { text: ' г. Алматы, ул. Шевченко, 153/1' },
             { text: 'Телефон : 5335, +7(727) 346-83-18, +7(701) 038-68-20' },
             { text: 'Email: info@topsecurity.kz' },
             { text: 'Instagram: @topsecurity.kz' },
@@ -54,11 +54,15 @@
                         if index === 1
                             article                    
                                 +phone(index)
-                                a Call-center :     
-                                a  5335,    
-                                a  +7 (701) 031-67-13, 
-                                a  +7 (727) 339-04-52 
-                                a(style="display:block; padding-left: 1.9vw") ПЦН: +7(727) 346-83-18, +7(701) 038-68-20 
+                                .cc_item
+                                    a Call-center :     
+                                    a  5335,    
+                                    a  +7 (701) 031-67-13, 
+                                    a  +7 (727) 339-04-52                                     
+                            article                    
+                                +phone(index)
+                                .cc_item                                    
+                                    a ПЦН: +7(727) 346-83-18, +7(701) 038-68-20                                     
                         else
                             article                    
                                 +phone(index)
@@ -72,14 +76,21 @@
                         if index === 1
                             article                    
                                 +phone(index)
-                                a Call-center :       
-                                a(href="tel:5335") 5335,
-                                br
-                                a(href="tel:+77010316713" style="padding-left: 9vw") +7 (701) 031-67-13,                                 
-                                a(href="tel:+77273390452", style="display:block;padding-left: 9vw") +7 (727) 339-04-52
-                                a(style="display:block; padding-left: 9vw") ПЦН: 
-                                a(style="display:block; padding-left: 9vw" href="tel:+77273468318") +7(727) 346-83-18, 
-                                a(style="display:block; padding-left: 9vw" href="tel:+77010386820") +7(701) 038-68-20  
+                                .cc_item
+                                    a Call-center :       
+                                    br                 
+                                    a(href="tel:5335") 5335,                                                       
+                                    a(href="tel:+77010316713" ) +7 (701) 031-67-13,                                 
+                                    br
+                                    a(href="tel:+77273390452") +7 (727) 339-04-52                                    
+                            article                    
+                                +phone(index)
+                                .cc_item                                    
+                                    a ПЦН: 
+                                    br
+                                    a( href="tel:+77273468318") +7(727) 346-83-18, 
+                                    br
+                                    a( href="tel:+77010386820") +7(701) 038-68-20                                      
                         else
                             article                    
                                 +phone(index)

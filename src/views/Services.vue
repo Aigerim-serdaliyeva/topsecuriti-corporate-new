@@ -24,6 +24,9 @@
                     a(:href="`${publicPath}Premium.pdf`" target="_blank")                       
                         button.button-bold
                             span Premium
+                    a(:href="`${publicPath}Elite.pdf`" target="_blank")                       
+                        button.button-bold
+                            span Elite                            
             .ct-services__wrap__hidden(ref="hiddenText")
                 article
                     img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
@@ -35,10 +38,12 @@
             mobile-header(:title="`Услуги`")
             main 
                 .ct-services__wrap__icons(ref="icons")
-                    article(v-for="(item,index) in servicesItems" :key="index", @click="showMobileInfo(index)")
+                    article(v-for="(item,index) in servicesItems" :key="index", @click="showMobileInfo(index)")                                                
+                        p(v-if="index === 1 || index === 3" style="margin-right: 4vw") {{item.first}} <br> {{item.last}}
                         img(:src="require(`@/assets/images/services/services-${index + 1}.png`)", alt="") 
-                        p {{item.first}}     
-                        p {{item.last}}  
+                        p(v-if="index === 0 || index === 2" style="margin-left: 4vw") {{item.first}} <br> {{item.last}}
+                        
+
                 .ct-services__wrap__text(ref="defaultText")
                     p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.                            
                     .blya
@@ -54,7 +59,10 @@
                                 span Standart
                         a(:href="`${publicPath}Premium.pdf`" target="_blank")                       
                             button.button-bold
-                                span Premium                    
+                                span Premium
+                        a(:href="`${publicPath}Elite.pdf`" target="_blank")                       
+                            button.button-bold
+                                span Elite                                                    
                 .ct-services__wrap__hidden(ref="hiddenText")
                     article
                         img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
@@ -75,6 +83,7 @@ export default {
       servicesItems: [
         { first: "Тревожная", last: "Кнопка" },
         { first: "Охранная", last: "Система" },
+        { first: "Постовая", last: "Охрана" },
         { first: "Мобильный", last: "Телохранитель" }
       ],
       servicesList: require("@/assets/json/services.json"),

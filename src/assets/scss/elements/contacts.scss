@@ -103,14 +103,11 @@
             padding-left: w(200);
             article {
                 display: flex; align-items: center;   
-                margin-top: h(14);                  
-                &:nth-child(2) {
-                    display: block;
-                }         
+                margin-top: h(14);                                      
             }
             a {
                 font-size: h(22);            
-                color: #111111;                
+                color: #111111;    
                 font-family: Beausans;              
             }
             svg {
@@ -162,10 +159,7 @@
             .cc {                
                 article {
                     display: flex; align-items: center;   
-                    margin-top: wm(20);    
-                    &:nth-child(2) {
-                        display: block;
-                    }                          
+                    margin-top: wm(20);                                
                 }
                 a {
                     font-size: wm(46);            
