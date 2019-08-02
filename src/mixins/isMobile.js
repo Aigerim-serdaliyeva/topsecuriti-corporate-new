@@ -6,6 +6,6 @@ export const isMobile = {
       } else {
         return false;
       }
-    }
+    }    
   }
 };

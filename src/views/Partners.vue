@@ -48,7 +48,9 @@
 <script>
 // eslint-disable-next-line
 let partnersSlider;
+import Visited from "@/mixins/visited";
 export default {
+    mixins: [Visited],
   mounted() {
     if (window.matchMedia("(min-width:960px)").matches) {
       // eslint-disable-next-line

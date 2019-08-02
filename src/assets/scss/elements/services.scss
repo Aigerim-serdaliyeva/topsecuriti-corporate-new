@@ -73,6 +73,10 @@
                         transform: scale(0.5);
                     }
                     .hidden-3 {
+                        @include size(w(189), w(192));
+                        right: w(10);
+                    }
+                    .hidden-4 {
                         @include size(w(227), w(115));
                         right: w(50);
                     }
@@ -240,8 +244,12 @@
                         transform: scale(0.5);                        
                     }
                     .hidden-3 {
-                        @include size(wm(227), wm(115));
+                        @include size(wm(200), wm(210));
                         right: wm(50);
+                    }
+                    .hidden-4 {
+                        @include size(wm(227), wm(115));
+                        right: wm(30);
                     }
                 }
             }  

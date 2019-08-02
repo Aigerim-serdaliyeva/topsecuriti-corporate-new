@@ -2,8 +2,9 @@
     header#header(ref="ctMenu",v-if="!isMobile")
         .menu
             .menu__numbers(v-if="!isMobile")                
-                a(href="tel:+77010316713") +7 (701) 031-67-13
-                a(href="tel:+77273390452") +7 (727) 339 04 52                                
+                a(href="tel:5335") 5335
+                a(href="tel:+77013510986") +7 (701) 351-09-86
+                a(href="tel:+77273646874") +7 (727) 364-68-74                                                
             .menu__logo
                 router-link(to="/", style="z-index:10")
                     menu-logo

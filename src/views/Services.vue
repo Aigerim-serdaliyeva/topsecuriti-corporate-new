@@ -41,8 +41,7 @@
                     article(v-for="(item,index) in servicesItems" :key="index", @click="showMobileInfo(index)")                                                
                         p(v-if="index === 1 || index === 3" style="margin-right: 4vw") {{item.first}} <br> {{item.last}}
                         img(:src="require(`@/assets/images/services/services-${index + 1}.png`)", alt="") 
-                        p(v-if="index === 0 || index === 2" style="margin-left: 4vw") {{item.first}} <br> {{item.last}}
-                        
+                        p(v-if="index === 0 || index === 2" style="margin-left: 4vw") {{item.first}} <br> {{item.last}}                        
 
                 .ct-services__wrap__text(ref="defaultText")
                     p Специализация охранной организации  #[b TOP SECURITY KZ] — обеспечение безопасности клиентов и их имущества. У нас вы можете заказать услуги охраны в городе Алматы на выгодных условиях.                            
@@ -68,16 +67,17 @@
                         img(:class="`hidden-${number + 1}`" :src="require(`@/assets/images/services/services-img-${number + 1}.png`)", alt="")
                         h2 {{servicesList[number].h2}} 
                         p  {{servicesList[number].p}}                                                                                           
-
                                                                                   
 </template>
 
 <script>
 import TweenLite from "gsap/TweenLite";
+import Visited from "@/mixins/visited";
 // eslint-disable-next-line
 let hiddenText, icons, defaultText;
 
 export default {
+    mixins: [Visited],
   data() {
     return {
       servicesItems: [

@@ -26,7 +26,10 @@
 </template>
 
 <script>
+import Visited from "@/mixins/visited";
+
 export default {
+    mixins: [Visited],
   data() {
     return {
       articleList: require("@/assets/json/article.json")
